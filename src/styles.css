@@ -2394,11 +2394,12 @@ textarea::placeholder {
   }
 }
 
-.money-maker-art { min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: #e9efd9; color: #223e31; padding: 32px; text-align: center; }
-.money-maker-mark { width: 108px; height: 108px; border-radius: 26px; background: #223e31; color: #fff; display: grid; place-content: center; font: 700 52px Manrope, sans-serif; position: relative; }
-.money-maker-mark span { position: absolute; right: 10px; top: 5px; color: #c6ee7d; font-size: 28px; }
-.money-maker-art strong { font-size: clamp(28px, 5vw, 44px); letter-spacing: -1.5px; }
-.money-maker-art small { margin-top: 16px; font-size: 10px; letter-spacing: 2px; }
+.money-maker-art { width: min(100% - 80px, 520px); min-height: 280px; margin: 40px 40px 40px auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: #e9efd9; color: #223e31; padding: 28px; border-radius: 6px; text-align: center; }
+.money-maker-mark { width: 84px; height: 84px; border-radius: 20px; background: #223e31; color: #fff; display: grid; place-content: center; font: 700 40px Manrope, sans-serif; position: relative; }
+.money-maker-mark span { position: absolute; right: 8px; top: 4px; color: #c6ee7d; font-size: 22px; }
+.money-maker-art strong { font-size: clamp(26px, 4vw, 36px); letter-spacing: -1.2px; }
+.money-maker-art small { margin-top: 12px; font-size: 10px; letter-spacing: 2px; }
+@media (max-width: 760px) { .money-maker-art { width: auto; min-height: 240px; margin: 25px; } }
 .form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 button:disabled { opacity: .65; cursor: wait; }
 
