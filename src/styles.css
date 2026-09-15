@@ -17,6 +17,8 @@ html {
   scroll-padding-top: 110px;
 }
 body {
+  /* Keep ↗ ✳ etc. as text glyphs; iOS otherwise swaps in colour emoji. */
+  font-variant-emoji: text;
   margin: 0;
   background: var(--paper);
   color: var(--ink);

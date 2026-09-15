@@ -5,20 +5,20 @@ import { Component, input } from '@angular/core';
     @if (kind() === 'lavender') {
       <div class="orbit-app">
         <aside>
-          ◉<br /><small>⌂<br />▦<br />◷<br />⚙</small>
+          ◉<br /><small>⌂<br />▦<br />◷<br />⚙&#xFE0E;</small>
         </aside>
         <div class="orbit-body">
           <div class="mock-top">
             <b>orbit<span> / Overview</span></b
-            ><i>↗</i>
+            ><i>↗&#xFE0E;</i>
           </div>
           <h4>Everything, in perspective.</h4>
           <div class="mock-stats">
             <div>
-              Total revenue<b>$48,250 <em>↗ 12.8%</em></b>
+              Total revenue<b>$48,250 <em>↗&#xFE0E; 12.8%</em></b>
             </div>
             <div>
-              Active orders<b>128 <em>↗ 8.2%</em></b>
+              Active orders<b>128 <em>↗&#xFE0E; 8.2%</em></b>
             </div>
           </div>
           <div class="chart-label">Revenue overview <span>This month⌄</span></div>
@@ -41,11 +41,11 @@ import { Component, input } from '@angular/core';
           <div class="chair-seat"></div>
           <i></i><i></i>
         </div>
-        <div class="forma-bottom">THE EVERYDAY COLLECTION <span>Explore ↗</span></div>
+        <div class="forma-bottom">THE EVERYDAY COLLECTION <span>Explore ↗&#xFE0E;</span></div>
       </div>
     } @else {
       <div class="signal-app">
-        <div class="mock-top">✳ signal<span>Intelligence workspace</span></div>
+        <div class="mock-top">✳&#xFE0E; signal<span>Intelligence workspace</span></div>
         <h4>See the bigger picture.</h4>
         <div class="wave-chart">
           <svg viewBox="0 0 400 110">

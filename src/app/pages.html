@@ -25,7 +25,7 @@
             class="round-arrow"
             [routerLink]="['/services', s.slug]"
             [attr.aria-label]="'Explore ' + s.title"
-            >↗</a
+            >↗&#xFE0E;</a
           >
         </article>
       }
@@ -38,7 +38,7 @@
         <h1>{{ s.title }}<span class="lime-dot">.</span></h1>
         <p>{{ s.description }}</p>
         <a class="button dark" routerLink="/contact" [queryParams]="{ service: s.title }"
-          >Let’s explore your project ↗</a
+          >Let’s explore your project ↗&#xFE0E;</a
         >
       </section>
       <section class="detail-grid section wrap">
@@ -50,7 +50,7 @@
           <h3>What we can help you with</h3>
           <ul class="deliverables">
             @for (item of s.deliverables; track item) {
-              <li><span>↗</span>{{ item }}</li>
+              <li><span>↗&#xFE0E;</span>{{ item }}</li>
             }
           </ul>
           <p>
@@ -62,7 +62,7 @@
     } @else {
       <section class="page-hero wrap">
         <h1>Service not found.</h1>
-        <a routerLink="/services" class="button dark">Explore services ↗</a>
+        <a routerLink="/services" class="button dark">Explore services ↗&#xFE0E;</a>
       </section>
     }
   }
@@ -95,7 +95,7 @@
               <small>{{ p.type }} / CONCEPT</small>
               <h3>{{ p.name }} — {{ p.subtitle }}</h3>
             </div>
-            <span>↗</span>
+            <span>↗&#xFE0E;</span>
           </div></a
         >
       }
@@ -134,13 +134,13 @@
             and agreed success criteria. The interface shown here is a visual concept, not a live
             client application.
           </p>
-          <a class="text-link" routerLink="/contact">Discuss a similar idea ↗</a>
+          <a class="text-link" routerLink="/contact">Discuss a similar idea ↗&#xFE0E;</a>
         </div>
       </section>
     } @else {
       <section class="page-hero wrap">
         <h1>Concept not found.</h1>
-        <a routerLink="/work">Back to the concept lab ↗</a>
+        <a routerLink="/work">Back to the concept lab ↗&#xFE0E;</a>
       </section>
     }
   }
@@ -154,7 +154,7 @@
       </p>
     </section>
     <section class="about-manifesto wrap">
-      <span>✳</span>
+      <span>✳&#xFE0E;</span>
       <h2>
         Technology should open doors.<br />Simplify the complex.<br />And make
         <em>good ideas happen.</em>
@@ -216,7 +216,7 @@
           </div>
           <h3>{{ a.title }}</h3>
           <p>{{ a.summary }}</p>
-          <span class="text-link">Read the story ↗</span></a
+          <span class="text-link">Read the story ↗&#xFE0E;</span></a
         >
       }
     </section>
@@ -232,12 +232,12 @@
         @for (p of a.paragraphs; track p) {
           <p>{{ p }}</p>
         }
-        <a routerLink="/contact" class="text-link">Let’s put these ideas into practice ↗</a>
+        <a routerLink="/contact" class="text-link">Let’s put these ideas into practice ↗&#xFE0E;</a>
       </article>
     } @else {
       <section class="page-hero wrap">
         <h1>Article not found.</h1>
-        <a routerLink="/insights">Explore insights ↗</a>
+        <a routerLink="/insights">Explore insights ↗&#xFE0E;</a>
       </section>
     }
   }
@@ -246,7 +246,7 @@
       <div class="eyebrow">404 / A SMALL DETOUR</div>
       <h1>This page took<br /><span class="serif">a different path.</span></h1>
       <p>Let’s get you back to something good.</p>
-      <a class="button dark" routerLink="/">Back to home ↗</a>
+      <a class="button dark" routerLink="/">Back to home ↗&#xFE0E;</a>
     </section>
   }
 }
@@ -254,7 +254,7 @@
   <div class="eyebrow">GOT SOMETHING IN MIND?</div>
   <div>
     <h2>Let’s build<br /><span class="serif">what’s next.</span></h2>
-    <a class="cta-circle" routerLink="/contact" aria-label="Discuss your project">↗</a>
+    <a class="cta-circle" routerLink="/contact" aria-label="Discuss your project">↗&#xFE0E;</a>
   </div>
   <p>One conversation can change everything.</p>
 </section>

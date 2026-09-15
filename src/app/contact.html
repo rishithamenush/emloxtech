@@ -4,8 +4,8 @@
     <h1>Big idea?<br />Small question?<br /><span class="serif">We’re all ears.</span></h1>
     <p>Tell us what you have in mind. We’ll help you find the right next step.</p>
     <div class="contact-details">
-      <small>DROP US A LINE</small><a href="mailto:info@emloxtech.com">info&#64;emloxtech.com ↗</a
-      ><small>GIVE US A CALL</small><a href="tel:+94717071104">+94 71 707 1104 ↗</a
+      <small>DROP US A LINE</small><a href="mailto:info@emloxtech.com">info&#64;emloxtech.com ↗&#xFE0E;</a
+      ><small>GIVE US A CALL</small><a href="tel:+94717071104">+94 71 707 1104 ↗&#xFE0E;</a
       ><small>OUR CORNER OF THE WORLD</small>
       <p>Sri Lanka</p>
     </div>
@@ -13,7 +13,7 @@
   <div class="contact-form-panel">
     @if (!sent()) {
       <form #form="ngForm" (ngSubmit)="submit(form)" novalidate>
-        <div class="form-heading"><span>YOUR NEXT CHAPTER</span><span>↗</span></div>
+        <div class="form-heading"><span>YOUR NEXT CHAPTER</span><span>↗&#xFE0E;</span></div>
         <h2>Let’s start with you.</h2>
         <div class="form-row">
           <label
@@ -98,18 +98,18 @@
           This prepares an email brief on your device. You’ll review it before opening your email
           app. Nothing is submitted to a server.
         </p>
-        <button class="button dark" type="submit">Prepare my project brief <span>↗</span></button>
+        <button class="button dark" type="submit">Prepare my project brief <span>↗&#xFE0E;</span></button>
       </form>
     } @else {
       <div class="brief-review">
-        <span class="service-icon">↗</span>
+        <span class="service-icon">↗&#xFE0E;</span>
         <h2 id="brief-heading" tabindex="-1">Your idea is<br />ready to share.</h2>
         <p>
           Review your brief below, then open your email app to send it to info&#64;emloxtech.com. It
           hasn’t been sent yet.
         </p>
         <pre>{{ brief }}</pre>
-        <a class="button dark" [href]="mailto">Open email app ↗</a
+        <a class="button dark" [href]="mailto">Open email app ↗&#xFE0E;</a
         ><button class="text-link" type="button" (click)="download()">Download brief ↓</button
         ><button class="text-link" type="button" (click)="sent.set(false)">← Edit details</button>
         <p class="form-note">

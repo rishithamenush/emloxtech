@@ -18,7 +18,7 @@ export const services = [
   {
     slug: 'ai-data',
     number: '02',
-    icon: '✳',
+    icon: '✳\uFE0E',
     title: 'AI & data intelligence',
     short: 'Make your data do something extraordinary.',
     description:
@@ -50,7 +50,7 @@ export const services = [
   {
     slug: 'cloud-devops',
     number: '04',
-    icon: '↗',
+    icon: '↗\uFE0E',
     title: 'Cloud & connected systems',
     short: 'A stronger foundation for your next chapter.',
     description:
