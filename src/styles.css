@@ -141,24 +141,38 @@ svg {
   background: var(--paper);
 }
 .brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -.07em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.brand-name {
   display: flex;
   align-items: center;
-  font-size: 32px;
-  font-weight: 750;
-  letter-spacing: -1.8px;
-  line-height: 1;
-}
-.brand-symbol {
-  font-size: 43px;
-  margin-right: 10px;
-  line-height: 1;
 }
 .brand-tec {
-  font-family: monospace;
-  letter-spacing: 1px;
-  font-size: 10px;
-  align-self: flex-end;
-  margin: 0 0 5px 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+  padding-left: 2px;
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: .38em;
+  color: #424a3b;
+}
+.brand-tec::before {
+  content: '';
+  height: 2px;
+  flex: 1;
+  background: #94bc3b;
 }
 .site-header nav {
   display: flex;
@@ -1741,4 +1755,13 @@ app-project-art {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* The transparent ribbon replaces the X within the wordmark. */
+.brand-ribbon-x {
+  width: 1.04em;
+  height: 1.08em;
+  margin-left: .025em;
+  flex-shrink: 0;
+  object-fit: contain;
 }

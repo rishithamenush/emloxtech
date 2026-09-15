@@ -1,26 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="90 50 420 490">
 <title>EmloX Tech ribbon X</title>
-<rect width="600" height="600" rx="100" fill="#272b24"/>
 <defs>
         <linearGradient id="ribbonA" x1="0" y1="0" x2="1" y2="1">
-          <stop stop-color="#f0ff9a" />
-          <stop offset=".25" stop-color="#d1f769" />
-          <stop offset=".52" stop-color="#789f26" />
-          <stop offset=".72" stop-color="#d6fc77" />
-          <stop offset="1" stop-color="#91b838" />
+          <stop stop-color="#c5ec66" />
+          <stop offset=".25" stop-color="#a5d741" />
+          <stop offset=".52" stop-color="#587f1e" />
+          <stop offset=".72" stop-color="#b3e34d" />
+          <stop offset="1" stop-color="#7fab2c" />
         </linearGradient>
         <linearGradient id="ribbonB" x1="0" y1="1" x2="1" y2="0">
-          <stop stop-color="#74932c" />
-          <stop offset=".28" stop-color="#d0ef84" />
-          <stop offset=".49" stop-color="#f0ffc1" />
-          <stop offset=".7" stop-color="#a7ce54" />
-          <stop offset="1" stop-color="#496021" />
+          <stop stop-color="#567c20" />
+          <stop offset=".28" stop-color="#a7d646" />
+          <stop offset=".49" stop-color="#d4f58d" />
+          <stop offset=".7" stop-color="#8ab935" />
+          <stop offset="1" stop-color="#3e591b" />
         </linearGradient>
-        <filter id="shadow">
-          <feDropShadow dx="5" dy="22" stdDeviation="17" flood-color="#000" flood-opacity=".4" />
-        </filter>
       </defs>
-      <g filter="url(#shadow)" transform="translate(300 300) rotate(-18) translate(-300 -300)">
+      <g transform="translate(300 300) rotate(-18) translate(-300 -300)">
         <path
           d="M143 96 C210 50 251 113 300 209 L459 471 C475 503 432 548 395 510 L199 207 C177 172 156 147 143 96Z"
           fill="url(#ribbonA)"
