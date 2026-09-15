@@ -56,6 +56,11 @@ export const routes: Routes = [
     loadComponent: () => import('./contact').then((m) => m.Contact),
     title: 'Let’s talk — EmloX Tech',
   },
+  {
+    path: '404',
+    loadComponent: () => import('./pages').then((m) => m.Pages),
+    data: { page: 'notfound' },
+  },
   { path: 'news', redirectTo: 'insights', pathMatch: 'full' },
   { path: 'contact-2', redirectTo: 'contact', pathMatch: 'full' },
   { path: 'about-2', redirectTo: 'about', pathMatch: 'full' },

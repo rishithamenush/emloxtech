@@ -2,5 +2,23 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "outputDirectory": "dist/emlox/browser",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/news",
+      "destination": "/insights",
+      "permanent": true
+    },
+    {
+      "source": "/contact-2",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/about-2",
+      "destination": "/about",
+      "permanent": true
+    }
+  ]
 }

@@ -1,6 +1,22 @@
 export const services = [
   {
     slug: 'product-engineering',
+    useCase:
+      'For teams replacing spreadsheets, launching a customer portal, or testing a new software idea. We can help define the smallest useful release before expanding the feature set.',
+    preparation:
+      'Bring a description of your users, the workflow you want to improve, any existing software, and the integrations you need. A short example of the current process is a useful starting point.',
+    relatedArticle: 'better-products',
+    questions: [
+      [
+        'What is included in MVP development?',
+        'An MVP is a first release designed to test a specific business assumption. We agree on the essential user journey, interface, integrations, testing, and handover before development begins.',
+      ],
+      [
+        'Can you build an internal tool or customer portal?',
+        'Yes. We can scope role-based workflows, dashboards, and integrations around the way your team operates. Access controls and data requirements are part of the initial planning.',
+      ],
+    ],
+
     number: '01',
     icon: 'code' as const,
     title: 'Digital product engineering',
@@ -17,6 +33,22 @@ export const services = [
   },
   {
     slug: 'ai-data',
+    useCase:
+      'For teams exploring document processing, data analysis, computer vision, or repetitive workflows that could benefit from automation. Start with one bounded task and a clear way to evaluate results.',
+    preparation:
+      'Describe the current task, the available data, who is allowed to use it, and what an incorrect result would mean. We use those constraints to assess whether AI is appropriate.',
+    relatedArticle: 'practical-ai',
+    questions: [
+      [
+        'How do you choose a first AI automation project?',
+        'We look for a repeatable task with usable data and a measurable definition of a good result. A limited pilot helps evaluate quality, cost, and the need for human review before wider use.',
+      ],
+      [
+        'Will AI outputs need human review?',
+        'The review process depends on the consequences of mistakes. We plan validation, escalation for uncertain results, and monitoring rather than assuming that generated output is always correct.',
+      ],
+    ],
+
     number: '02',
     icon: 'sparkles' as const,
     title: 'AI & data intelligence',
@@ -33,6 +65,22 @@ export const services = [
   },
   {
     slug: 'experience-design',
+    useCase:
+      'For a new digital product, an inconsistent interface, or a brand that needs a clearer visual direction. We connect the identity, user journeys, and interface patterns around the audience you serve.',
+    preparation:
+      'Share your current screens or brand materials, your audience, the main tasks people need to complete, and any known usability problems. Existing customer feedback helps shape the design priorities.',
+    relatedArticle: 'design-that-scales',
+    questions: [
+      [
+        'Can you redesign an existing website or application?',
+        'Yes. We review the current journeys, identify friction, and plan a focused redesign. The scope can cover selected screens, a complete interface, or a reusable design system.',
+      ],
+      [
+        'What does a UI/UX design handover include?',
+        'We agree on the deliverables before starting. These can include user flows, responsive screen designs, interactive prototypes, component states, and implementation guidance for developers.',
+      ],
+    ],
+
     number: '03',
     icon: 'pen' as const,
     title: 'Brand & experience design',
@@ -49,6 +97,22 @@ export const services = [
   },
   {
     slug: 'cloud-devops',
+    useCase:
+      'For teams planning a cloud migration, improving release reliability, or connecting applications and devices. We begin with the current architecture and operational needs.',
+    preparation:
+      'Bring an overview of your infrastructure, deployment process, integrations, and reliability requirements. Share your operating budget and any constraints on where data can be stored.',
+    relatedArticle: 'better-products',
+    questions: [
+      [
+        'Can you improve an existing deployment process?',
+        'Yes. We can assess the build and release workflow and scope automated checks, deployment pipelines, rollback procedures, and operational documentation.',
+      ],
+      [
+        'How do you plan cloud costs?',
+        'We consider workload, storage, traffic, and reliability needs when proposing architecture. Hosting and third-party service charges are discussed separately from implementation work; costs depend on actual usage.',
+      ],
+    ],
+
     number: '04',
     icon: 'cloud' as const,
     title: 'Cloud & connected systems',

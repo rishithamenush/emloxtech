@@ -25,3 +25,15 @@ Tested using the Codex in-app browser against the running Angular development se
 ## Limits
 
 These checks are targeted build, responsive, and interaction checks. They do not constitute a full accessibility certification, cross-browser/device lab, load test, or mail-delivery test. Email-client behavior depends on the visitor's configured application. The original project was reviewed from source; its old demos were not all executed.
+
+## SEO update — 2026-09-15
+
+- Production build passed: 20 prerendered routes (16 public pages, three legacy redirects, one 404 route).
+- Initial browser bundle: 349.45 kB raw / 96.40 kB estimated transfer, within configured budget.
+- `npm run test:seo` passed for all 16 indexable pages: one H1, unique title and description, canonical, social metadata, JSON-LD, internal links, sitemap, robots.txt, and noindex 404 output.
+- Production browser preview: homepage and direct service page render; client navigation updates title/canonical and retains exactly one structured-data script.
+- Service FAQ opens; service enquiry link preselects the requested service. Contact canonical excludes the query string.
+- Invalid service URL renders a missing-page message with noindex and no business structured-data script after hydration.
+- No browser console errors observed in the checked flows. Service-page appearance inspected at the default browser viewport.
+- `git diff --check` passed.
+- Live deployment, real HTTP status/redirect behavior on Vercel, DNS, Search Console ownership, actual index coverage, Google Trends demand, and live Core Web Vitals were not verified. See SEO-LAUNCH.md.

@@ -1,0 +1,198 @@
+import { DOCUMENT, Injectable, inject } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
+import { services, projects, articles } from './content';
+
+export const SITE_URL = 'https://www.emloxtech.com';
+const BRAND = 'EmloX Tech';
+
+@Injectable()
+export class SeoStrategy extends TitleStrategy {
+  private document = inject(DOCUMENT);
+  private meta = inject(Meta);
+  private title = inject(Title);
+
+  override updateTitle(state: RouterStateSnapshot): void {
+    const path = state.url.split(/[?#]/)[0].replace(/\/$/, '') || '/';
+    const url = SITE_URL + (path === '/' ? '/' : path);
+    const service = services.find((item) => path === '/services/' + item.slug);
+    const project = projects.find((item) => path === '/work/' + item.slug);
+    const article = articles.find((item) => path === '/insights/' + item.slug);
+    const pages: Record<string, [string, string, string]> = {
+      '/': [
+        'Software Development & UI/UX Design in Sri Lanka',
+        'EmloX Tech is a Sri Lankan design and software studio building web applications, MVPs, AI automation, and cloud systems for local and international teams.',
+        'WebPage',
+      ],
+      '/services': [
+        'Software, AI & Design Services in Sri Lanka',
+        'Explore web and mobile development, MVP engineering, UI/UX design, AI automation, and cloud services. Define your project scope with EmloX Tech.',
+        'CollectionPage',
+      ],
+      '/work': [
+        'Software & Design Portfolio Concepts',
+        'Explore Orbit, Forma, and Signal: original EmloX Tech concepts for operations software, ecommerce design, and AI analytics. Illustrative studio work.',
+        'CollectionPage',
+      ],
+      '/about': [
+        'About Our Sri Lankan Software & Design Studio',
+        'Meet EmloX Tech’s approach to software development and design: clear scope, regular reviews, and remote collaboration from Sri Lanka.',
+        'AboutPage',
+      ],
+      '/insights': [
+        'Software Development, AI & UX Insights',
+        'Practical notes from EmloX Tech on planning software, choosing a first AI project, and building design systems. Read our product and engineering guidance.',
+        'CollectionPage',
+      ],
+      '/contact': [
+        'Discuss Your Software or Design Project',
+        'Contact EmloX Tech about a web application, MVP, UI/UX design, AI, or cloud project. Share your scope and timeline with our Sri Lanka-based studio.',
+        'ContactPage',
+      ],
+    };
+    const serviceTitles: Record<string, string> = {
+      'product-engineering': 'Web Application & MVP Development in Sri Lanka',
+      'ai-data': 'AI Automation & Data Engineering Services',
+      'experience-design': 'UI/UX Design & Brand Identity in Sri Lanka',
+      'cloud-devops': 'Cloud, DevOps & Systems Integration Services',
+    };
+    const entry = pages[path];
+    const valid = Boolean(entry || service || project || article);
+    const heading = service
+      ? serviceTitles[service.slug]
+      : project
+        ? `${project.name}: ${project.type} Concept`
+        : article
+          ? article.title
+          : entry?.[0] || 'Page not found';
+    const description =
+      service?.description ||
+      project?.description ||
+      article?.summary ||
+      entry?.[1] ||
+      'This page could not be found. Explore EmloX Tech services, concepts, and insights.';
+    const title = `${heading} | ${BRAND}`;
+    this.title.setTitle(title);
+    this.meta.updateTag({ name: 'description', content: description });
+    this.meta.updateTag({
+      name: 'robots',
+      content: valid ? 'index, follow, max-image-preview:large' : 'noindex, follow',
+    });
+    for (const [property, content] of Object.entries({
+      'og:title': title,
+      'og:description': description,
+      'og:url': url,
+      'og:type': article ? 'article' : 'website',
+      'og:site_name': BRAND,
+      'og:locale': 'en_US',
+    })) {
+      this.meta.updateTag({ property, content });
+    }
+    for (const [name, content] of Object.entries({
+      'twitter:card': 'summary',
+      'twitter:title': title,
+      'twitter:description': description,
+    }))
+      this.meta.updateTag({ name, content });
+    let canonical = this.document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = this.document.createElement('link');
+      canonical.rel = 'canonical';
+      this.document.head.appendChild(canonical);
+    }
+    canonical.href = url;
+    this.document.getElementById('site-structured-data')?.remove();
+    if (!valid) return;
+    const organization = {
+      '@type': 'Organization',
+      '@id': SITE_URL + '/#organization',
+      name: BRAND,
+      url: SITE_URL + '/',
+      logo: SITE_URL + '/emlox-logo.svg',
+      email: 'info@emloxtech.com',
+      description:
+        'Independent design and software engineering studio based in Sri Lanka, working with local and international teams.',
+    };
+    const graph: object[] = [
+      organization,
+      {
+        '@type': 'WebSite',
+        '@id': SITE_URL + '/#website',
+        name: BRAND,
+        url: SITE_URL + '/',
+        publisher: { '@id': organization['@id'] },
+        inLanguage: 'en',
+      },
+      {
+        '@type': entry?.[2] || 'WebPage',
+        '@id': url + '#webpage',
+        url,
+        name: heading,
+        description,
+        inLanguage: 'en',
+        isPartOf: { '@id': SITE_URL + '/#website' },
+        about: { '@id': organization['@id'] },
+      },
+    ];
+    if (service)
+      graph.push({
+        '@type': 'Service',
+        '@id': url + '#service',
+        name: service.title,
+        description,
+        url,
+        serviceType: service.tags,
+        provider: { '@id': organization['@id'] },
+        mainEntityOfPage: { '@id': url + '#webpage' },
+      });
+    if (article)
+      graph.push({
+        '@type': 'Article',
+        '@id': url + '#article',
+        headline: article.title,
+        description,
+        articleBody: article.paragraphs.join('\n\n'),
+        author: {
+          '@type': 'Organization',
+          '@id': organization['@id'],
+          name: BRAND,
+          url: SITE_URL + '/about',
+        },
+        publisher: { '@id': organization['@id'] },
+        mainEntityOfPage: { '@id': url + '#webpage' },
+      });
+    if (path !== '/') {
+      const parts = path.slice(1).split('/');
+      const breadcrumbs = [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL + '/' },
+      ];
+      if (parts.length > 1)
+        breadcrumbs.push({
+          '@type': 'ListItem',
+          position: 2,
+          name: (
+            { services: 'Services', work: 'Concepts', insights: 'Insights' } as Record<
+              string,
+              string
+            >
+          )[parts[0]],
+          item: SITE_URL + '/' + parts[0],
+        });
+      breadcrumbs.push({
+        '@type': 'ListItem',
+        position: breadcrumbs.length + 1,
+        name: service?.title || project?.name || article?.title || heading,
+        item: url,
+      });
+      graph.push({ '@type': 'BreadcrumbList', itemListElement: breadcrumbs });
+    }
+    const script = this.document.createElement('script');
+    script.id = 'site-structured-data';
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': graph,
+    }).replace(/</g, '\\u003c');
+    this.document.head.appendChild(script);
+  }
+}

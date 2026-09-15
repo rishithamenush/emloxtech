@@ -17,7 +17,11 @@ Open http://localhost:4200. The current local preview uses http://127.0.0.1:4200
 npm run build
 ```
 
-Output: `dist/emlox/browser`. Host this folder with a fallback to `index.html` for application routes. This is a client-rendered application; prerendering/SSR is not configured.
+Output: `dist/emlox/browser`. Every public route is prerendered to HTML at build time, then hydrated for browser interactions. Host the generated directories as static pages and serve `404.html` with HTTP 404 for unknown URLs. Do not configure a catch-all homepage rewrite. Vercel routing is included in `vercel.json`. No application server is required.
+
+The build also generates `sitemap.xml` and `robots.txt` from the rendered canonical URLs. Run `npm run test:seo` after building. For a local production preview run `node scripts/preview.mjs` and open http://127.0.0.1:4300.
+
+SEO configuration: `src/app/seo.ts`. Canonical origin: `https://www.emloxtech.com`. See `docs/SEO-LAUNCH.md` for free launch and measurement steps.
 
 Use a Node version supported by Angular 22. This project was built and checked with Node 26.8.1 and npm 11.19.0. See the official compatibility table: https://angular.dev/reference/versions.
 

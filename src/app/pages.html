@@ -61,6 +61,33 @@
           </p>
         </div>
       </section>
+      <section class="detail-grid section wrap">
+        <div>
+          <h2>Is this service right for your project?</h2>
+          <p>{{ s.useCase }}</p>
+        </div>
+        <div>
+          <h3>What to prepare</h3>
+          <p>{{ s.preparation }}</p>
+          <a class="text-link" [routerLink]="['/insights', s.relatedArticle]"
+            >Read our planning guide <app-icon name="book"
+          /></a>
+        </div>
+      </section>
+      <section class="faq-section section wrap">
+        <div>
+          <div class="eyebrow">PROJECT PLANNING</div>
+          <h2>Common questions.</h2>
+        </div>
+        <div class="faq-list">
+          @for (question of s.questions; track question[0]) {
+            <details>
+              <summary>{{ question[0] }}<span aria-hidden="true">+</span></summary>
+              <p>{{ question[1] }}</p>
+            </details>
+          }
+        </div>
+      </section>
     } @else {
       <section class="page-hero wrap">
         <h1>Service not found.</h1>
@@ -229,6 +256,7 @@
         <div class="article-meta">{{ a.category }} · {{ a.minutes }} read</div>
         <h1>{{ a.title }}</h1>
         <p class="article-intro">{{ a.summary }}</p>
+        <p>By <a routerLink="/about">EmloX Tech</a> · Product, design, and engineering notes</p>
         <hr />
         @for (p of a.paragraphs; track p) {
           <p>{{ p }}</p>

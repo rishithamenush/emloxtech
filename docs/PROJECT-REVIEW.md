@@ -47,6 +47,6 @@ Consolidated offerings into product engineering, AI/data, brand/experience desig
 - Confirm business details and service positioning.
 - Supply approved client case studies, imagery, testimonials, and legal text if those pages are required.
 - If direct form submission is desired, connect a server-side email provider with environment-based credentials, validated inputs, a verified sender, error handling, and abuse controls. Do not place mail credentials in Angular client code.
-- Configure the hosting server to return `index.html` for application routes. For production search optimization, add prerendering/SSR and canonical/social metadata using the final domain.
+- SEO update: prerendering, canonical/social metadata, structured data, sitemap, and static 404 handling are now implemented. Follow `docs/SEO-LAUNCH.md`; serve generated static pages rather than rewriting every request to the homepage.
 
 The original Downloads project was not changed. The replacement lives in the EmloxTech workspace.
