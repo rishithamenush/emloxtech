@@ -20,7 +20,7 @@ export class Contact {
   }
   get mailto() {
     return (
-      'mailto:contact@emloxtech.com?subject=' +
+      'mailto:info@emloxtech.com?subject=' +
       encodeURIComponent('Project enquiry — ' + this.model.name) +
       '&body=' +
       encodeURIComponent(this.brief)
