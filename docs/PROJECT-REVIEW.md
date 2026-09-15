@@ -1,4 +1,4 @@
-# EmloX Tec: original project review and Angular rebuild
+# EmloX Tech: original project review and Angular rebuild
 
 ## Review scope
 
@@ -36,7 +36,7 @@ The repository-wide inventory scanned 150 JavaScript, CSS, and SCSS files (27,93
 
 ## Content decisions
 
-Retained the EmloX Tec brand and the source contact information, with the telephone link corrected to match its displayed number. Business contact details should be confirmed by the owner before launch.
+Applied the user-confirmed EmloX Tech name and retained the source contact information, with the telephone link corrected to match its displayed number. Business contact details should be confirmed by the owner before launch.
 
 Replaced template stock case studies with three clearly labeled original concepts (Orbit, Forma, Signal). These are visual explorations, not customer deployments or measured business results. No unverified client logos, invented testimonials, staff identities, or performance statistics were published.
 

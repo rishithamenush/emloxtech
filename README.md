@@ -1,4 +1,4 @@
-# EmloX Tec — Angular rebrand
+# EmloX Tech — Angular rebrand
 
 A complete redesigned company website using Angular 22 standalone components.
 

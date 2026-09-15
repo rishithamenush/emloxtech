@@ -15,7 +15,7 @@ export class Contact {
     message: '',
   };
   get brief() {
-    return `Project enquiry for EmloX Tec\n\nName: ${this.model.name}\nEmail: ${this.model.email}\nCompany: ${this.model.company || 'Not specified'}\nInterested in: ${this.model.service}\nBudget: ${this.model.budget}\n\n${this.model.message}`;
+    return `Project enquiry for EmloX Tech\n\nName: ${this.model.name}\nEmail: ${this.model.email}\nCompany: ${this.model.company || 'Not specified'}\nInterested in: ${this.model.service}\nBudget: ${this.model.budget}\n\n${this.model.message}`;
   }
   get mailto() {
     return (
