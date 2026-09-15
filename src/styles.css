@@ -999,6 +999,9 @@ footer {
 }
 .footer-mail {
   justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 0.55em;
   font-size: 18px;
   letter-spacing: -0.03em;
 }
@@ -1202,14 +1205,43 @@ footer {
   color: var(--muted);
   margin-top: 25px;
 }
-.contact-details a {
-  display: block;
-  font-size: 20px;
+.contact-details a,
+.contact-details p {
+  display: flex;
+  align-items: center;
+  gap: 0.55em;
+  width: fit-content;
   margin-top: 7px;
+}
+.contact-details a {
+  font-size: 20px;
 }
 .contact-details p {
   font-size: 14px;
-  margin-top: 7px;
+}
+.contact-details svg,
+.footer-mail svg {
+  flex-shrink: 0;
+  width: 1.05em;
+  height: 1.05em;
+  fill: none;
+  stroke: #54702b;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s;
+}
+.contact-details p svg {
+  width: 1.3em;
+  height: 1.3em;
+}
+.contact-details a:hover,
+.footer-mail:hover {
+  color: #54702b;
+}
+.contact-details a:hover svg,
+.footer-mail:hover svg {
+  transform: translateY(-2px);
 }
 .contact-form-panel {
   padding: 34px;
