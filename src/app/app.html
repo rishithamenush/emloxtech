@@ -1,14 +1,19 @@
 <a class="skip-link" [href]="skipHref()">Skip to content</a>
 <header class="site-header">
   <a class="brand" routerLink="/" aria-label="EmloX Tech home"
-    ><span class="brand-name"><span>Emlo</span><img class="brand-ribbon-x" src="emlox-logo.svg" alt="" width="38" height="40" /></span><span class="brand-tec">TECH</span></a
+    ><span class="brand-name"
+      ><span>Emlo</span
+      ><img class="brand-ribbon-x" src="emlox-logo.svg" alt="" width="38" height="40" /></span
+    ><span class="brand-tec">TECH</span></a
   >
   <nav id="main-navigation" aria-label="Main navigation" [class.is-open]="menuOpen()">
     <a routerLink="/services" routerLinkActive="active">Services</a
     ><a routerLink="/work" routerLinkActive="active">Work</a
     ><a routerLink="/about" routerLinkActive="active">About us</a
     ><a routerLink="/insights" routerLinkActive="active">Insights</a
-    ><a routerLink="/contact" class="nav-cta">Let’s talk <span>↗&#xFE0E;</span></a>
+    ><a routerLink="/contact" class="nav-cta"
+      >Let’s talk <span><app-icon name="message" /></span
+    ></a>
   </nav>
   <button
     class="menu-toggle"
@@ -25,18 +30,18 @@
 <footer>
   <div class="footer-top">
     <a class="brand" routerLink="/" aria-label="EmloX Tech home"
-      ><span class="brand-name"><span>Emlo</span><img class="brand-ribbon-x" src="emlox-logo.svg" alt="" width="38" height="40" /></span><span class="brand-tec">TECH</span></a
+      ><span class="brand-name"
+        ><span>Emlo</span
+        ><img class="brand-ribbon-x" src="emlox-logo.svg" alt="" width="38" height="40" /></span
+      ><span class="brand-tec">TECH</span></a
     >
     <p>Good people.<br />Extraordinary possibilities.</p>
-    <a class="footer-mail" href="mailto:info@emloxtech.com"
-      ><svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3" y="5" width="18" height="14" rx="2" />
-        <path d="m3.5 6.5 8.5 6.5 8.5-6.5" /></svg
-      >info&#64;emloxtech.com</a
+    <a class="footer-mail" href="mailto:contact@emloxtech.com"
+      ><app-icon name="mail" />contact&#64;emloxtech.com</a
     >
   </div>
   <div class="footer-bottom">
     <span>© {{ year }} EmloX Tech.</span><span>Made with purpose. Based in Sri Lanka.</span
-    ><a routerLink="/contact">Get in touch ↗&#xFE0E;</a>
+    ><a routerLink="/contact">Get in touch <app-icon name="message" /></a>
   </div>
 </footer>

@@ -25,8 +25,8 @@
             class="round-arrow"
             [routerLink]="['/services', s.slug]"
             [attr.aria-label]="'Explore ' + s.title"
-            >↗&#xFE0E;</a
-          >
+            ><app-icon name="arrow-right"
+          /></a>
         </article>
       }
     </section>
@@ -34,12 +34,12 @@
   @case ('service') {
     @if (service(); as s) {
       <section class="page-hero wrap">
-        <a routerLink="/services" class="eyebrow">← ALL SERVICES</a>
+        <a routerLink="/services" class="eyebrow"><app-icon name="arrow-left" /> ALL SERVICES</a>
         <h1>{{ s.title }}<span class="lime-dot">.</span></h1>
         <p>{{ s.description }}</p>
         <a class="button dark" routerLink="/contact" [queryParams]="{ service: s.title }"
-          >Let’s explore your project ↗&#xFE0E;</a
-        >
+          >Let’s explore your project <app-icon name="message"
+        /></a>
       </section>
       <section class="detail-grid section wrap">
         <div>
@@ -50,7 +50,9 @@
           <h3>What we can help you with</h3>
           <ul class="deliverables">
             @for (item of s.deliverables; track item) {
-              <li><span>↗&#xFE0E;</span>{{ item }}</li>
+              <li>
+                <span><app-icon name="check" /></span>{{ item }}
+              </li>
             }
           </ul>
           <p>
@@ -62,7 +64,9 @@
     } @else {
       <section class="page-hero wrap">
         <h1>Service not found.</h1>
-        <a routerLink="/services" class="button dark">Explore services ↗&#xFE0E;</a>
+        <a routerLink="/services" class="button dark"
+          >Explore services <app-icon name="arrow-right"
+        /></a>
       </section>
     }
   }
@@ -95,9 +99,8 @@
               <small>{{ p.type }} / CONCEPT</small>
               <h3>{{ p.name }} — {{ p.subtitle }}</h3>
             </div>
-            <span>↗&#xFE0E;</span>
-          </div></a
-        >
+            <span><app-icon name="arrow-right" /></span></div
+        ></a>
       }
     </section>
     <p class="wrap subtle-note">
@@ -108,7 +111,7 @@
   @case ('project') {
     @if (project(); as p) {
       <section class="page-hero wrap">
-        <a routerLink="/work" class="eyebrow">← THE CONCEPT LAB</a>
+        <a routerLink="/work" class="eyebrow"><app-icon name="arrow-left" /> THE CONCEPT LAB</a>
         <h1>{{ p.name }}<span class="serif">. A fresh perspective.</span></h1>
         <p>{{ p.description }}</p>
         <div class="tags">
@@ -134,13 +137,15 @@
             and agreed success criteria. The interface shown here is a visual concept, not a live
             client application.
           </p>
-          <a class="text-link" routerLink="/contact">Discuss a similar idea ↗&#xFE0E;</a>
+          <a class="text-link" routerLink="/contact"
+            >Discuss a similar idea <app-icon name="message"
+          /></a>
         </div>
       </section>
     } @else {
       <section class="page-hero wrap">
         <h1>Concept not found.</h1>
-        <a routerLink="/work">Back to the concept lab ↗&#xFE0E;</a>
+        <a routerLink="/work">Back to the concept lab <app-icon name="arrow-left" /></a>
       </section>
     }
   }
@@ -208,23 +213,22 @@
       @for (a of articles; track a.slug; let i = $index) {
         <a class="insight-card" [routerLink]="['/insights', a.slug]"
           ><div [class]="'insight-art art-' + i">
-            <app-insight-art [index]="i"></app-insight-art
-            ><small>FIELD NOTES 0{{ i + 1 }}</small>
+            <app-insight-art [index]="i"></app-insight-art><small>FIELD NOTES 0{{ i + 1 }}</small>
           </div>
           <div class="article-meta">
             {{ a.category }} <span>{{ a.minutes }} read</span>
           </div>
           <h3>{{ a.title }}</h3>
           <p>{{ a.summary }}</p>
-          <span class="text-link">Read the story ↗&#xFE0E;</span></a
-        >
+          <span class="text-link">Read the story <app-icon name="book" /></span
+        ></a>
       }
     </section>
   }
   @case ('article') {
     @if (article(); as a) {
       <article class="article-body wrap">
-        <a class="eyebrow" routerLink="/insights">← ALL FIELD NOTES</a>
+        <a class="eyebrow" routerLink="/insights"><app-icon name="arrow-left" /> ALL FIELD NOTES</a>
         <div class="article-meta">{{ a.category }} · {{ a.minutes }} read</div>
         <h1>{{ a.title }}</h1>
         <p class="article-intro">{{ a.summary }}</p>
@@ -232,12 +236,14 @@
         @for (p of a.paragraphs; track p) {
           <p>{{ p }}</p>
         }
-        <a routerLink="/contact" class="text-link">Let’s put these ideas into practice ↗&#xFE0E;</a>
+        <a routerLink="/contact" class="text-link"
+          >Let’s put these ideas into practice <app-icon name="message"
+        /></a>
       </article>
     } @else {
       <section class="page-hero wrap">
         <h1>Article not found.</h1>
-        <a routerLink="/insights">Explore insights ↗&#xFE0E;</a>
+        <a routerLink="/insights">Explore insights <app-icon name="arrow-right" /></a>
       </section>
     }
   }
@@ -246,7 +252,7 @@
       <div class="eyebrow">404 / A SMALL DETOUR</div>
       <h1>This page took<br /><span class="serif">a different path.</span></h1>
       <p>Let’s get you back to something good.</p>
-      <a class="button dark" routerLink="/">Back to home ↗&#xFE0E;</a>
+      <a class="button dark" routerLink="/">Back to home <app-icon name="home" /></a>
     </section>
   }
 }
@@ -254,7 +260,9 @@
   <div class="eyebrow">GOT SOMETHING IN MIND?</div>
   <div>
     <h2>Let’s build<br /><span class="serif">what’s next.</span></h2>
-    <a class="cta-circle" routerLink="/contact" aria-label="Discuss your project">↗&#xFE0E;</a>
+    <a class="cta-circle" routerLink="/contact" aria-label="Discuss your project"
+      ><app-icon name="message"
+    /></a>
   </div>
   <p>One conversation can change everything.</p>
 </section>

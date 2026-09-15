@@ -2,7 +2,7 @@ export const services = [
   {
     slug: 'product-engineering',
     number: '01',
-    icon: '⌘',
+    icon: 'code' as const,
     title: 'Digital product engineering',
     short: 'From the first sketch to the next big thing.',
     description:
@@ -18,7 +18,7 @@ export const services = [
   {
     slug: 'ai-data',
     number: '02',
-    icon: '✳\uFE0E',
+    icon: 'sparkles' as const,
     title: 'AI & data intelligence',
     short: 'Make your data do something extraordinary.',
     description:
@@ -34,7 +34,7 @@ export const services = [
   {
     slug: 'experience-design',
     number: '03',
-    icon: '◈',
+    icon: 'pen' as const,
     title: 'Brand & experience design',
     short: 'Beautiful to look at. Effortless to use.',
     description:
@@ -50,7 +50,7 @@ export const services = [
   {
     slug: 'cloud-devops',
     number: '04',
-    icon: '↗\uFE0E',
+    icon: 'cloud' as const,
     title: 'Cloud & connected systems',
     short: 'A stronger foundation for your next chapter.',
     description:

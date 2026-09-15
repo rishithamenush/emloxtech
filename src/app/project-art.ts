@@ -1,6 +1,8 @@
+import { Icon } from './icon';
 import { Component, input } from '@angular/core';
 @Component({
   selector: 'app-project-art',
+  imports: [Icon],
   template: `<div class="project-art" [class]="'project-art ' + kind()" aria-hidden="true">
     @if (kind() === 'lavender') {
       <div class="orbit-app">
@@ -10,15 +12,19 @@ import { Component, input } from '@angular/core';
         <div class="orbit-body">
           <div class="mock-top">
             <b>orbit<span> / Overview</span></b
-            ><i>↗&#xFE0E;</i>
+            ><i><app-icon name="arrow-right" /></i>
           </div>
           <h4>Everything, in perspective.</h4>
           <div class="mock-stats">
             <div>
-              Total revenue<b>$48,250 <em>↗&#xFE0E; 12.8%</em></b>
+              Total revenue<b
+                >$48,250 <em><app-icon name="growth" /> 12.8%</em></b
+              >
             </div>
             <div>
-              Active orders<b>128 <em>↗&#xFE0E; 8.2%</em></b>
+              Active orders<b
+                >128 <em><app-icon name="growth" /> 8.2%</em></b
+              >
             </div>
           </div>
           <div class="chart-label">Revenue overview <span>This month⌄</span></div>
@@ -41,7 +47,9 @@ import { Component, input } from '@angular/core';
           <div class="chair-seat"></div>
           <i></i><i></i>
         </div>
-        <div class="forma-bottom">THE EVERYDAY COLLECTION <span>Explore ↗&#xFE0E;</span></div>
+        <div class="forma-bottom">
+          THE EVERYDAY COLLECTION <span>Explore <app-icon name="arrow-right" /></span>
+        </div>
       </div>
     } @else {
       <div class="signal-app">

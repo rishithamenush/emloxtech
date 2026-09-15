@@ -5,31 +5,19 @@
     <p>Tell us what you have in mind. We’ll help you find the right next step.</p>
     <div class="contact-details">
       <small>DROP US A LINE</small
-      ><a href="mailto:info@emloxtech.com"
-        ><svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="5" width="18" height="14" rx="2" />
-          <path d="m3.5 6.5 8.5 6.5 8.5-6.5" /></svg
-        >info&#64;emloxtech.com</a
+      ><a href="mailto:contact@emloxtech.com"><app-icon name="mail" />contact&#64;emloxtech.com</a
       ><small>GIVE US A CALL</small
-      ><a href="tel:+94717071104"
-        ><svg viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M6.6 3.5h2.6l1.6 4.2-2 1.4a11.5 11.5 0 0 0 6.1 6.1l1.4-2 4.2 1.6v2.6a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"
-          /></svg
-        >+94 71 707 1104</a
+      ><a href="tel:+94717071104"><app-icon name="phone" />+94 71 707 1104</a
       ><small>OUR CORNER OF THE WORLD</small>
-      <p>
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" />
-          <circle cx="12" cy="10" r="2.3" /></svg
-        >Sri Lanka
-      </p>
+      <p><app-icon name="pin" />Sri Lanka</p>
     </div>
   </div>
   <div class="contact-form-panel">
     @if (!sent()) {
       <form #form="ngForm" (ngSubmit)="submit(form)" novalidate>
-        <div class="form-heading"><span>YOUR NEXT CHAPTER</span><span>↗&#xFE0E;</span></div>
+        <div class="form-heading">
+          <span>YOUR NEXT CHAPTER</span><span><app-icon name="file" /></span>
+        </div>
         <h2>Let’s start with you.</h2>
         <div class="form-row">
           <label
@@ -114,20 +102,25 @@
           This prepares an email brief on your device. You’ll review it before opening your email
           app. Nothing is submitted to a server.
         </p>
-        <button class="button dark" type="submit">Prepare my project brief <span>↗&#xFE0E;</span></button>
+        <button class="button dark" type="submit">
+          Prepare my project brief <span><app-icon name="file" /></span>
+        </button>
       </form>
     } @else {
       <div class="brief-review">
-        <span class="service-icon">↗&#xFE0E;</span>
+        <span class="service-icon"><app-icon name="check" /></span>
         <h2 id="brief-heading" tabindex="-1">Your idea is<br />ready to share.</h2>
         <p>
-          Review your brief below, then open your email app to send it to info&#64;emloxtech.com. It
-          hasn’t been sent yet.
+          Review your brief below, then open your email app to send it to contact&#64;emloxtech.com.
+          It hasn’t been sent yet.
         </p>
         <pre>{{ brief }}</pre>
-        <a class="button dark" [href]="mailto">Open email app ↗&#xFE0E;</a
-        ><button class="text-link" type="button" (click)="download()">Download brief ↓</button
-        ><button class="text-link" type="button" (click)="sent.set(false)">← Edit details</button>
+        <a class="button dark" [href]="mailto">Open email app <app-icon name="mail" /></a
+        ><button class="text-link" type="button" (click)="download()">
+          Download brief <app-icon name="download" /></button
+        ><button class="text-link" type="button" (click)="sent.set(false)">
+          <app-icon name="pen" /> Edit details
+        </button>
         <p class="form-note">
           No email app configured? Download the brief and attach it using your preferred email
           service.

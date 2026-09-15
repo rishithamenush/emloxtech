@@ -1,8 +1,9 @@
+import { Icon } from './icon';
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { services } from './content';
-@Component({ selector: 'app-contact', imports: [FormsModule], templateUrl: './contact.html' })
+@Component({ selector: 'app-contact', imports: [Icon, FormsModule], templateUrl: './contact.html' })
 export class Contact {
   services = services;
   sent = signal(false);
@@ -19,7 +20,7 @@ export class Contact {
   }
   get mailto() {
     return (
-      'mailto:info@emloxtech.com?subject=' +
+      'mailto:contact@emloxtech.com?subject=' +
       encodeURIComponent('Project enquiry — ' + this.model.name) +
       '&body=' +
       encodeURIComponent(this.brief)

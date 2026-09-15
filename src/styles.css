@@ -17,7 +17,7 @@ html {
   scroll-padding-top: 110px;
 }
 body {
-  /* Keep ↗ ✳ etc. as text glyphs; iOS otherwise swaps in colour emoji. */
+  /* Keep decorative text symbols from rendering as color emoji. */
   font-variant-emoji: text;
   margin: 0;
   background: var(--paper);
@@ -150,7 +150,7 @@ svg {
   font-family: 'Manrope Variable', sans-serif;
   font-size: 46px;
   font-weight: 800;
-  letter-spacing: -.07em;
+  letter-spacing: -0.07em;
   line-height: 1;
   white-space: nowrap;
 }
@@ -165,9 +165,9 @@ svg {
   margin-top: 5px;
   padding-left: 2px;
   font-family: inherit;
-  font-size: max(8px, .22em);
+  font-size: max(8px, 0.22em);
   font-weight: 750;
-  letter-spacing: .38em;
+  letter-spacing: 0.38em;
   color: #424a3b;
 }
 .brand-tec::before {
@@ -986,7 +986,7 @@ svg {
   transition: transform 0.2s;
 }
 .cta-circle:hover {
-  transform: rotate(45deg);
+  transform: translateY(-4px);
 }
 footer {
   padding: 0 56px;
@@ -1228,28 +1228,17 @@ footer {
 .contact-details p {
   font-size: 14px;
 }
-.contact-details svg,
-.footer-mail svg {
-  flex-shrink: 0;
-  width: 1.05em;
-  height: 1.05em;
-  fill: none;
-  stroke: #54702b;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.contact-details app-icon,
+.footer-mail app-icon {
+  color: #54702b;
   transition: transform 0.2s;
-}
-.contact-details p svg {
-  width: 1.3em;
-  height: 1.3em;
 }
 .contact-details a:hover,
 .footer-mail:hover {
   color: #54702b;
 }
-.contact-details a:hover svg,
-.footer-mail:hover svg {
+.contact-details a:hover app-icon,
+.footer-mail:hover app-icon {
   transform: translateY(-2px);
 }
 .contact-form-panel {
@@ -1806,8 +1795,29 @@ app-project-art {
   /* Upright X, centred on the cap height of "Emlo" (not the line box). */
   width: calc(1.05em * 435 / 440);
   height: 1.05em;
-  margin-left: -.05em;
-  transform: translateY(.023em);
+  margin-left: -0.05em;
+  transform: translateY(0.023em);
   flex-shrink: 0;
   object-fit: contain;
+}
+
+/* Shared action icons keep their shape and alignment at every screen size. */
+.button > app-icon,
+.text-link > app-icon,
+.nav-cta app-icon {
+  font-size: 18px;
+}
+.contact-details app-icon,
+.footer-mail app-icon {
+  color: #54702b;
+  font-size: 1.1em;
+}
+.footer-bottom a,
+a.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.cta-circle app-icon {
+  font-size: 0.8em;
 }
