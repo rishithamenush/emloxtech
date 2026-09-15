@@ -26,7 +26,7 @@ export class SeoStrategy extends TitleStrategy {
       ],
       '/privacy': [
         'Privacy Policy',
-        'How EmloX Tech handles website information, project enquiries, email delivery, and your privacy choices.',
+        'EmloX Tech’s company Privacy Policy covers personal information in business communications, project enquiries, client engagements, and website use.',
         'WebPage',
       ],
       '/work/money-maker': [
