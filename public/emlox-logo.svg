@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="90 50 420 490">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="132 82 357 440">
 <title>EmloX Tech ribbon X</title>
 <defs>
         <linearGradient id="ribbonA" x1="0" y1="0" x2="1" y2="1">
@@ -16,7 +16,8 @@
           <stop offset="1" stop-color="#3e591b" />
         </linearGradient>
       </defs>
-      <g transform="translate(300 300) rotate(-18) translate(-300 -300)">
+      <!-- -2.12deg evens out the two leaf angles so the X stands upright. -->
+      <g transform="rotate(-2.12 307 302)">
         <path
           d="M143 96 C210 50 251 113 300 209 L459 471 C475 503 432 548 395 510 L199 207 C177 172 156 147 143 96Z"
           fill="url(#ribbonA)"

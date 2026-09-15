@@ -1759,9 +1759,11 @@ app-project-art {
 
 /* The transparent ribbon replaces the X within the wordmark. */
 .brand-ribbon-x {
-  width: 1.04em;
-  height: 1.08em;
-  margin-left: .025em;
+  /* Upright X, centred on the cap height of "Emlo" (not the line box). */
+  width: calc(1.05em * 357 / 440);
+  height: 1.05em;
+  margin-left: .04em;
+  transform: translateY(.023em);
   flex-shrink: 0;
   object-fit: contain;
 }

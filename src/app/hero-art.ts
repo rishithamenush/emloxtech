@@ -29,7 +29,7 @@ import { Component } from '@angular/core';
           <feDropShadow dx="5" dy="22" stdDeviation="17" flood-color="#000" flood-opacity=".4" />
         </filter>
       </defs>
-      <g filter="url(#shadow)" transform="translate(300 300) rotate(-18) translate(-300 -300)">
+      <g filter="url(#shadow)" transform="translate(-10.5 -2) rotate(-2.12 307 302)">
         <path
           d="M143 96 C210 50 251 113 300 209 L459 471 C475 503 432 548 395 510 L199 207 C177 172 156 147 143 96Z"
           fill="url(#ribbonA)"
