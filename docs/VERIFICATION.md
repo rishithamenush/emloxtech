@@ -37,3 +37,7 @@ These checks are targeted build, responsive, and interaction checks. They do not
 - No browser console errors observed in the checked flows. Service-page appearance inspected at the default browser viewport.
 - `git diff --check` passed.
 - Live deployment, real HTTP status/redirect behavior on Vercel, DNS, Search Console ownership, actual index coverage, Google Trends demand, and live Core Web Vitals were not verified. See SEO-LAUNCH.md.
+
+## Live deployment check — 2026-09-15
+
+Verified https://www.emloxtech.com after the owner deployed. All 16 sitemap pages return HTTP 200 with unique titles/descriptions, matching www canonical URLs, index/follow directives, one H1, and parseable JSON-LD in the initial HTML. robots.txt returns 200 and permits crawling with the correct sitemap URL. Two nonexistent paths return real HTTP 404 and noindex. All three legacy redirects return 308 to their intended pages. Both HTTP and the non-www HTTPS homepage redirect with 308 to https://www.emloxtech.com/. Details: `LIVE-SEO-AUDIT.json`. Search Console index coverage, ranking, rich-result eligibility, and live performance scores remain unverified.

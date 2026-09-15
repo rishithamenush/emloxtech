@@ -1,0 +1,298 @@
+[
+  {
+    "url": "https://www.emloxtech.com/",
+    "status": 200,
+    "title": "Software Development & UI/UX Design in Sri Lanka | EmloX Tech",
+    "description": "EmloX Tech is a Sri Lankan design and software studio building web applications, MVPs, AI automation, and cloud systems for local and international teams.",
+    "canonical": "https://www.emloxtech.com/",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/about",
+    "status": 200,
+    "title": "About Our Sri Lankan Software & Design Studio | EmloX Tech",
+    "description": "Meet EmloX Tech\u2019s approach to software development and design: clear scope, regular reviews, and remote collaboration from Sri Lanka.",
+    "canonical": "https://www.emloxtech.com/about",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "AboutPage",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/contact",
+    "status": 200,
+    "title": "Discuss Your Software or Design Project | EmloX Tech",
+    "description": "Contact EmloX Tech about a web application, MVP, UI/UX design, AI, or cloud project. Share your scope and timeline with our Sri Lanka-based studio.",
+    "canonical": "https://www.emloxtech.com/contact",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "ContactPage",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/insights",
+    "status": 200,
+    "title": "Software Development, AI & UX Insights | EmloX Tech",
+    "description": "Practical notes from EmloX Tech on planning software, choosing a first AI project, and building design systems. Read our product and engineering guidance.",
+    "canonical": "https://www.emloxtech.com/insights",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "CollectionPage",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/insights/better-products",
+    "status": 200,
+    "title": "Before you build: define the problem. | EmloX Tech",
+    "description": "Before choosing a stack or drawing a screen, get clear on the problem worth solving.",
+    "canonical": "https://www.emloxtech.com/insights/better-products",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "Article",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/insights/design-that-scales",
+    "status": 200,
+    "title": "When your product needs a design system. | EmloX Tech",
+    "description": "Why a small, thoughtful design system makes a big difference as products grow.",
+    "canonical": "https://www.emloxtech.com/insights/design-that-scales",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "Article",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/insights/practical-ai",
+    "status": 200,
+    "title": "Choosing a useful first AI project. | EmloX Tech",
+    "description": "Find the repetitive work, understand your data, and keep people in the loop.",
+    "canonical": "https://www.emloxtech.com/insights/practical-ai",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "Article",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/services",
+    "status": 200,
+    "title": "Software, AI & Design Services in Sri Lanka | EmloX Tech",
+    "description": "Explore web and mobile development, MVP engineering, UI/UX design, AI automation, and cloud services. Define your project scope with EmloX Tech.",
+    "canonical": "https://www.emloxtech.com/services",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "CollectionPage",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/services/ai-data",
+    "status": 200,
+    "title": "AI Automation & Data Engineering Services | EmloX Tech",
+    "description": "Turn complex information into useful decisions with focused machine learning, computer vision, and intelligent automation.",
+    "canonical": "https://www.emloxtech.com/services/ai-data",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "Service",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/services/cloud-devops",
+    "status": 200,
+    "title": "Cloud, DevOps & Systems Integration Services | EmloX Tech",
+    "description": "Modernize your infrastructure and connect your systems with scalable cloud architecture, delivery automation, and IoT integration.",
+    "canonical": "https://www.emloxtech.com/services/cloud-devops",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "Service",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/services/experience-design",
+    "status": 200,
+    "title": "UI/UX Design & Brand Identity in Sri Lanka | EmloX Tech",
+    "description": "Distinctive identities and thoughtful digital experiences, grounded in the way your customers think, explore, and act.",
+    "canonical": "https://www.emloxtech.com/services/experience-design",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "Service",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/services/product-engineering",
+    "status": 200,
+    "title": "Web Application & MVP Development in Sri Lanka | EmloX Tech",
+    "description": "Purpose-built web, mobile, and desktop applications that connect your business goals with what people actually need.",
+    "canonical": "https://www.emloxtech.com/services/product-engineering",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "Service",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/work",
+    "status": 200,
+    "title": "Software & Design Portfolio Concepts | EmloX Tech",
+    "description": "Explore Orbit, Forma, and Signal: original EmloX Tech concepts for operations software, ecommerce design, and AI analytics. Illustrative studio work.",
+    "canonical": "https://www.emloxtech.com/work",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "CollectionPage",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/work/forma",
+    "status": 200,
+    "title": "Forma: Brand & digital experience Concept | EmloX Tech",
+    "description": "An exploratory storefront for design-led furniture, with an editorial product experience and a simpler path from discovery to purchase.",
+    "canonical": "https://www.emloxtech.com/work/forma",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/work/orbit",
+    "status": 200,
+    "title": "Orbit: Product engineering Concept | EmloX Tech",
+    "description": "A concept for an operations workspace that brings orders, tasks, and business signals into one calm, focused interface.",
+    "canonical": "https://www.emloxtech.com/work/orbit",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/work/signal",
+    "status": 200,
+    "title": "Signal: AI & data intelligence Concept | EmloX Tech",
+    "description": "A concept for turning operational data into understandable trends, with human review built into the decision-making process.",
+    "canonical": "https://www.emloxtech.com/work/signal",
+    "robots": "index, follow, max-image-preview:large",
+    "h1": 1,
+    "schema": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "BreadcrumbList"
+    ]
+  },
+  {
+    "url": "https://www.emloxtech.com/robots.txt",
+    "status": 200,
+    "body": "User-agent: *\nAllow: /\n\nSitemap: https://www.emloxtech.com/sitemap.xml\n"
+  },
+  {
+    "url": "https://www.emloxtech.com/seo-check-missing-page",
+    "status": 404,
+    "title": "Page not found | EmloX Tech",
+    "description": "This page could not be found. Explore EmloX Tech services, concepts, and insights.",
+    "canonical": "https://www.emloxtech.com/404",
+    "robots": "noindex, follow",
+    "h1": 1,
+    "schema": []
+  },
+  {
+    "url": "https://www.emloxtech.com/services/not-a-service",
+    "status": 404,
+    "title": "Page not found | EmloX Tech",
+    "description": "This page could not be found. Explore EmloX Tech services, concepts, and insights.",
+    "canonical": "https://www.emloxtech.com/404",
+    "robots": "noindex, follow",
+    "h1": 1,
+    "schema": []
+  },
+  {
+    "url": "https://www.emloxtech.com/news",
+    "status": 308,
+    "location": "/insights"
+  },
+  {
+    "url": "https://www.emloxtech.com/contact-2",
+    "status": 308,
+    "location": "/contact"
+  },
+  {
+    "url": "https://www.emloxtech.com/about-2",
+    "status": 308,
+    "location": "/about"
+  },
+  {
+    "url": "https://emloxtech.com/",
+    "status": 308,
+    "location": "https://www.emloxtech.com/"
+  },
+  {
+    "url": "http://www.emloxtech.com/",
+    "status": 308,
+    "location": "https://www.emloxtech.com/"
+  }
+]
