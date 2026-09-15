@@ -754,18 +754,22 @@ svg {
   gap: 95px;
 }
 .about-emblem {
-  font-size: 230px;
+  font-size: clamp(120px, 18vw, 230px);
   font-weight: 550;
   line-height: 0.95;
-  letter-spacing: -30px;
   font-family: Georgia, serif;
   margin: 40px 0 50px;
+  white-space: nowrap;
 }
-.about-emblem span {
-  font-family: sans-serif;
-  font-size: 190px;
+/* Sized in em so it scales with the "e"; centred on the e's x-height, beside it rather than over it. */
+.about-emblem svg {
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  margin-left: 0.04em;
+  position: relative;
+  top: 0.06em;
   color: #8d9c64;
-  font-weight: 400;
 }
 .small-label {
   font-size: 8px;
@@ -1358,12 +1362,6 @@ app-project-art {
   }
   .about-teaser {
     gap: 35px;
-  }
-  .about-emblem {
-    font-size: 190px;
-  }
-  .about-emblem span {
-    font-size: 150px;
   }
   .project-art {
     padding: 24px;
