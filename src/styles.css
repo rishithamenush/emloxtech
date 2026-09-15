@@ -843,14 +843,20 @@ svg {
   position: relative;
   overflow: hidden;
 }
-.insight-art > span {
-  font:
-    180px/0.8 Georgia,
-    serif;
+.insight-art app-insight-art {
+  display: flex;
+  height: 68%;
+  max-width: 70%;
+  aspect-ratio: 1;
   transform: rotate(-12deg);
   transition: transform 0.4s;
 }
-.insight-card:hover .insight-art > span {
+.insight-art svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.insight-card:hover .insight-art app-insight-art {
   transform: rotate(0deg) scale(1.12);
 }
 .insight-art small {
@@ -863,16 +869,13 @@ svg {
 .art-1 {
   background: #d0d6c6;
 }
-.art-1 > span {
-  font-family: sans-serif;
+.art-1 app-insight-art {
   color: #3d5038;
-  font-size: 230px;
 }
 .art-2 {
   background: #e6ded1;
 }
-.art-2 > span {
-  font-size: 240px;
+.art-2 app-insight-art {
   color: #806b54;
 }
 .article-meta {

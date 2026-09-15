@@ -208,7 +208,7 @@
       @for (a of articles; track a.slug; let i = $index) {
         <a class="insight-card" [routerLink]="['/insights', a.slug]"
           ><div [class]="'insight-art art-' + i">
-            <span>{{ ['↗', '✳', '◈'][i] }}</span
+            <app-insight-art [index]="i"></app-insight-art
             ><small>FIELD NOTES 0{{ i + 1 }}</small>
           </div>
           <div class="article-meta">

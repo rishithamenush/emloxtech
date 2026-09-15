@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { HeroArt } from './hero-art';
 import { ProjectArt } from './project-art';
+import { InsightArt } from './insight-art';
 import { services, projects, articles, faqs } from './content';
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, HeroArt, ProjectArt],
+  imports: [RouterLink, HeroArt, ProjectArt, InsightArt],
   templateUrl: './home.html',
 })
 export class Home {

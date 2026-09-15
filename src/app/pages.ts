@@ -3,9 +3,10 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { services, projects, articles, faqs } from './content';
 import { ProjectArt } from './project-art';
+import { InsightArt } from './insight-art';
 @Component({
   selector: 'app-pages',
-  imports: [RouterLink, ProjectArt],
+  imports: [RouterLink, ProjectArt, InsightArt],
   templateUrl: './pages.html',
 })
 export class Pages {
