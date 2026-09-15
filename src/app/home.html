@@ -1,218 +1,150 @@
-<section class="hero wrap">
-  <div class="hero-copy">
-    <div class="eyebrow"><span class="status-dot"></span> YOUR NEXT CHAPTER STARTS HERE</div>
-    <h1>Big ideas.<br />Bold builds.<br /><span class="serif">Real impact.</span></h1>
+<section class="studio-hero wrap">
+  <div class="studio-kicker">
+    <span>Independent design & engineering studio</span
+    ><span>Sri Lanka · Working internationally</span>
+  </div>
+  <h1>Software built<br />around <span>your business.</span></h1>
+  <div class="studio-hero-bottom">
     <p>
-      We turn ambitious ideas into remarkable digital experiences. Your partner in design,
-      engineering, and what comes next.
+      We design and develop web applications, digital experiences, and connected systems. From a
+      first product to a platform that needs a better foundation.
     </p>
     <div class="hero-actions">
       <a class="button dark" routerLink="/contact"
-        >Build something great <span><app-icon name="message" /></span></a
-      ><a class="text-link" routerLink="/work"
-        >Explore our thinking <span><app-icon name="arrow-right" /></span
-      ></a>
-    </div>
-    <div class="hero-foot">
-      <svg class="mini-mark" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M5 0V12H16" />
-        <path d="M15 7.5 20.5 12 15 16.5Z" /></svg
-      ><span><strong>Built for a world of possibilities.</strong></span>
-    </div>
-  </div>
-  <app-hero-art />
-</section>
-<div class="expertise-strip">
-  <div class="wrap">
-    <span>IDEAS MEET EXPERTISE</span><b>Strategy</b><i>✳&#xFE0E;</i><b>Design</b><i>✳&#xFE0E;</i
-    ><b>Engineering</b><i>✳&#xFE0E;</i><b>Intelligence</b><i>✳&#xFE0E;</i><b>Cloud</b>
-  </div>
-</div>
-<section class="section wrap" id="services">
-  <div class="section-heading">
-    <div>
-      <div class="eyebrow">01 / WHAT WE DO</div>
-      <h2>A little imagination.<br />A lot of <span class="serif">possibility.</span></h2>
-    </div>
-    <div class="heading-aside">
-      <p>
-        From the spark of an idea to the systems behind it. We bring the right skills together to
-        move you forward.
-      </p>
+        >Discuss your project <app-icon name="message"
+      /></a>
       <a class="text-link" routerLink="/services"
-        >Explore our services <app-icon name="arrow-right"
+        >Our capabilities <app-icon name="arrow-right"
       /></a>
     </div>
   </div>
-  <div class="service-grid">
+</section>
+<section class="studio-showcase wrap" aria-labelledby="showcase-heading">
+  <div class="showcase-caption">
+    <h2 id="showcase-heading">From the studio</h2>
+    <span>01 / Product exploration</span>
+  </div>
+  <a class="showcase-link" routerLink="/work/orbit">
+    <div class="showcase-copy">
+      <span class="eyebrow">ORBIT — INTERNAL CONCEPT</span>
+      <h3>A working day.<br />A clearer view.</h3>
+      <p>Exploring a single workspace for orders, tasks, and business operations.</p>
+      <span class="text-link">Explore the concept <app-icon name="arrow-right" /></span>
+    </div>
+    <app-project-art kind="lavender" />
+  </a>
+  <div class="showcase-foot">
+    <span>Product strategy / Interface design / Engineering</span
+    ><span>Independent concept, not a client engagement</span>
+  </div>
+</section>
+<section class="section wrap studio-services" id="services">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">01 / CAPABILITIES</div>
+      <h2>The right expertise.<br />One connected team.</h2>
+    </div>
+    <p class="heading-aside">
+      A focused project or a broader build. We bring design and engineering together around the work
+      you need to get done.
+    </p>
+  </div>
+  <div class="capability-list">
     @for (service of services; track service.slug) {
-      <a class="service-card" [routerLink]="['/services', service.slug]"
-        ><div class="card-top">
-          <span class="service-icon"><app-icon [name]="service.icon" /></span
-          ><span>{{ service.number }} /</span>
-        </div>
+      <a [routerLink]="['/services', service.slug]" class="capability-row"
+        ><span class="capability-number">{{ service.number }}</span>
         <h3>{{ service.title }}</h3>
         <p>{{ service.short }}</p>
-        <div class="card-bottom">
-          <span>{{ service.tags[0] }}</span
-          ><span class="round-arrow"><app-icon name="arrow-right" /></span></div
-      ></a>
+        <app-icon name="arrow-right"
+      /></a>
     }
   </div>
 </section>
-<section class="work-section section">
-  <div class="wrap">
-    <div class="section-heading">
-      <div>
-        <div class="eyebrow">02 / POSSIBILITIES IN PRACTICE</div>
-        <h2>Ideas made <span class="serif">tangible.</span></h2>
-      </div>
-      <a class="text-link" routerLink="/work"
-        >Inside our concept lab <app-icon name="arrow-right"
-      /></a>
-    </div>
-    <div class="featured-projects">
-      @for (project of projects.slice(0, 2); track project.slug) {
-        <a class="project-card" [routerLink]="['/work', project.slug]"
-          ><app-project-art [kind]="project.color" />
-          <div class="project-caption">
-            <div>
-              <small>{{ project.type }} <span> / CONCEPT</span></small>
-              <h3>
-                {{ project.name }} <span>— {{ project.subtitle }}</span>
-              </h3>
-            </div>
-            <span class="round-arrow"><app-icon name="arrow-right" /></span></div
-        ></a>
-      }
-    </div>
-    <p class="subtle-note">
-      An exploration of what we can build together. These are illustrative concepts, not client case
-      studies.
-    </p>
-  </div>
-</section>
-<section class="about-teaser section wrap">
-  <div>
-    <div class="eyebrow">03 / YOUR TEAM, EXTENDED</div>
-    <div class="about-emblem">
-      e<svg viewBox="0 0 100 100" aria-hidden="true">
-        <g stroke="currentColor" stroke-width="7">
-          <path d="M50 4 V96" />
-          <path d="M4 50 H96" />
-          <path d="M17 17 L83 83" />
-          <path d="M83 17 L17 83" />
-        </g>
-      </svg>
-    </div>
-    <p class="small-label">INDEPENDENT MINDS. SHARED AMBITION.</p>
-  </div>
-  <div>
-    <h2>Not just building software.<br />Building <span class="serif">what’s next.</span></h2>
-    <p class="large-copy">
-      We’re a team of curious thinkers, thoughtful designers, and hands-on engineers. We bring
-      clarity to complex challenges and care to every detail.
-    </p>
-    <div class="principles">
-      <div>
-        <span><app-icon name="users" /></span>
-        <h3>Think together.</h3>
-        <p>Your goals shape the work. Open conversations keep us moving in the same direction.</p>
-      </div>
-      <div>
-        <span>✳&#xFE0E;</span>
-        <h3>Make it matter.</h3>
-        <p>
-          Every decision connects back to the people using your product and the business behind it.
-        </p>
-      </div>
-    </div>
-    <a routerLink="/about" class="text-link"
-      >Meet the EmloX mindset <app-icon name="arrow-right"
-    /></a>
-  </div>
-</section>
-<section class="process-section section">
-  <div class="wrap">
-    <div class="section-heading">
-      <div>
-        <div class="eyebrow">04 / HOW WE MAKE IT HAPPEN</div>
-        <h2>Great things don’t<br />happen <span class="serif">by accident.</span></h2>
-      </div>
-      <p class="heading-aside">
-        A clear process. An open conversation.<br />A shared commitment to getting it right.
+<section class="studio-approach">
+  <div class="wrap section approach-layout">
+    <div>
+      <div class="eyebrow">02 / THE ENGAGEMENT</div>
+      <h2>Know what’s being built.<br />And where it stands.</h2>
+      <p class="approach-intro">
+        Good collaboration needs more than a kickoff call. We agree on the scope, share work as it
+        develops, and make room for feedback before decisions become expensive to change.
       </p>
+      <a class="text-link" routerLink="/about">How we work <app-icon name="arrow-right" /></a>
     </div>
-    <div class="process-grid">
-      @for (step of ['Discover', 'Design', 'Develop', 'Evolve']; track step; let i = $index) {
+    <ol class="engagement-steps">
+      <li>
+        <span>01</span>
         <div>
-          <span class="step-number"
-            >0{{ i + 1 }} <i><app-icon [name]="processIcons[i]" /></i
-          ></span>
-          <h3>{{ step }}</h3>
+          <h3>Define the work</h3>
           <p>
-            {{
-              [
-                'We ask, listen, and map the challenge. Together, we define what success looks like.',
-                'We turn insight into a clear direction, then prototype and refine the experience.',
-                'We build with care, test with purpose, and keep you involved along the way.',
-                'We launch, learn, and help your product keep moving forward.',
-              ][i]
-            }}
+            Map the problem, users, and technical constraints. Agree on deliverables and a practical
+            first milestone.
           </p>
         </div>
-      }
-    </div>
+      </li>
+      <li>
+        <span>02</span>
+        <div>
+          <h3>Design, build, review</h3>
+          <p>
+            Review prototypes and working software. Keep priorities, feedback, and decisions visible
+            throughout the project.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span>03</span>
+        <div>
+          <h3>Launch with a plan</h3>
+          <p>
+            Prepare testing, documentation, and handover. Agree on maintenance and support before
+            launch.
+          </p>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
-<section class="section wrap">
+<section class="section wrap studio-journal">
   <div class="section-heading">
     <div>
-      <div class="eyebrow">05 / FRESH PERSPECTIVES</div>
-      <h2>A few things <span class="serif">on our minds.</span></h2>
+      <div class="eyebrow">03 / NOTES</div>
+      <h2>Thinking behind the work.</h2>
     </div>
-    <a class="text-link" routerLink="/insights">All insights <app-icon name="arrow-right" /></a>
+    <a class="text-link" routerLink="/insights">All articles <app-icon name="arrow-right" /></a>
   </div>
-  <div class="insights-grid">
-    @for (article of articles; track article.slug; let i = $index) {
-      <a class="insight-card" [routerLink]="['/insights', article.slug]"
-        ><div class="insight-art" [class]="'insight-art art-' + i">
-          <app-insight-art [index]="i"></app-insight-art
-          ><small>EMLOX / FIELD NOTES 0{{ i + 1 }}</small>
-        </div>
-        <div class="article-meta">
-          {{ article.category }} <span>{{ article.minutes }} read</span>
-        </div>
+  <div class="journal-list">
+    @for (article of articles; track article.slug) {
+      <a [routerLink]="['/insights', article.slug]"
+        ><span>{{ article.category }}</span>
         <h3>{{ article.title }}</h3>
-        <span class="text-link">Read the story <app-icon name="book" /></span
-      ></a>
+        <app-icon name="arrow-right"
+      /></a>
     }
   </div>
 </section>
 <section class="faq-section section wrap">
   <div>
-    <div class="eyebrow">A LITTLE MORE CLARITY</div>
-    <h2>Good <span class="serif">questions.</span><br />Straight answers.</h2>
-    <a class="text-link" routerLink="/contact"
-      >Have something else in mind? <app-icon name="message"
-    /></a>
+    <div class="eyebrow">BEFORE WE START</div>
+    <h2>A few practical questions.</h2>
+    <a class="text-link" routerLink="/contact">Ask us directly <app-icon name="message" /></a>
   </div>
   <div class="faq-list">
     @for (faq of faqs; track faq[0]) {
       <details>
-        <summary>{{ faq[0] }}<span>+</span></summary>
+        <summary>{{ faq[0] }}<span aria-hidden="true">+</span></summary>
         <p>{{ faq[1] }}</p>
       </details>
     }
   </div>
 </section>
 <section class="cta-panel wrap">
-  <div class="eyebrow">SOMETHING GOOD STARTS WITH A CONVERSATION</div>
+  <div class="eyebrow">LET’S TALK</div>
   <div>
-    <h2>Your next big thing.<br /><span class="serif">Let’s make it happen.</span></h2>
-    <a class="cta-circle" routerLink="/contact" aria-label="Start a project"
-      ><app-icon name="message"
+    <h2>What are you working on?</h2>
+    <a class="button dark" routerLink="/contact"
+      >Discuss your project <app-icon name="message"
     /></a>
   </div>
-  <p>Bring the idea. We’ll bring the energy.</p>
+  <p>Tell us about the problem, your priorities, and where you need help.</p>
 </section>

@@ -1,24 +1,26 @@
 <section class="contact-layout wrap">
   <div class="contact-intro">
-    <div class="eyebrow"><span class="status-dot"></span> LET’S MAKE SOMETHING MATTER</div>
-    <h1>Big idea?<br />Small question?<br /><span class="serif">We’re all ears.</span></h1>
-    <p>Tell us what you have in mind. We’ll help you find the right next step.</p>
+    <div class="eyebrow">PROJECT INQUIRIES</div>
+    <h1>Tell us what<br />you need to build.</h1>
+    <p>
+      Share your goals, timeline, and what you need help with. We can then discuss the scope and a
+      practical next step.
+    </p>
     <div class="contact-details">
-      <small>DROP US A LINE</small
+      <small>EMAIL</small
       ><a href="mailto:info@emloxtech.com"><app-icon name="mail" />info&#64;emloxtech.com</a
-      ><small>GIVE US A CALL</small
-      ><a href="tel:+94717071104"><app-icon name="phone" />+94 71 707 1104</a
-      ><small>OUR CORNER OF THE WORLD</small>
-      <p><app-icon name="pin" />Sri Lanka</p>
+      ><small>PHONE</small><a href="tel:+94717071104"><app-icon name="phone" />+94 71 707 1104</a
+      ><small>LOCATION & TIME ZONE</small>
+      <p><app-icon name="pin" />Sri Lanka · UTC+5:30</p>
     </div>
   </div>
   <div class="contact-form-panel">
     @if (!sent()) {
       <form #form="ngForm" (ngSubmit)="submit(form)" novalidate>
         <div class="form-heading">
-          <span>YOUR NEXT CHAPTER</span><span><app-icon name="file" /></span>
+          <span>PROJECT DETAILS</span><span><app-icon name="file" /></span>
         </div>
-        <h2>Let’s start with you.</h2>
+        <h2>A short project brief.</h2>
         <div class="form-row">
           <label
             >Your name <span>*</span
@@ -60,7 +62,7 @@
             [(ngModel)]="model.company"
             maxlength="160"
             autocomplete="organization"
-            placeholder="Where you make things happen" /></label
+            placeholder="Company name" /></label
         ><label
           >What can we help with? <span>*</span
           ><select name="service" [(ngModel)]="model.service" required #service="ngModel">
@@ -83,7 +85,7 @@
             <option>$50,000+</option>
           </select></label
         ><label
-          >A little about your idea <span>*</span
+          >Project overview <span>*</span
           ><textarea
             name="message"
             [(ngModel)]="model.message"
@@ -99,8 +101,7 @@
           }
         </label>
         <p class="form-note">
-          This prepares an email brief on your device. You’ll review it before opening your email
-          app. Nothing is submitted to a server.
+          Review your brief in the next step, then send it using your email app.
         </p>
         <button class="button dark" type="submit">
           Prepare my project brief <span><app-icon name="file" /></span>
@@ -109,10 +110,10 @@
     } @else {
       <div class="brief-review">
         <span class="service-icon"><app-icon name="check" /></span>
-        <h2 id="brief-heading" tabindex="-1">Your idea is<br />ready to share.</h2>
+        <h2 id="brief-heading" tabindex="-1">Your brief is ready to review.</h2>
         <p>
-          Review your brief below, then open your email app to send it to info&#64;emloxtech.com.
-          It hasn’t been sent yet.
+          Review your brief below, then open your email app to send it to info&#64;emloxtech.com. It
+          hasn’t been sent yet.
         </p>
         <pre>{{ brief }}</pre>
         <a class="button dark" [href]="mailto">Open email app <app-icon name="mail" /></a

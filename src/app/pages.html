@@ -2,10 +2,10 @@
   @case ('services') {
     <section class="page-hero wrap">
       <div class="eyebrow">OUR EXPERTISE</div>
-      <h1>Ambitious by nature.<br /><span class="serif">Practical by design.</span></h1>
+      <h1>Design and engineering,<br />from scope to release.</h1>
       <p>
-        One collaborative team. Connected capabilities. Everything you need to move from “what if”
-        to what’s next.
+        We help plan, design, and build digital products. Choose a focused service or bring us in
+        across the full project.
       </p>
     </section>
     <section class="wrap service-list">
@@ -38,7 +38,7 @@
         <h1>{{ s.title }}<span class="lime-dot">.</span></h1>
         <p>{{ s.description }}</p>
         <a class="button dark" routerLink="/contact" [queryParams]="{ service: s.title }"
-          >Let’s explore your project <app-icon name="message"
+          >Discuss your project <app-icon name="message"
         /></a>
       </section>
       <section class="detail-grid section wrap">
@@ -72,8 +72,8 @@
   }
   @case ('work') {
     <section class="page-hero wrap">
-      <div class="eyebrow">THE CONCEPT LAB</div>
-      <h1>Less ordinary.<br /><span class="serif">More possibility.</span></h1>
+      <div class="eyebrow">STUDIO CONCEPTS</div>
+      <h1>An inside look<br />at our thinking.</h1>
       <p>
         A glimpse into our design and engineering thinking. Explore original product concepts across
         digital experiences, commerce, and intelligence.
@@ -111,7 +111,7 @@
   @case ('project') {
     @if (project(); as p) {
       <section class="page-hero wrap">
-        <a routerLink="/work" class="eyebrow"><app-icon name="arrow-left" /> THE CONCEPT LAB</a>
+        <a routerLink="/work" class="eyebrow"><app-icon name="arrow-left" /> STUDIO CONCEPTS</a>
         <h1>{{ p.name }}<span class="serif">. A fresh perspective.</span></h1>
         <p>{{ p.description }}</p>
         <div class="tags">
@@ -123,7 +123,7 @@
       </section>
       <section class="wrap project-detail-art"><app-project-art [kind]="p.color" /></section>
       <section class="detail-grid section wrap">
-        <h2>Less friction.<br /><span class="serif">More flow.</span></h2>
+        <h2>The problem.<br />The design direction.</h2>
         <div>
           <h3>The design direction</h3>
           <p>
@@ -152,24 +152,24 @@
   @case ('about') {
     <section class="page-hero wrap">
       <div class="eyebrow">HELLO. WE’RE EmloX Tech.</div>
-      <h1>Curious minds.<br /><span class="serif">Shared ambition.</span></h1>
+      <h1>A studio built around<br />close collaboration.</h1>
       <p>
-        We bring design, engineering, and intelligent technology together to help businesses build
-        their next chapter.
+        EmloX Tech is a design and engineering studio based in Sri Lanka. We help teams plan new
+        products, improve existing software, and connect the systems behind them.
       </p>
     </section>
     <section class="about-manifesto wrap">
-      <span>✳&#xFE0E;</span>
-      <h2>
-        Technology should open doors.<br />Simplify the complex.<br />And make
-        <em>good ideas happen.</em>
-      </h2>
-      <small>THAT’S THE EMLOX MINDSET.</small>
+      <div class="eyebrow">OUR APPROACH</div>
+      <h2>The people building your product should understand the business behind it.</h2>
+      <p>
+        That starts with listening. We take time to understand your users, your current systems, and
+        what a successful release needs to achieve.
+      </p>
     </section>
     <section class="detail-grid section wrap">
       <div>
         <div class="eyebrow">BASED IN SRI LANKA. THINKING BEYOND BORDERS.</div>
-        <h2>Small details.<br /><span class="serif">Bigger thinking.</span></h2>
+        <h2>Based in Sri Lanka.<br />Built for remote collaboration.</h2>
       </div>
       <div>
         <p class="large-copy">
@@ -204,17 +204,14 @@
   @case ('insights') {
     <section class="page-hero wrap">
       <div class="eyebrow">EMLOX FIELD NOTES</div>
-      <h1>A curious outlook.<br /><span class="serif">A fresh perspective.</span></h1>
+      <h1>Notes on making<br />better software.</h1>
       <p>
         Thoughts on building useful products, thoughtful experiences, and technology with a purpose.
       </p>
     </section>
     <section class="wrap insights-grid">
       @for (a of articles; track a.slug; let i = $index) {
-        <a class="insight-card" [routerLink]="['/insights', a.slug]"
-          ><div [class]="'insight-art art-' + i">
-            <app-insight-art [index]="i"></app-insight-art><small>FIELD NOTES 0{{ i + 1 }}</small>
-          </div>
+        <a class="insight-card" [routerLink]="['/insights', a.slug]">
           <div class="article-meta">
             {{ a.category }} <span>{{ a.minutes }} read</span>
           </div>
@@ -237,7 +234,7 @@
           <p>{{ p }}</p>
         }
         <a routerLink="/contact" class="text-link"
-          >Let’s put these ideas into practice <app-icon name="message"
+          >Discuss your project <app-icon name="message"
         /></a>
       </article>
     } @else {
@@ -249,20 +246,20 @@
   }
   @default {
     <section class="page-hero wrap">
-      <div class="eyebrow">404 / A SMALL DETOUR</div>
-      <h1>This page took<br /><span class="serif">a different path.</span></h1>
-      <p>Let’s get you back to something good.</p>
+      <div class="eyebrow">404 / PAGE NOT FOUND</div>
+      <h1>We couldn’t find<br />that page.</h1>
+      <p>The address may have changed. You can return to the homepage below.</p>
       <a class="button dark" routerLink="/">Back to home <app-icon name="home" /></a>
     </section>
   }
 }
 <section class="cta-panel wrap">
-  <div class="eyebrow">GOT SOMETHING IN MIND?</div>
+  <div class="eyebrow">HAVE A PROJECT IN MIND?</div>
   <div>
-    <h2>Let’s build<br /><span class="serif">what’s next.</span></h2>
-    <a class="cta-circle" routerLink="/contact" aria-label="Discuss your project"
-      ><app-icon name="message"
+    <h2>Let’s discuss the details.</h2>
+    <a class="button dark" routerLink="/contact"
+      >Discuss your project <app-icon name="message"
     /></a>
   </div>
-  <p>One conversation can change everything.</p>
+  <p>Share your goals, constraints, and timeline. We’ll work out the next step together.</p>
 </section>

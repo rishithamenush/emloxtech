@@ -4,7 +4,7 @@ export const services = [
     number: '01',
     icon: 'code' as const,
     title: 'Digital product engineering',
-    short: 'From the first sketch to the next big thing.',
+    short: 'Web applications, mobile products, and internal tools built around your workflows.',
     description:
       'Purpose-built web, mobile, and desktop applications that connect your business goals with what people actually need.',
     tags: ['Web applications', 'Mobile experiences', 'MVP development'],
@@ -20,7 +20,7 @@ export const services = [
     number: '02',
     icon: 'sparkles' as const,
     title: 'AI & data intelligence',
-    short: 'Make your data do something extraordinary.',
+    short: 'Data pipelines, practical automation, and AI features with human oversight.',
     description:
       'Turn complex information into useful decisions with focused machine learning, computer vision, and intelligent automation.',
     tags: ['Machine learning', 'Computer vision', 'Data platforms'],
@@ -36,7 +36,7 @@ export const services = [
     number: '03',
     icon: 'pen' as const,
     title: 'Brand & experience design',
-    short: 'Beautiful to look at. Effortless to use.',
+    short: 'Brand identities and interfaces that make your product easier to understand and use.',
     description:
       'Distinctive identities and thoughtful digital experiences, grounded in the way your customers think, explore, and act.',
     tags: ['Brand identity', 'UI / UX design', 'Design systems'],
@@ -52,7 +52,7 @@ export const services = [
     number: '04',
     icon: 'cloud' as const,
     title: 'Cloud & connected systems',
-    short: 'A stronger foundation for your next chapter.',
+    short: 'Cloud infrastructure, delivery automation, and integrations for connected systems.',
     description:
       'Modernize your infrastructure and connect your systems with scalable cloud architecture, delivery automation, and IoT integration.',
     tags: ['Cloud architecture', 'CI / CD', 'IoT integration'],
@@ -103,9 +103,9 @@ export const articles = [
   {
     slug: 'better-products',
     category: 'PRODUCT THINKING',
-    title: 'The best products start with better questions.',
+    title: 'Before you build: define the problem.',
     summary: 'Before choosing a stack or drawing a screen, get clear on the problem worth solving.',
-    minutes: '4 min',
+    minutes: '1 min',
     paragraphs: [
       'A useful product begins with a specific person and a specific problem. “We need an app” describes a format. “Our customers cannot track an order without calling us” describes something a team can investigate and improve.',
       'Start by mapping the current experience. Talk to the people who use it, watch where work slows down, and identify the smallest change that would make a meaningful difference. A focused first release teaches you more than a long feature list.',
@@ -115,9 +115,9 @@ export const articles = [
   {
     slug: 'practical-ai',
     category: 'AI & DATA',
-    title: 'Less AI hype. More everyday impact.',
+    title: 'Choosing a useful first AI project.',
     summary: 'Find the repetitive work, understand your data, and keep people in the loop.',
-    minutes: '3 min',
+    minutes: '1 min',
     paragraphs: [
       'The strongest place to start with AI is often a repetitive task that already has a clear definition of a good result. Document classification, information extraction, and search can offer a focused starting point.',
       'Evaluate whether your data is suitable before selecting a model. Check quality, permissions, coverage, and the consequences of an incorrect result. Build a representative evaluation set and compare the proposed system against the current process.',
@@ -127,9 +127,9 @@ export const articles = [
   {
     slug: 'design-that-scales',
     category: 'DESIGN NOTES',
-    title: 'Consistency is a feature, too.',
+    title: 'When your product needs a design system.',
     summary: 'Why a small, thoughtful design system makes a big difference as products grow.',
-    minutes: '3 min',
+    minutes: '1 min',
     paragraphs: [
       'Every new screen asks a familiar set of questions: how should a button behave, what does an error look like, and how does a person get back? A design system makes those answers consistent.',
       'Start with the patterns the product already needs. Define readable typography, color roles, spacing, form states, and navigation. Test components with keyboard access, long content, and small screens.',
@@ -138,6 +138,10 @@ export const articles = [
   },
 ];
 export const faqs = [
+  [
+    'How would we work together across time zones?',
+    'We are based in Sri Lanka (UTC+5:30). At the start of an engagement, we agree on meeting times, review milestones, and how to share progress so your team has a clear record between calls.',
+  ],
   [
     'What kind of businesses do you work with?',
     'We help teams shape new digital products and improve existing ones. Whether you are exploring an early idea or modernizing an established business, we begin with your goals and the people you serve.',
