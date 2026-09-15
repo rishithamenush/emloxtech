@@ -2402,14 +2402,14 @@ textarea::placeholder {
 .form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 button:disabled { opacity: .65; cursor: wait; }
 
-/* Align the policy with the shared page gutter while keeping lines readable. */
-.article-body.privacy-body {
-  width: 100%;
-  max-width: 800px;
-  margin-inline: 0;
-  text-align: left;
-}
-.privacy-body > p,
-.privacy-body > h2 {
-  max-width: 800px;
+
+
+/* Policy sections share the page hero, gutters, and dividers used elsewhere. */
+.privacy-content { padding-bottom: 64px; text-align: left; }
+.privacy-section { padding-block: 36px; border-top: 1px solid var(--line); }
+.privacy-section h2 { margin: 14px 0 18px; font-size: clamp(25px, 3vw, 36px); }
+.privacy-section p { max-width: 800px; margin: 0; line-height: 1.9; }
+@media (max-width: 700px) {
+  .privacy-content { padding-bottom: 32px; }
+  .privacy-section { padding-block: 28px; }
 }
