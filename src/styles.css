@@ -288,9 +288,18 @@ svg {
   font-weight: 450;
   color: var(--ink);
 }
+/* The arrow's horizontal stroke sits at the SVG's vertical centre, level with the text beside it. */
 .mini-mark {
-  font-size: 34px;
-  line-height: 1;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  color: #5a6053;
+}
+.mini-mark path:first-child {
+  fill: none;
 }
 .art-scene {
   background: #272b24;
