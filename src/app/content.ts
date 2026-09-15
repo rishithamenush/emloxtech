@@ -19,7 +19,7 @@ export const services = [
 
     number: '01',
     icon: 'code' as const,
-    title: 'Digital product engineering',
+    title: 'Web applications & MVP development',
     short: 'Web applications, mobile products, and internal tools built around your workflows.',
     description:
       'Purpose-built web, mobile, and desktop applications that connect your business goals with what people actually need.',
@@ -51,7 +51,7 @@ export const services = [
 
     number: '02',
     icon: 'sparkles' as const,
-    title: 'AI & data intelligence',
+    title: 'AI automation & data engineering',
     short: 'Data pipelines, practical automation, and AI features with human oversight.',
     description:
       'Turn complex information into useful decisions with focused machine learning, computer vision, and intelligent automation.',
@@ -83,7 +83,7 @@ export const services = [
 
     number: '03',
     icon: 'pen' as const,
-    title: 'Brand & experience design',
+    title: 'UI/UX design & brand identity',
     short: 'Brand identities and interfaces that make your product easier to understand and use.',
     description:
       'Distinctive identities and thoughtful digital experiences, grounded in the way your customers think, explore, and act.',
@@ -115,7 +115,7 @@ export const services = [
 
     number: '04',
     icon: 'cloud' as const,
-    title: 'Cloud & connected systems',
+    title: 'Cloud, DevOps & integrations',
     short: 'Cloud infrastructure, delivery automation, and integrations for connected systems.',
     description:
       'Modernize your infrastructure and connect your systems with scalable cloud architecture, delivery automation, and IoT integration.',
@@ -154,7 +154,7 @@ export const projects = [
   {
     slug: 'signal',
     name: 'Signal',
-    type: 'AI & data intelligence',
+    type: 'AI automation & data engineering',
     category: 'AI & Data',
     subtitle: 'From complex data to clear direction.',
     description:
@@ -204,11 +204,11 @@ export const articles = [
 export const faqs = [
   [
     'How would we work together across time zones?',
-    'We are based in Sri Lanka (UTC+5:30). At the start of an engagement, we agree on meeting times, review milestones, and how to share progress so your team has a clear record between calls.',
+    'At the start of an engagement, we agree on meeting overlap, review milestones, and a shared channel for questions and progress. Written updates and recorded decisions help work move forward between calls.',
   ],
   [
     'What kind of businesses do you work with?',
-    'We help teams shape new digital products and improve existing ones. Whether you are exploring an early idea or modernizing an established business, we begin with your goals and the people you serve.',
+    'We work on projects for founders planning an MVP, businesses improving day-to-day operations, and product teams updating an existing application. Share your priorities so we can assess the fit and define a useful starting point.',
   ],
   [
     'Can you redesign or modernize an existing product?',
@@ -216,7 +216,7 @@ export const faqs = [
   ],
   [
     'How do you estimate cost and timelines?',
-    'We first clarify the scope, required integrations, and level of design and engineering work. From there, we can propose milestones and a tailored estimate. There is no one-size-fits-all package.',
+    'We estimate each project around its scope, integrations, design needs, and delivery milestones. We agree on the budget and what is included before work begins. If the scope changes, we discuss the impact on cost and timing before proceeding.',
   ],
   [
     'What happens after launch?',

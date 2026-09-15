@@ -20,12 +20,12 @@ export class SeoStrategy extends TitleStrategy {
     const article = articles.find((item) => path === '/insights/' + item.slug);
     const pages: Record<string, [string, string, string]> = {
       '/': [
-        'Software Development & UI/UX Design in Sri Lanka',
-        'EmloX Tech is a Sri Lankan design and software studio building web applications, MVPs, AI automation, and cloud systems for local and international teams.',
+        'Custom Software Development & UI/UX Design',
+        'Build web applications, MVPs, and better digital experiences with EmloX Tech. Remote software development, UI/UX design, and practical AI automation.',
         'WebPage',
       ],
       '/services': [
-        'Software, AI & Design Services in Sri Lanka',
+        'Software Development, AI & UI/UX Design Services',
         'Explore web and mobile development, MVP engineering, UI/UX design, AI automation, and cloud services. Define your project scope with EmloX Tech.',
         'CollectionPage',
       ],
@@ -35,8 +35,8 @@ export class SeoStrategy extends TitleStrategy {
         'CollectionPage',
       ],
       '/about': [
-        'About Our Sri Lankan Software & Design Studio',
-        'Meet EmloX Tech’s approach to software development and design: clear scope, regular reviews, and remote collaboration from Sri Lanka.',
+        'About Our Software Development & Design Studio',
+        'Work with EmloX Tech on your next digital product. Clear project scope, working software reviews, and remote collaboration from discovery to handover.',
         'AboutPage',
       ],
       '/insights': [
@@ -46,14 +46,14 @@ export class SeoStrategy extends TitleStrategy {
       ],
       '/contact': [
         'Discuss Your Software or Design Project',
-        'Contact EmloX Tech about a web application, MVP, UI/UX design, AI, or cloud project. Share your scope and timeline with our Sri Lanka-based studio.',
+        'Discuss your web application, MVP, UI/UX design, or automation project with EmloX Tech. Share your goals, budget, and timeline for a tailored project estimate.',
         'ContactPage',
       ],
     };
     const serviceTitles: Record<string, string> = {
-      'product-engineering': 'Web Application & MVP Development in Sri Lanka',
+      'product-engineering': 'Custom Web Application & MVP Development',
       'ai-data': 'AI Automation & Data Engineering Services',
-      'experience-design': 'UI/UX Design & Brand Identity in Sri Lanka',
+      'experience-design': 'UI/UX Design, Website Redesign & Brand Identity',
       'cloud-devops': 'Cloud, DevOps & Systems Integration Services',
     };
     const entry = pages[path];
@@ -111,7 +111,7 @@ export class SeoStrategy extends TitleStrategy {
       logo: SITE_URL + '/emlox-logo.svg',
       email: 'info@emloxtech.com',
       description:
-        'Independent design and software engineering studio based in Sri Lanka, working with local and international teams.',
+        'Independent software development and design studio offering remote project collaboration for founders, businesses, and product teams.',
     };
     const graph: object[] = [
       organization,

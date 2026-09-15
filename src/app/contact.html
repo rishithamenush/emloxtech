@@ -1,17 +1,17 @@
 <section class="contact-layout wrap">
   <div class="contact-intro">
     <div class="eyebrow">PROJECT INQUIRIES</div>
-    <h1>Tell us what<br />you need to build.</h1>
+    <h1>Let’s plan your<br />next project.</h1>
     <p>
-      Share your goals, timeline, and what you need help with. We can then discuss the scope and a
-      practical next step.
+      Tell us what you want to launch or improve, when you need it, and what budget you have in
+      mind. We’ll use those details to discuss deliverables, milestones, and a tailored estimate.
     </p>
     <div class="contact-details">
       <small>EMAIL</small
       ><a href="mailto:info@emloxtech.com"><app-icon name="mail" />info&#64;emloxtech.com</a
       ><small>PHONE</small><a href="tel:+94717071104"><app-icon name="phone" />+94 71 707 1104</a
-      ><small>LOCATION & TIME ZONE</small>
-      <p><app-icon name="pin" />Sri Lanka · UTC+5:30</p>
+      ><small>HOW WE WORK</small>
+      <p>Remote collaboration · Meeting times agreed with your team</p>
     </div>
   </div>
   <div class="contact-form-panel">
@@ -21,6 +21,10 @@
           <span>PROJECT DETAILS</span><span><app-icon name="file" /></span>
         </div>
         <h2>A short project brief.</h2>
+        <p class="form-note">
+          Your budget helps us suggest a realistic scope. These ranges are planning preferences, not
+          fixed service prices.
+        </p>
         <div class="form-row">
           <label
             >Your name <span>*</span
@@ -76,10 +80,11 @@
             <small class="error">Please choose a service.</small>
           }</label
         ><label
-          >Budget range <span class="optional">(USD, optional)</span
+          >Estimated project budget <span class="optional">(USD, optional)</span
           ><select name="budget" [(ngModel)]="model.budget">
             <option>Let’s discuss</option>
-            <option>Under $5,000</option>
+            <option>Under $1,000</option>
+            <option>$1,000 – $5,000</option>
             <option>$5,000 – $15,000</option>
             <option>$15,000 – $50,000</option>
             <option>$50,000+</option>
@@ -94,7 +99,7 @@
             maxlength="2000"
             #message="ngModel"
             rows="4"
-            placeholder="What are you hoping to build, improve, or figure out?"
+            placeholder="What should we build or improve? Who will use it, what must it do, and when would you like to launch?"
           ></textarea>
           @if (message.invalid && (message.touched || form.submitted)) {
             <small class="error">Tell us a little more (20–2,000 characters).</small>

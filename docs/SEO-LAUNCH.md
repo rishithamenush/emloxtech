@@ -30,17 +30,17 @@ These are editorial targets based on the actual services, not measured Google Tr
 
 | Page | Main intent | Supporting language |
 | --- | --- | --- |
-| Home | Software development in Sri Lanka | Custom software, remote development studio |
+| Home | Custom software development | Custom software, remote development studio |
 | Product engineering | Web application and MVP development | Customer portals, internal tools, API integration |
 | AI and data | AI automation services | Document processing, data engineering, bounded AI pilots |
-| Experience design | UI/UX design in Sri Lanka | Interface redesign, brand identity, design systems |
+| Experience design | UI/UX design and website redesign | Interface redesign, brand identity, design systems |
 | Cloud and DevOps | Cloud and systems integration | Deployment pipelines, cloud migration, infrastructure assessment |
 
 Avoid creating near-identical pages for many cities or stuffing every phrase into each heading. Add a dedicated offering page only when there is a distinct service and enough useful first-hand detail.
 
 ## Free Google Trends workflow
 
-Open [Google Trends](https://trends.google.com/trends/). Compare a small group such as “web development”, “software development”, “UI UX design”, and “AI automation”. Examine Sri Lanka and your chosen international market separately, using the same search type and category. Review 12 months for seasonality and five years for longer patterns. Inspect related queries before choosing an article topic.
+Open [Google Trends](https://trends.google.com/trends/). Compare a small group such as “web development”, “software development”, “UI UX design”, and “AI automation”. Examine your chosen international markets separately, using the same search type and category. Review 12 months for seasonality and five years for longer patterns. Inspect related queries before choosing an article topic.
 
 Trends is sampled and normalized (0–100); it is not monthly search volume. A zero can mean insufficient data. No live Trends comparison was retrieved during this implementation, so no trend or demand claims are made. Use Search Console impressions and actual enquiries to refine this initial intent map after launch.
 
@@ -73,3 +73,7 @@ When adding pages, update the route/content and the expected public-page count i
 - [Google Trends data FAQ](https://support.google.com/trends/answer/4365533)
 - [Angular rendering and static output](https://angular.dev/guide/ssr)
 - [Vercel project configuration](https://vercel.com/docs/project-configuration)
+
+## International client positioning update
+
+Public pages and metadata now use location-neutral remote collaboration language. No overseas office, client history, or other location is implied. Service names focus on buyer needs: web applications and MVPs, AI automation, UI/UX design, and cloud integrations. Pricing uses a tailored project estimate; no public hourly rate has been set. Contact budget ranges are optional client planning preferences, not advertised service prices. Existing contact details remain available. The portfolio remains illustrative concept work until approved real case studies are supplied.
