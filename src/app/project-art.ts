@@ -17,17 +17,17 @@ import { Component, input } from '@angular/core';
           <h4>Everything, in perspective.</h4>
           <div class="mock-stats">
             <div>
-              Total revenue<b
-                >$48,250 <em><app-icon name="growth" /> 12.8%</em></b
+              Workspace<b
+                >Demo <em><app-icon name="growth" /> Preview</em></b
               >
             </div>
             <div>
               Active orders<b
-                >128 <em><app-icon name="growth" /> 8.2%</em></b
+                >Sample <em><app-icon name="growth" /> Data</em></b
               >
             </div>
           </div>
-          <div class="chart-label">Revenue overview <span>This month⌄</span></div>
+          <div class="chart-label">Illustrative activity <span>This month⌄</span></div>
           <div class="bar-chart">
             <i style="height:30%"></i><i style="height:45%"></i><i style="height:39%"></i
             ><i style="height:63%"></i><i style="height:52%"></i><i style="height:72%"></i

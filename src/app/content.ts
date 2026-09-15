@@ -127,6 +127,37 @@ export const services = [
       'Operational documentation and support planning',
     ],
   },
+  {
+    slug: 'mobile-app-development',
+    number: '05',
+    icon: 'code' as const,
+    title: 'Mobile application development',
+    short: 'Android and iOS applications built around the tasks your users need to complete.',
+    description:
+      'Plan, design, and develop mobile applications with clear user journeys, backend integrations, and a practical release plan.',
+    tags: ['Android apps', 'iOS apps', 'App store releases'],
+    deliverables: [
+      'App scope and platform planning',
+      'Mobile interface design and prototyping',
+      'Application development and backend integration',
+      'Device testing and store submission preparation',
+    ],
+    useCase:
+      'For businesses taking a service mobile, founders testing an app idea, or teams replacing a manual field workflow. We define the first useful release and the devices it needs to support.',
+    preparation:
+      'Share your core user journey, target platforms, integrations, and any offline or notification requirements. Store accounts, review requirements, and ongoing maintenance are part of release planning.',
+    relatedArticle: 'better-products',
+    questions: [
+      [
+        'Can you help with publishing an app?',
+        'We can prepare a release and support the submission process. Store accounts and any platform fees are agreed with you, and approval remains subject to each store’s review.',
+      ],
+      [
+        'Do you have a published mobile product?',
+        'Yes. Money Maker: Budget & Expense is an EmloX Android product available on Google Play. Explore it from our Work page.',
+      ],
+    ],
+  },
 ];
 export const projects = [
   {

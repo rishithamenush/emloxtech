@@ -24,6 +24,16 @@ export const routes: Routes = [
     title: 'The concept lab — EmloX Tech',
   },
   {
+    path: 'work/money-maker',
+    loadComponent: () => import('./pages').then((m) => m.Pages),
+    data: { page: 'money-maker' },
+  },
+  {
+    path: 'privacy',
+    loadComponent: () => import('./pages').then((m) => m.Pages),
+    data: { page: 'privacy' },
+  },
+  {
     path: 'work/:slug',
     loadComponent: () => import('./pages').then((m) => m.Pages),
     data: { page: 'project' },

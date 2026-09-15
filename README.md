@@ -39,11 +39,15 @@ Use a Node version supported by Angular 22. This project was built and checked w
 
 ## Contact behavior
 
-The form validates and prepares a project brief locally. Visitors review it, open their email app to send it, or download the text file. No request is sent to a backend and no form content is persisted. Configure a real server-side mail integration if direct submission is needed.
+The visitor reviews a brief before sending. With `RESEND_API_KEY` and `CONTACT_FROM` configured in Vercel, `api/contact.js` sends it to info@emloxtech.com through Resend. Without that configuration, the email-app/download flow remains available. See `docs/CONTACT-SETUP.md` for activation, provider limits, and verification. Never commit credentials. Run `node --test scripts/contact.test.mjs` for mocked API tests.
 
 ## Portfolio content
 
-Orbit, Forma, and Signal are explicitly labeled illustrative concepts, not verified client work. Replace or extend them with approved case studies when available.
+Money Maker: Budget & Expense is featured as a published EmloX Android product, linked to its verified Google Play listing. Orbit, Forma, and Signal remain explicitly labeled illustrative concepts. No testimonials or client results are invented.
+
+## Sharing and privacy
+
+The site includes a 1200×630 social image, page-specific share metadata, a website privacy notice, and Vercel security headers. A contact API is the only request-time backend; page HTML is static. Confirm operational privacy practices and test real inbox delivery after setup.
 
 ## Fonts
 

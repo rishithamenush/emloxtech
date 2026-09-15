@@ -1,11 +1,10 @@
 import { Icon } from './icon';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ProjectArt } from './project-art';
 import { services, articles, faqs } from './content';
 @Component({
   selector: 'app-home',
-  imports: [Icon, RouterLink, ProjectArt],
+  imports: [Icon, RouterLink],
   templateUrl: './home.html',
 })
 export class Home {

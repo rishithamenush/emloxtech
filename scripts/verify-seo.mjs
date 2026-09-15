@@ -5,8 +5,8 @@ const sitemap = await readFile(`${root}/sitemap.xml`, 'utf8');
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
 assert.equal(
   urls.length,
-  16,
-  'All 16 public pages must be in the sitemap; update this count when adding content',
+  19,
+  'All 19 public pages must be in the sitemap; update this count when adding content',
 );
 assert.equal(new Set(urls).size, urls.length);
 const titles = new Set();
@@ -26,6 +26,7 @@ for (const url of urls) {
   descriptions.add(description);
   assert.ok(html.includes('property="og:url"'), path);
   assert.ok(html.includes('name="twitter:card"'), path);
+  assert.ok(html.includes('https://www.emloxtech.com/social-preview.png'), path);
   const json = html.match(/<script[^>]*id="site-structured-data"[^>]*>([\s\S]*?)<\/script>/)?.[1];
   const data = JSON.parse(json);
   assert.ok(

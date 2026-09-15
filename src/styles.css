@@ -1022,6 +1022,12 @@ footer {
   color: var(--muted);
   padding: 22px 0 28px;
 }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+}
 .page-hero {
   padding-block: 95px 65px;
 }
@@ -2386,4 +2392,24 @@ textarea::placeholder {
   .contact-details a {
     font-size: 18px;
   }
+}
+
+.money-maker-art { min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: #e9efd9; color: #223e31; padding: 32px; text-align: center; }
+.money-maker-mark { width: 108px; height: 108px; border-radius: 26px; background: #223e31; color: #fff; display: grid; place-content: center; font: 700 52px Manrope, sans-serif; position: relative; }
+.money-maker-mark span { position: absolute; right: 10px; top: 5px; color: #c6ee7d; font-size: 28px; }
+.money-maker-art strong { font-size: clamp(28px, 5vw, 44px); letter-spacing: -1.5px; }
+.money-maker-art small { margin-top: 16px; font-size: 10px; letter-spacing: 2px; }
+.form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+button:disabled { opacity: .65; cursor: wait; }
+
+/* Align the policy with the shared page gutter while keeping lines readable. */
+.article-body.privacy-body {
+  width: 100%;
+  max-width: 800px;
+  margin-inline: 0;
+  text-align: left;
+}
+.privacy-body > p,
+.privacy-body > h2 {
+  max-width: 800px;
 }

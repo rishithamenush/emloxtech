@@ -20,8 +20,18 @@ export class SeoStrategy extends TitleStrategy {
     const article = articles.find((item) => path === '/insights/' + item.slug);
     const pages: Record<string, [string, string, string]> = {
       '/': [
-        'Custom Software Development & UI/UX Design',
+        'Web & Mobile Application Development',
         'Build web applications, MVPs, and better digital experiences with EmloX Tech. Remote software development, UI/UX design, and practical AI automation.',
+        'WebPage',
+      ],
+      '/privacy': [
+        'Privacy Policy',
+        'How EmloX Tech handles website information, project enquiries, email delivery, and your privacy choices.',
+        'WebPage',
+      ],
+      '/work/money-maker': [
+        'Money Maker: Budget & Expense Android App',
+        'Explore Money Maker, an EmloX Android app for tracking income, expenses, and monthly budgets. Available on Google Play.',
         'WebPage',
       ],
       '/services': [
@@ -30,8 +40,8 @@ export class SeoStrategy extends TitleStrategy {
         'CollectionPage',
       ],
       '/work': [
-        'Software & Design Portfolio Concepts',
-        'Explore Orbit, Forma, and Signal: original EmloX Tech concepts for operations software, ecommerce design, and AI analytics. Illustrative studio work.',
+        'Published Products & Design Concepts',
+        'Explore Money Maker, our published Android budgeting app, alongside original EmloX concepts for operations software, ecommerce, and analytics.',
         'CollectionPage',
       ],
       '/about': [
@@ -51,6 +61,7 @@ export class SeoStrategy extends TitleStrategy {
       ],
     };
     const serviceTitles: Record<string, string> = {
+      'mobile-app-development': 'Mobile App Development for Android & iOS',
       'product-engineering': 'Custom Web Application & MVP Development',
       'ai-data': 'AI Automation & Data Engineering Services',
       'experience-design': 'UI/UX Design, Website Redesign & Brand Identity',
@@ -85,11 +96,18 @@ export class SeoStrategy extends TitleStrategy {
       'og:type': article ? 'article' : 'website',
       'og:site_name': BRAND,
       'og:locale': 'en_US',
+      'og:image': SITE_URL + '/social-preview.png',
+      'og:image:width': '1200',
+      'og:image:height': '630',
+      'og:image:type': 'image/png',
+      'og:image:alt': 'EmloX Tech — Web and mobile apps, from idea to launch.',
     })) {
       this.meta.updateTag({ property, content });
     }
     for (const [name, content] of Object.entries({
-      'twitter:card': 'summary',
+      'twitter:card': 'summary_large_image',
+      'twitter:image': SITE_URL + '/social-preview.png',
+      'twitter:image:alt': 'EmloX Tech — Web and mobile apps, from idea to launch.',
       'twitter:title': title,
       'twitter:description': description,
     }))
@@ -134,6 +152,16 @@ export class SeoStrategy extends TitleStrategy {
         about: { '@id': organization['@id'] },
       },
     ];
+    if (path === '/work/money-maker')
+      graph.push({
+        '@type': 'SoftwareApplication',
+        name: 'Money Maker: Budget & Expense',
+        operatingSystem: 'Android',
+        applicationCategory: 'FinanceApplication',
+        url,
+        installUrl: 'https://play.google.com/store/apps/details?id=app.moneymaker.android',
+        publisher: { '@id': organization['@id'] },
+      });
     if (service)
       graph.push({
         '@type': 'Service',
@@ -171,10 +199,7 @@ export class SeoStrategy extends TitleStrategy {
           '@type': 'ListItem',
           position: 2,
           name: (
-            { services: 'Services', work: 'Concepts', insights: 'Insights' } as Record<
-              string,
-              string
-            >
+            { services: 'Services', work: 'Work', insights: 'Insights' } as Record<string, string>
           )[parts[0]],
           item: SITE_URL + '/' + parts[0],
         });

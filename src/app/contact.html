@@ -17,6 +17,15 @@
   <div class="contact-form-panel">
     @if (!sent()) {
       <form #form="ngForm" (ngSubmit)="submit(form)" novalidate>
+        <div class="form-trap" aria-hidden="true">
+          <label
+            >Leave this field empty<input
+              name="website"
+              [(ngModel)]="website"
+              tabindex="-1"
+              autocomplete="off"
+          /></label>
+        </div>
         <div class="form-heading">
           <span>PROJECT DETAILS</span><span><app-icon name="file" /></span>
         </div>
@@ -106,7 +115,8 @@
           }
         </label>
         <p class="form-note">
-          Review your brief in the next step, then send it using your email app.
+          Review your brief before sending. See our <a routerLink="/privacy">Privacy Policy</a> for
+          how we handle enquiries.
         </p>
         <button class="button dark" type="submit">
           Prepare my project brief <span><app-icon name="file" /></span>
@@ -115,21 +125,52 @@
     } @else {
       <div class="brief-review">
         <span class="service-icon"><app-icon name="check" /></span>
-        <h2 id="brief-heading" tabindex="-1">Your brief is ready to review.</h2>
-        <p>
-          Review your brief below, then open your email app to send it to info&#64;emloxtech.com. It
-          hasn’t been sent yet.
-        </p>
+        <h2 id="brief-heading" tabindex="-1">
+          {{ delivered() ? 'Your enquiry has been submitted.' : 'Your brief is ready to review.' }}
+        </h2>
+        @if (delivered()) {
+          <p>
+            Your enquiry was accepted for email delivery to info&#64;emloxtech.com. We’ll use your
+            email address to respond.
+          </p>
+        } @else {
+          <p>Check the details below before sending your enquiry to info&#64;emloxtech.com.</p>
+        }
         <pre>{{ brief }}</pre>
-        <a class="button dark" [href]="mailto">Open email app <app-icon name="mail" /></a
-        ><button class="text-link" type="button" (click)="download()">
-          Download brief <app-icon name="download" /></button
-        ><button class="text-link" type="button" (click)="sent.set(false)">
-          <app-icon name="pen" /> Edit details
-        </button>
-        <p class="form-note">
-          No email app configured? Download the brief and attach it using your preferred email
-          service.
+        @if (available() && !delivered()) {
+          <button class="button dark" type="button" (click)="send()" [disabled]="sending()">
+            {{ sending() ? 'Sending…' : 'Send enquiry' }} <app-icon name="mail" />
+          </button>
+        }
+        @if (deliveryError()) {
+          <p class="error" role="alert">{{ deliveryError() }}</p>
+        }
+        @if (!delivered()) {
+          <p class="form-note">
+            {{
+              available()
+                ? 'Prefer your own email app? You can also send your brief below.'
+                : 'Send this brief through your email app, or download it and send it to info@emloxtech.com.'
+            }}
+          </p>
+          <a class="button dark" [href]="mailto">Open email app <app-icon name="mail" /></a
+          ><button class="text-link" type="button" (click)="download()">
+            Download brief <app-icon name="download" /></button
+          ><button
+            class="text-link"
+            type="button"
+            (click)="sent.set(false); deliveryError.set('')"
+            [disabled]="sending()"
+          >
+            <app-icon name="pen" /> Edit details
+          </button>
+          <p class="form-note">
+            No email app configured? Download the brief and attach it using your preferred email
+            service.
+          </p>
+        }
+        <p class="form-note" role="status" aria-live="polite">
+          {{ delivered() ? 'Enquiry submitted.' : '' }}
         </p>
       </div>
     }

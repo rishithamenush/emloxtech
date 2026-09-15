@@ -9,6 +9,7 @@ import {
 import { appConfig } from './app.config';
 import { services, projects, articles } from './content';
 const serverRoutes: ServerRoute[] = [
+  { path: 'work/money-maker', renderMode: RenderMode.Prerender },
   ...(['services', 'work', 'insights'] as const).map((section): ServerRoute => ({
     path: `${section}/:slug`,
     renderMode: RenderMode.Prerender,

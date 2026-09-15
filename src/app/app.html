@@ -8,7 +8,7 @@
   >
   <nav id="main-navigation" aria-label="Main navigation" [class.is-open]="menuOpen()">
     <a routerLink="/services" routerLinkActive="active">Services</a
-    ><a routerLink="/work" routerLinkActive="active">Concepts</a
+    ><a routerLink="/work" routerLinkActive="active">Work</a
     ><a routerLink="/about" routerLinkActive="active">About us</a
     ><a routerLink="/insights" routerLinkActive="active">Notes</a
     ><a routerLink="/contact" class="nav-cta"
@@ -41,7 +41,10 @@
     >
   </div>
   <div class="footer-bottom">
-    <span>© {{ year }} EmloX Tech.</span
-    ><a routerLink="/contact">Get in touch <app-icon name="message" /></a>
+    <span>© {{ year }} EmloX Tech.</span>
+    <div class="footer-links">
+      <a routerLink="/privacy">Privacy Policy</a
+      ><a routerLink="/contact">Get in touch <app-icon name="message" /></a>
+    </div>
   </div>
 </footer>
