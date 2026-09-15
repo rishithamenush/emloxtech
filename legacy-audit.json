@@ -1,0 +1,1423 @@
+[
+  {
+    "file": "components/AboutOne/About.js",
+    "lines": 85,
+    "placeholder": false,
+    "links": [
+      "/about"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/AboutTwo/About.js",
+    "lines": 80,
+    "placeholder": true,
+    "links": [
+      "/about"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/AboutTwo/WhyChooseUs.js",
+    "lines": 97,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Auth/LoginForm.js",
+    "lines": 117,
+    "placeholder": false,
+    "links": [
+      "https://www.google.com/",
+      "https://www.facebook.com/",
+      "https://www.twitter.com/",
+      "/auth/recover-password",
+      "/auth/sign-up"
+    ],
+    "forms": 1
+  },
+  {
+    "file": "components/Auth/RecoverPasswordForm.js",
+    "lines": 67,
+    "placeholder": false,
+    "links": [
+      "/contact",
+      "/auth/login",
+      "/auth/sign-up"
+    ],
+    "forms": 1
+  },
+  {
+    "file": "components/Auth/SignUpForm.js",
+    "lines": 107,
+    "placeholder": false,
+    "links": [
+      "/auth/login"
+    ],
+    "forms": 1
+  },
+  {
+    "file": "components/CaseStudiesDetails/CaseStudiesDetailsContent.js",
+    "lines": 101,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/ComingSoon/ComingSoonContent.js",
+    "lines": 94,
+    "placeholder": true,
+    "links": [],
+    "forms": 1
+  },
+  {
+    "file": "components/Common/CTA.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [
+      "/contact"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Common/MakeYourBusiness.js",
+    "lines": 104,
+    "placeholder": false,
+    "links": [
+      "/about-2"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Common/News.js",
+    "lines": 181,
+    "placeholder": true,
+    "links": [
+      "/news/news-details",
+      "/news-grid",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "/news-grid",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "/news-grid",
+      "/news/news-details",
+      "/news/news-details"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Common/Newsletter.js",
+    "lines": 78,
+    "placeholder": false,
+    "links": [],
+    "forms": 1
+  },
+  {
+    "file": "components/Common/PageBanner.js",
+    "lines": 29,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Common/Partner.js",
+    "lines": 89,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Common/PartnerSlider.js",
+    "lines": 100,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Common/PartnerSliderTwo.js",
+    "lines": 100,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Common/Team.js",
+    "lines": 185,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Common/TeamTwo.js",
+    "lines": 152,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Common/Testimonials.js",
+    "lines": 179,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Contact/ContactForm.js",
+    "lines": 164,
+    "placeholder": false,
+    "links": [],
+    "forms": 1
+  },
+  {
+    "file": "components/Contact/ContactFormStyleTwo.js",
+    "lines": 143,
+    "placeholder": false,
+    "links": [],
+    "forms": 1
+  },
+  {
+    "file": "components/Contact/ContactInfo.js",
+    "lines": 51,
+    "placeholder": false,
+    "links": [
+      "info@emloxtec.com",
+      "tel:+94 118928232"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/ErrorPage/CustomErrorContent.js",
+    "lines": 28,
+    "placeholder": false,
+    "links": [
+      "/"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Faq/AskQuestionForm.js",
+    "lines": 141,
+    "placeholder": false,
+    "links": [],
+    "forms": 1
+  },
+  {
+    "file": "components/Faq/FaqContent.js",
+    "lines": 117,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/About.js",
+    "lines": 80,
+    "placeholder": true,
+    "links": [
+      "/about"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/CaseStudies.js",
+    "lines": 161,
+    "placeholder": false,
+    "links": [
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/Faq.js",
+    "lines": 129,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/MainBanner.js",
+    "lines": 122,
+    "placeholder": false,
+    "links": [
+      "/services",
+      "/contact",
+      "/services",
+      "/contact",
+      "/services",
+      "/contact"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/Services.js",
+    "lines": 114,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/WhatWeOffer/HealthCare.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/WhatWeOffer/HeavyIndustry.js",
+    "lines": 78,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/WhatWeOffer/Manufacturing.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/WhatWeOffer/Transportation.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/WhatWeOffer/index.js",
+    "lines": 111,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFive/WhyChooseUs.js",
+    "lines": 135,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/About.js",
+    "lines": 87,
+    "placeholder": false,
+    "links": [
+      "/about"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/CaseStudies.js",
+    "lines": 161,
+    "placeholder": false,
+    "links": [
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/Faq.js",
+    "lines": 152,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/Features.js",
+    "lines": 61,
+    "placeholder": true,
+    "links": [
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/MainBanner.js",
+    "lines": 69,
+    "placeholder": false,
+    "links": [
+      "/about",
+      "/contact"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/MakeYourBusiness.js",
+    "lines": 84,
+    "placeholder": false,
+    "links": [
+      "/about-2"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/News.js",
+    "lines": 184,
+    "placeholder": false,
+    "links": [
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/Services.js",
+    "lines": 112,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/WhatWeOffer/HealthCare.js",
+    "lines": 75,
+    "placeholder": false,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/WhatWeOffer/HeavyIndustry.js",
+    "lines": 75,
+    "placeholder": false,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/WhatWeOffer/Manufacturing.js",
+    "lines": 75,
+    "placeholder": false,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/WhatWeOffer/Transportation.js",
+    "lines": 75,
+    "placeholder": false,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/WhatWeOffer/index.js",
+    "lines": 109,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeFour/WhyChooseUs.js",
+    "lines": 87,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/About.js",
+    "lines": 90,
+    "placeholder": true,
+    "links": [
+      "/about"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/Features.js",
+    "lines": 64,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/MainBanner.js",
+    "lines": 144,
+    "placeholder": true,
+    "links": [
+      "/about",
+      "/contact"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/Services.js",
+    "lines": 114,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/WhatWeOffer/HealthCare.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/WhatWeOffer/HeavyIndustry.js",
+    "lines": 78,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/WhatWeOffer/Manufacturing.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/WhatWeOffer/Transportation.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/WhatWeOffer/index.js",
+    "lines": 111,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeOne/WhyChooseUs.js",
+    "lines": 96,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/About.js",
+    "lines": 90,
+    "placeholder": true,
+    "links": [
+      "/about"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/CaseStudies.js",
+    "lines": 161,
+    "placeholder": false,
+    "links": [
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details",
+      "/case-studies/case-studies-details"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/Faq.js",
+    "lines": 129,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/MainBanner.js",
+    "lines": 121,
+    "placeholder": true,
+    "links": [
+      "/about"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/Services.js",
+    "lines": 114,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/WhatWeOffer/HealthCare.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/WhatWeOffer/HeavyIndustry.js",
+    "lines": 78,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/WhatWeOffer/Manufacturing.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/WhatWeOffer/Transportation.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/WhatWeOffer/index.js",
+    "lines": 111,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeThree/WhyChooseUs.js",
+    "lines": 97,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeTwo/About.js",
+    "lines": 90,
+    "placeholder": true,
+    "links": [
+      "/about"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeTwo/Features.js",
+    "lines": 64,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeTwo/MainBanner.js",
+    "lines": 178,
+    "placeholder": true,
+    "links": [
+      "/about",
+      "/contact"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeTwo/Pricing/Monthly.js",
+    "lines": 155,
+    "placeholder": false,
+    "links": [
+      "/contact",
+      "/contact",
+      "/contact"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeTwo/Pricing/Yearly.js",
+    "lines": 155,
+    "placeholder": false,
+    "links": [
+      "/contact",
+      "/contact",
+      "/contact"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeTwo/Pricing/index.js",
+    "lines": 67,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeTwo/Services.js",
+    "lines": 114,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/HomeTwo/WhatWeOffer.js",
+    "lines": 208,
+    "placeholder": false,
+    "links": [
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Layouts/Footer.js",
+    "lines": 235,
+    "placeholder": false,
+    "links": [
+      "/",
+      "https://www.facebook.com/",
+      "https://twitter.com/",
+      "https://www.linkedin.com/",
+      "https://www.pinterest.com/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/about",
+      "/services",
+      "/pricing",
+      "/contact",
+      "/testimonials",
+      "tel:+918455678901",
+      "info@emloxtec.com",
+      "/terms-conditions",
+      "/privacy-policy"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Layouts/Navbar.js",
+    "lines": 127,
+    "placeholder": false,
+    "links": [
+      "/",
+      "/",
+      "/about/",
+      "/services/",
+      "/contact/"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Layouts/ServicesDropdown.js",
+    "lines": 92,
+    "placeholder": false,
+    "links": [
+      "/services/"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/News/CommentsArea.js",
+    "lines": 187,
+    "placeholder": true,
+    "links": [
+      "#",
+      "#",
+      "#"
+    ],
+    "forms": 1
+  },
+  {
+    "file": "components/News/NewsDetailsContent.js",
+    "lines": 169,
+    "placeholder": true,
+    "links": [
+      "#",
+      "#",
+      "https://www.facebook.com/",
+      "https://www.twitter.com/",
+      "https://www.linkedin.com/",
+      "https://www.pinterest.com/",
+      "#",
+      "#"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/News/NewsGridCard.js",
+    "lines": 475,
+    "placeholder": true,
+    "links": [
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/News/NewsGridTwo.js",
+    "lines": 352,
+    "placeholder": true,
+    "links": [
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/News/NewsSidebar.js",
+    "lines": 180,
+    "placeholder": false,
+    "links": [
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "/news/news-details",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    "forms": 1
+  },
+  {
+    "file": "components/Pricing/Monthly.js",
+    "lines": 155,
+    "placeholder": false,
+    "links": [
+      "/contact",
+      "/contact",
+      "/contact"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Pricing/PricingStyleOne.js",
+    "lines": 67,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Pricing/Yearly.js",
+    "lines": 155,
+    "placeholder": false,
+    "links": [
+      "/contact",
+      "/contact",
+      "/contact"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/PrivacyPolicy/PrivacyPolicyContent.js",
+    "lines": 102,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/ServiceDetails/AskQuestionForm.js",
+    "lines": 88,
+    "placeholder": false,
+    "links": [],
+    "forms": 1
+  },
+  {
+    "file": "components/ServiceDetails/ServiceDetailsContent.js",
+    "lines": 109,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/ServiceDetails/ServiceSidebar.js",
+    "lines": 94,
+    "placeholder": false,
+    "links": [
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Services/ServicesStyleFour.js",
+    "lines": 163,
+    "placeholder": false,
+    "links": [
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Services/ServicesStyleOne.js",
+    "lines": 125,
+    "placeholder": false,
+    "links": [
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Services/ServicesStyleThree.js",
+    "lines": 204,
+    "placeholder": true,
+    "links": [
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Services/ServicesStyleTwo.js",
+    "lines": 190,
+    "placeholder": true,
+    "links": [
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "/services/service-details/",
+      "#",
+      "#",
+      "#",
+      "#",
+      "#"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Services/WhatWeOffer/HealthCare.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Services/WhatWeOffer/HeavyIndustry.js",
+    "lines": 78,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Services/WhatWeOffer/Manufacturing.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Services/WhatWeOffer/Transportation.js",
+    "lines": 79,
+    "placeholder": true,
+    "links": [
+      "/services"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "components/Services/WhatWeOffer/index.js",
+    "lines": 111,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Shared/GoTop.js",
+    "lines": 50,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Team/TeamCard.js",
+    "lines": 300,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/TermsAndConditions/TermsAndConditionsContent.js",
+    "lines": 102,
+    "placeholder": true,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "components/Testimonials/TestimonialsContent.js",
+    "lines": 297,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "next.config.js",
+    "lines": 22,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/404.js",
+    "lines": 12,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/_app.js",
+    "lines": 38,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/_document.js",
+    "lines": 48,
+    "placeholder": false,
+    "links": [
+      "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap",
+      "https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&display=swap",
+      "/images/favicon.png"
+    ],
+    "forms": 0
+  },
+  {
+    "file": "pages/about-2.js",
+    "lines": 36,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/about.js",
+    "lines": 42,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/api/contact.js",
+    "lines": 39,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/auth/login.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/auth/recover-password.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/auth/sign-up.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/case-studies/case-studies-details/index.js",
+    "lines": 27,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/coming-soon.js",
+    "lines": 12,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/contact-2.js",
+    "lines": 27,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/contact.js",
+    "lines": 27,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/faq.js",
+    "lines": 27,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/index-2.js",
+    "lines": 48,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/index-3.js",
+    "lines": 48,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/index-4.js",
+    "lines": 54,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/index-5.js",
+    "lines": 46,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/index.js",
+    "lines": 93,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/news/index.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/news/news-details/index.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/news/news-right-sidebar/index.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/pricing.js",
+    "lines": 29,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/privacy-policy.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/services/index.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/services/service-details/index.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/services/style-2/index.js",
+    "lines": 30,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/services/style-3/index.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/services/style-4/index.js",
+    "lines": 26,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/team.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/terms-conditions.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "pages/testimonials.js",
+    "lines": 24,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "public/fonts/flaticon.css",
+    "lines": 75,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "styles/animate.css",
+    "lines": 7,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "styles/bootstrap.min.css",
+    "lines": 5,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "styles/boxicons.min.css",
+    "lines": 1,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "styles/flaticon.css",
+    "lines": 69,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "styles/responsive.css",
+    "lines": 1683,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "styles/responsive.scss",
+    "lines": 2174,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "styles/style.css",
+    "lines": 4919,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "styles/style.scss",
+    "lines": 5224,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  },
+  {
+    "file": "utils/baseUrl.js",
+    "lines": 5,
+    "placeholder": false,
+    "links": [],
+    "forms": 0
+  }
+]

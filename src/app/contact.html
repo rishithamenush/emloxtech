@@ -1,0 +1,122 @@
+<section class="contact-layout wrap">
+  <div class="contact-intro">
+    <div class="eyebrow"><span class="status-dot"></span> LET’S MAKE SOMETHING MATTER</div>
+    <h1>Big idea?<br />Small question?<br /><span class="serif">We’re all ears.</span></h1>
+    <p>Tell us what you have in mind. We’ll help you find the right next step.</p>
+    <div class="contact-details">
+      <small>DROP US A LINE</small><a href="mailto:info@emloxtec.com">info&#64;emloxtec.com ↗</a
+      ><small>GIVE US A CALL</small><a href="tel:+94118928232">+94 11 892 8232 ↗</a
+      ><small>OUR CORNER OF THE WORLD</small>
+      <p>Sri Jayawardenepura Kotte<br />Sri Lanka</p>
+    </div>
+  </div>
+  <div class="contact-form-panel">
+    @if (!sent()) {
+      <form #form="ngForm" (ngSubmit)="submit(form)" novalidate>
+        <div class="form-heading"><span>YOUR NEXT CHAPTER</span><span>↗</span></div>
+        <h2>Let’s start with you.</h2>
+        <div class="form-row">
+          <label
+            >Your name <span>*</span
+            ><input
+              name="name"
+              [(ngModel)]="model.name"
+              required
+              minlength="2"
+              maxlength="100"
+              #name="ngModel"
+              autocomplete="name"
+              placeholder="Alex Morgan"
+            />
+            @if (name.invalid && (name.touched || form.submitted)) {
+              <small class="error">Please enter your name (at least 2 characters).</small>
+            }</label
+          ><label
+            >Email address <span>*</span
+            ><input
+              name="email"
+              [(ngModel)]="model.email"
+              type="email"
+              required
+              email
+              maxlength="160"
+              #email="ngModel"
+              autocomplete="email"
+              placeholder="alex@company.com"
+            />
+            @if (email.invalid && (email.touched || form.submitted)) {
+              <small class="error">Please enter a valid email address.</small>
+            }
+          </label>
+        </div>
+        <label
+          >Company <span class="optional">(optional)</span
+          ><input
+            name="company"
+            [(ngModel)]="model.company"
+            maxlength="160"
+            autocomplete="organization"
+            placeholder="Where you make things happen" /></label
+        ><label
+          >What can we help with? <span>*</span
+          ><select name="service" [(ngModel)]="model.service" required #service="ngModel">
+            <option value="" disabled>Select a service</option>
+            @for (s of services; track s.slug) {
+              <option [value]="s.title">{{ s.title }}</option>
+            }
+            <option>Something else / I’m exploring</option>
+          </select>
+          @if (service.invalid && (service.touched || form.submitted)) {
+            <small class="error">Please choose a service.</small>
+          }</label
+        ><label
+          >Budget range <span class="optional">(USD, optional)</span
+          ><select name="budget" [(ngModel)]="model.budget">
+            <option>Let’s discuss</option>
+            <option>Under $5,000</option>
+            <option>$5,000 – $15,000</option>
+            <option>$15,000 – $50,000</option>
+            <option>$50,000+</option>
+          </select></label
+        ><label
+          >A little about your idea <span>*</span
+          ><textarea
+            name="message"
+            [(ngModel)]="model.message"
+            required
+            minlength="20"
+            maxlength="2000"
+            #message="ngModel"
+            rows="4"
+            placeholder="What are you hoping to build, improve, or figure out?"
+          ></textarea>
+          @if (message.invalid && (message.touched || form.submitted)) {
+            <small class="error">Tell us a little more (20–2,000 characters).</small>
+          }
+        </label>
+        <p class="form-note">
+          This prepares an email brief on your device. You’ll review it before opening your email
+          app. Nothing is submitted to a server.
+        </p>
+        <button class="button dark" type="submit">Prepare my project brief <span>↗</span></button>
+      </form>
+    } @else {
+      <div class="brief-review">
+        <span class="service-icon">↗</span>
+        <h2 id="brief-heading" tabindex="-1">Your idea is<br />ready to share.</h2>
+        <p>
+          Review your brief below, then open your email app to send it to info&#64;emloxtec.com. It
+          hasn’t been sent yet.
+        </p>
+        <pre>{{ brief }}</pre>
+        <a class="button dark" [href]="mailto">Open email app ↗</a
+        ><button class="text-link" type="button" (click)="download()">Download brief ↓</button
+        ><button class="text-link" type="button" (click)="sent.set(false)">← Edit details</button>
+        <p class="form-note">
+          No email app configured? Download the brief and attach it using your preferred email
+          service.
+        </p>
+      </div>
+    }
+  </div>
+</section>
