@@ -1,16 +1,17 @@
-<section class="contact-layout wrap">
+<section class="contact-layout container">
   <div class="contact-intro">
-    <div class="eyebrow">PROJECT INQUIRIES</div>
-    <h1>Let’s plan your<br />next project.</h1>
-    <p>
+    <span class="mono-label"><app-icon name="grid" /> Project inquiries</span>
+    <h1>It starts with a conversation.</h1>
+    <p class="lead">
       Tell us what you want to launch or improve, when you need it, and what budget you have in
       mind. We’ll use those details to discuss deliverables, milestones, and a tailored estimate.
     </p>
     <div class="contact-details">
-      <small>EMAIL</small
+      <small class="mono-label">Email</small
       ><a href="mailto:info@emloxtech.com"><app-icon name="mail" />info&#64;emloxtech.com</a
-      ><small>PHONE</small><a href="tel:+94717071104"><app-icon name="phone" />+94 71 707 1104</a
-      ><small>HOW WE WORK</small>
+      ><small class="mono-label">Phone</small
+      ><a href="tel:+94717071104"><app-icon name="phone" />+94 71 707 1104</a
+      ><small class="mono-label">How we work</small>
       <p>Remote collaboration · Meeting times agreed with your team</p>
     </div>
   </div>
@@ -27,9 +28,9 @@
           /></label>
         </div>
         <div class="form-heading">
-          <span>PROJECT DETAILS</span><span><app-icon name="file" /></span>
+          <span class="mono-label">Project details</span><span><app-icon name="file" /></span>
         </div>
-        <h2>A short project brief.</h2>
+        <h2>Tell us what you have in mind.</h2>
         <p class="form-note">
           Your budget helps us suggest a realistic scope. These ranges are planning preferences, not
           fixed service prices.
@@ -118,9 +119,7 @@
           Review your brief before sending. See our <a routerLink="/privacy">Privacy Policy</a> for
           how we handle enquiries.
         </p>
-        <button class="button dark" type="submit">
-          Prepare my project brief <span><app-icon name="file" /></span>
-        </button>
+        <button class="pill dark lg block" type="submit">Prepare my project brief</button>
       </form>
     } @else {
       <div class="brief-review">
@@ -138,7 +137,7 @@
         }
         <pre>{{ brief }}</pre>
         @if (available() && !delivered()) {
-          <button class="button dark" type="button" (click)="send()" [disabled]="sending()">
+          <button class="pill dark lg" type="button" (click)="send()" [disabled]="sending()">
             {{ sending() ? 'Sending…' : 'Send enquiry' }} <app-icon name="mail" />
           </button>
         }
@@ -153,11 +152,11 @@
                 : 'Send this brief through your email app, or download it and send it to info@emloxtech.com.'
             }}
           </p>
-          <a class="button dark" [href]="mailto">Open email app <app-icon name="mail" /></a
-          ><button class="text-link" type="button" (click)="download()">
+          <a class="pill outline lg" [href]="mailto">Open email app <app-icon name="mail" /></a
+          ><button class="link-arrow" type="button" (click)="download()">
             Download brief <app-icon name="download" /></button
           ><button
-            class="text-link"
+            class="link-arrow"
             type="button"
             (click)="sent.set(false); deliveryError.set('')"
             [disabled]="sending()"

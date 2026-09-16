@@ -51,4 +51,4 @@ The site includes a 1200×630 social image, page-specific share metadata, a webs
 
 ## Fonts
 
-DM Sans and Manrope are bundled through Fontsource under their open font licenses. Serif accents use the system Georgia font. There are no runtime requests to Google Fonts.
+Inter (interface), Roboto Mono (labels), and Manrope (wordmark) are bundled through Fontsource under their open font licenses. Concept artwork uses the system Georgia font. There are no runtime requests to Google Fonts.

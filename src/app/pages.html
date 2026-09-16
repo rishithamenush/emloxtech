@@ -1,111 +1,149 @@
 @switch (page()) {
   @case ('services') {
-    <section class="page-hero wrap">
-      <div class="eyebrow">OUR EXPERTISE</div>
-      <h1>Software and design<br />for your next stage.</h1>
-      <p>
+    <section class="page-hero container">
+      <span class="mono-label"><app-icon name="grid" /> Our expertise</span>
+      <h1>The right skills. One shared plan.</h1>
+      <p class="lead">
         Launch a first product, improve an existing application, or reduce manual work. Choose a
         focused engagement or bring design and development together around one project plan.
       </p>
     </section>
-    <section class="wrap service-list">
-      @for (s of services; track s.slug) {
-        <article>
-          <span class="service-index">{{ s.number }} /</span>
-          <div>
-            <h2>{{ s.title }}</h2>
-            <p>{{ s.description }}</p>
-            <div class="tags">
-              @for (tag of s.tags; track tag) {
-                <span>{{ tag }}</span>
-              }
+    <section class="container section-tight">
+      <div class="rows">
+        @for (s of services; track s.slug) {
+          <div class="row">
+            <div>
+              <span class="mono-label">{{ s.number }}</span>
+              <h2>
+                <a [routerLink]="['/services', s.slug]">{{ s.title }}</a>
+              </h2>
+            </div>
+            <div>
+              <p>{{ s.description }}</p>
+              <div class="tags">
+                @for (tag of s.tags; track tag) {
+                  <span>{{ tag }}</span>
+                }
+              </div>
+              <a
+                class="link-arrow"
+                [routerLink]="['/services', s.slug]"
+                [attr.aria-label]="'Explore ' + s.title"
+                >Learn more <app-icon name="arrow-up-right"
+              /></a>
             </div>
           </div>
-          <a
-            class="round-arrow"
-            [routerLink]="['/services', s.slug]"
-            [attr.aria-label]="'Explore ' + s.title"
-            ><app-icon name="arrow-right"
-          /></a>
-        </article>
-      }
+        }
+      </div>
     </section>
   }
   @case ('service') {
     @if (service(); as s) {
-      <section class="page-hero wrap">
-        <a routerLink="/services" class="eyebrow"><app-icon name="arrow-left" /> ALL SERVICES</a>
-        <h1>{{ s.title }}<span class="lime-dot">.</span></h1>
-        <p>{{ s.description }}</p>
-        <a class="button dark" routerLink="/contact" [queryParams]="{ service: s.title }"
-          >Discuss your project <app-icon name="message"
-        /></a>
-      </section>
-      <section class="detail-grid section wrap">
-        <div>
-          <div class="eyebrow">FROM IDEA TO DELIVERY</div>
-          <h2>{{ s.short }}</h2>
-        </div>
-        <div>
-          <h3>What we can help you with</h3>
-          <ul class="deliverables">
-            @for (item of s.deliverables; track item) {
-              <li>
-                <span><app-icon name="check" /></span>{{ item }}
-              </li>
-            }
-          </ul>
-          <p>
-            We tailor the scope to your goals, existing systems, and team. We’ll define
-            deliverables, milestones, and support together before work begins.
-          </p>
+      <section class="page-hero container">
+        <a routerLink="/services" class="mono-label back"
+          ><app-icon name="arrow-left" /> All services</a
+        >
+        <h1>{{ s.title }}</h1>
+        <p class="lead">{{ s.description }}</p>
+        <div class="actions">
+          <a class="pill dark lg" routerLink="/contact" [queryParams]="{ service: s.title }"
+            >Discuss your project</a
+          >
         </div>
       </section>
-      <section class="detail-grid section wrap">
-        <div>
-          <h2>Is this service right for your project?</h2>
-          <p>{{ s.useCase }}</p>
+      <section class="container section-tight">
+        <div class="split">
+          <div>
+            <span class="mono-label">From idea to delivery</span>
+            <h2>{{ s.short }}</h2>
+          </div>
+          <div>
+            <h3>What we can help you with</h3>
+            <ul class="checklist">
+              @for (item of s.deliverables; track item) {
+                <li><app-icon name="check" />{{ item }}</li>
+              }
+            </ul>
+            <p>
+              We tailor the scope to your goals, existing systems, and team. We’ll define
+              deliverables, milestones, and support together before work begins.
+            </p>
+          </div>
         </div>
-        <div>
-          <h3>What to prepare</h3>
-          <p>{{ s.preparation }}</p>
-          <a class="text-link" [routerLink]="['/insights', s.relatedArticle]"
-            >Read our planning guide <app-icon name="book"
-          /></a>
+        <div class="split">
+          <div>
+            <span class="mono-label">Fit</span>
+            <h2>Is this service right for your project?</h2>
+          </div>
+          <div>
+            <p class="body-lg">{{ s.useCase }}</p>
+            <h3>What to prepare</h3>
+            <p>{{ s.preparation }}</p>
+            <a class="link-arrow" [routerLink]="['/insights', s.relatedArticle]"
+              >Read our planning guide <app-icon name="arrow-up-right"
+            /></a>
+          </div>
         </div>
       </section>
-      <section class="faq-section section wrap">
-        <div>
-          <div class="eyebrow">PROJECT PLANNING</div>
-          <h2>Common questions.</h2>
+      <section class="container section narrow">
+        <div class="section-head">
+          <span class="mono-label"><app-icon name="grid" /> Project planning</span>
+          <h2>Common questions</h2>
         </div>
         <div class="faq-list">
           @for (question of s.questions; track question[0]) {
             <details>
-              <summary>{{ question[0] }}<span aria-hidden="true">+</span></summary>
+              <summary>
+                {{ question[0] }}<span aria-hidden="true"><app-icon name="plus" /></span>
+              </summary>
               <p>{{ question[1] }}</p>
             </details>
           }
         </div>
       </section>
     } @else {
-      <section class="page-hero wrap">
-        <h1>Service not found.</h1>
-        <a routerLink="/services" class="button dark"
-          >Explore services <app-icon name="arrow-right"
-        /></a>
+      <section class="page-hero container">
+        <h1>Service not found</h1>
+        <div class="actions">
+          <a routerLink="/services" class="pill dark lg">Explore services</a>
+        </div>
       </section>
     }
   }
   @case ('work') {
-    <section class="page-hero wrap">
-      <div class="eyebrow">PRODUCTS &amp; EXPLORATIONS</div>
-      <h1>Published products.<br />Ideas in progress.</h1>
-      <p>
+    <section class="page-hero container">
+      <span class="mono-label"><app-icon name="grid" /> Products &amp; explorations</span>
+      <h1>Things we’ve made. Ideas we’re exploring.</h1>
+      <p class="lead">
         Try our published Android app, Money Maker, and explore our original interface concepts for
         business software, commerce, and analytics.
       </p>
+    </section>
+    <section class="container section-tight">
+      <a class="showcase" routerLink="/work/money-maker">
+        <div class="showcase-media">
+          <div class="app-tile" aria-hidden="true">
+            <span class="app-icon">M<span>+</span></span>
+            <strong>Money Maker</strong>
+            <span>Budget &amp; Expense</span>
+          </div>
+        </div>
+        <div class="showcase-bar">
+          <div>
+            <span class="mono-label">Published product</span>
+            <h2>Money Maker</h2>
+            <p>
+              An Android budgeting and expense tracker by EmloX. Track income and expenses, organize
+              spending by category, and plan monthly budgets.
+            </p>
+          </div>
+          <span class="link-arrow">Explore the app <app-icon name="arrow-up-right" /></span>
+        </div>
+      </a>
+    </section>
+    <section class="container section-tight">
       <div class="filter-row" aria-label="Filter concepts">
+        <span class="mono-label">Concepts</span>
         @for (item of filters; track item) {
           <button
             (click)="filter.set(item)"
@@ -116,144 +154,156 @@
           </button>
         }
       </div>
-    </section>
-    <section class="detail-grid section wrap">
-      <div>
-        <div class="eyebrow">PUBLISHED PRODUCT</div>
-        <h2>Money Maker</h2>
-        <p>An Android budgeting and expense tracker by EmloX.</p>
+      <div class="work-grid">
+        @for (p of filteredProjects(); track p.slug) {
+          <a class="resource" [routerLink]="['/work', p.slug]"
+            ><div class="resource-media wide"><app-project-art [kind]="p.color" /></div>
+            <div class="resource-body">
+              <span class="mono-label">{{ p.type }} · Concept</span>
+              <h3>{{ p.name }}: {{ p.subtitle }}</h3>
+              <span class="link-arrow">View concept <app-icon name="arrow-up-right" /></span></div
+          ></a>
+        }
       </div>
-      <div>
-        <p>Track income and expenses, organize spending by category, and plan monthly budgets.</p>
-        <a class="button dark" routerLink="/work/money-maker"
-          >Explore the app <app-icon name="arrow-right"
-        /></a>
-      </div>
+      <p class="fine-print">
+        Orbit, Forma, and Signal are illustrative product concepts. Money Maker is a published EmloX
+        product.
+      </p>
     </section>
-    <section class="wrap work-grid">
-      @for (p of filteredProjects(); track p.slug) {
-        <a class="project-card" [routerLink]="['/work', p.slug]"
-          ><app-project-art [kind]="p.color" />
-          <div class="project-caption">
-            <div>
-              <small>{{ p.type }} / CONCEPT</small>
-              <h3>{{ p.name }} — {{ p.subtitle }}</h3>
-            </div>
-            <span><app-icon name="arrow-right" /></span></div
-        ></a>
-      }
-    </section>
-    <p class="wrap subtle-note">
-      Orbit, Forma, and Signal are illustrative product concepts. Money Maker is a published EmloX
-      product.
-    </p>
   }
   @case ('project') {
     @if (project(); as p) {
-      <section class="page-hero wrap">
-        <a routerLink="/work" class="eyebrow"><app-icon name="arrow-left" /> STUDIO CONCEPTS</a>
-        <h1>{{ p.name }}<span class="serif">. A fresh perspective.</span></h1>
-        <p>{{ p.description }}</p>
-        <div class="tags">
+      <section class="page-hero container">
+        <a routerLink="/work" class="mono-label back"
+          ><app-icon name="arrow-left" /> Studio concepts</a
+        >
+        <h1>{{ p.name }}: {{ p.subtitle }}</h1>
+        <p class="lead">{{ p.description }}</p>
+        <div class="tags center">
           @for (tag of p.capabilities; track tag) {
             <span>{{ tag }}</span>
           }
           <span>Illustrative concept</span>
         </div>
       </section>
-      <section class="wrap project-detail-art"><app-project-art [kind]="p.color" /></section>
-      <section class="detail-grid section wrap">
-        <h2>The problem.<br />The design direction.</h2>
-        <div>
-          <h3>The design direction</h3>
-          <p>
-            This exploration puts information hierarchy, clear navigation, and a focused visual
-            identity at the center of the experience. It demonstrates a direction we could tailor to
-            a real business challenge.
-          </p>
-          <h3>From concept to your product</h3>
-          <p>
-            A production engagement would begin with discovery, user research, integration planning,
-            and agreed success criteria. The interface shown here is a visual concept, not a live
-            client application.
-          </p>
-          <a class="text-link" routerLink="/contact"
-            >Discuss a similar idea <app-icon name="message"
-          /></a>
+      <section class="container project-detail-art">
+        <app-project-art [kind]="p.color" />
+      </section>
+      <section class="container section-tight">
+        <div class="split">
+          <div>
+            <span class="mono-label">Concept</span>
+            <h2>The problem and the design direction</h2>
+          </div>
+          <div>
+            <h3>The design direction</h3>
+            <p>
+              This exploration puts information hierarchy, clear navigation, and a focused visual
+              identity at the center of the experience. It demonstrates a direction we could tailor
+              to a real business challenge.
+            </p>
+            <h3>From concept to your product</h3>
+            <p>
+              A production engagement would begin with discovery, user research, integration
+              planning, and agreed success criteria. The interface shown here is a visual concept,
+              not a live client application.
+            </p>
+            <a class="link-arrow" routerLink="/contact"
+              >Discuss a similar idea <app-icon name="arrow-up-right"
+            /></a>
+          </div>
         </div>
       </section>
     } @else {
-      <section class="page-hero wrap">
-        <h1>Concept not found.</h1>
-        <a routerLink="/work">Back to the concept lab <app-icon name="arrow-left" /></a>
+      <section class="page-hero container">
+        <h1>Concept not found</h1>
+        <div class="actions">
+          <a class="pill dark lg" routerLink="/work">Back to the concept lab</a>
+        </div>
       </section>
     }
   }
   @case ('money-maker') {
-    <section class="page-hero wrap">
-      <a class="eyebrow" routerLink="/work">ALL WORK</a>
-      <h1>Money Maker<span class="lime-dot">.</span></h1>
-      <p>
-        A budgeting and expense-tracking app for Android, published by EmloX Tec. on Google Play.
+    <section class="page-hero container">
+      <a class="mono-label back" routerLink="/work"><app-icon name="arrow-left" /> All work</a>
+      <h1>Money Maker</h1>
+      <p class="lead">
+        A budgeting and expense-tracking app for Android, published by EmloX Tech on Google Play.
       </p>
-      <a
-        class="button dark"
-        href="https://play.google.com/store/apps/details?id=app.moneymaker.android"
-        target="_blank"
-        rel="noopener noreferrer"
-        >View on Google Play <app-icon name="arrow-right"
-      /></a>
-    </section>
-    <section class="detail-grid section wrap">
-      <div>
-        <div class="eyebrow">THE PRODUCT</div>
-        <h2>Make everyday money<br />easier to follow.</h2>
-      </div>
-      <div>
-        <p>
-          Money Maker helps people record income and expenses, organize transactions into
-          categories, and keep track of monthly budgets.
-        </p>
-        <h3>What people can do</h3>
-        <ul class="deliverables">
-          <li>Record income and expenses</li>
-          <li>Set budgets by spending category</li>
-          <li>Review spending through charts</li>
-          <li>Use reminders to keep a regular tracking habit</li>
-        </ul>
-        <p>
-          Visit the store listing for the current release, features, support details, and
-          app-specific privacy information.
-        </p>
+      <div class="actions">
+        <a
+          class="pill dark lg"
+          href="https://play.google.com/store/apps/details?id=app.moneymaker.android"
+          target="_blank"
+          rel="noopener noreferrer"
+          >View on Google Play</a
+        >
       </div>
     </section>
-    <section class="detail-grid section wrap">
-      <div><h2>Planning your own app?</h2></div>
-      <div>
-        <p>
-          Start with the task your app should make easier. We can help define the first release,
-          design its key screens, connect the required services, and prepare for testing and
-          publication.
-        </p>
-        <a class="text-link" routerLink="/services/mobile-app-development"
-          >Explore mobile development <app-icon name="arrow-right"
-        /></a>
+    <section class="container section-tight">
+      <div class="showcase static">
+        <div class="showcase-media">
+          <div class="app-tile" aria-hidden="true">
+            <span class="app-icon">M<span>+</span></span>
+            <strong>Money Maker</strong>
+            <span>Budget &amp; Expense</span>
+          </div>
+        </div>
+      </div>
+      <div class="split">
+        <div>
+          <span class="mono-label">The product</span>
+          <h2>Make everyday money easier to follow</h2>
+        </div>
+        <div>
+          <p class="body-lg">
+            Money Maker helps people record income and expenses, organize transactions into
+            categories, and keep track of monthly budgets.
+          </p>
+          <h3>What people can do</h3>
+          <ul class="checklist">
+            <li><app-icon name="check" />Record income and expenses</li>
+            <li><app-icon name="check" />Set budgets by spending category</li>
+            <li><app-icon name="check" />Review spending through charts</li>
+            <li><app-icon name="check" />Use reminders to keep a regular tracking habit</li>
+          </ul>
+          <p>
+            Visit the store listing for the current release, features, support details, and
+            app-specific privacy information.
+          </p>
+        </div>
+      </div>
+      <div class="split">
+        <div>
+          <span class="mono-label">Your app</span>
+          <h2>Planning your own app?</h2>
+        </div>
+        <div>
+          <p>
+            Start with the task your app should make easier. We can help define the first release,
+            design its key screens, connect the required services, and prepare for testing and
+            publication.
+          </p>
+          <a class="link-arrow" routerLink="/services/mobile-app-development"
+            >Explore mobile development <app-icon name="arrow-up-right"
+          /></a>
+        </div>
       </div>
     </section>
   }
   @case ('privacy') {
-    <section class="page-hero wrap">
-      <div class="eyebrow">EMLOX TECH · COMPANY PRIVACY</div>
-      <h1>Privacy Policy<span class="lime-dot">.</span></h1>
-      <p>
+    <section class="page-hero container">
+      <span class="mono-label"><app-icon name="grid" /> EmloX Tech · Company privacy</span>
+      <h1>Privacy Policy</h1>
+      <p class="lead">
         This Privacy Policy explains how EmloX Tech handles personal information in business
         communications, project enquiries, client engagements, and use of our website. For privacy
         questions, contact
         <a href="mailto:info@emloxtech.com">info&#64;emloxtech.com</a>.
       </p>
     </section>
-    <article class="privacy-content wrap" aria-label="EmloX Tech company privacy policy">
-      <section class="privacy-section" aria-labelledby="privacy-section-1">
+    <article class="container prose-list" aria-label="EmloX Tech company privacy policy">
+      <section class="split" aria-labelledby="privacy-section-1">
         <h2 id="privacy-section-1">Information you provide</h2>
         <p>
           When you contact or work with EmloX Tech, you may provide your name, business contact
@@ -264,7 +314,7 @@
           first message.
         </p>
       </section>
-      <section class="privacy-section" aria-labelledby="privacy-section-2">
+      <section class="split" aria-labelledby="privacy-section-2">
         <h2 id="privacy-section-2">How enquiries are handled</h2>
         <p>
           When you use direct submission, your details pass through our hosting provider, Vercel,
@@ -273,7 +323,7 @@
           Preparing or downloading a brief alone does not send an enquiry.
         </p>
       </section>
-      <section class="privacy-section" aria-labelledby="privacy-projects">
+      <section class="split" aria-labelledby="privacy-projects">
         <h2 id="privacy-projects">Information in client projects</h2>
         <p>
           A project may involve information supplied by a client about its users or business. The
@@ -282,7 +332,7 @@
           project-specific terms.
         </p>
       </section>
-      <section class="privacy-section" aria-labelledby="privacy-section-3">
+      <section class="split" aria-labelledby="privacy-section-3">
         <h2 id="privacy-section-3">Website operation</h2>
         <p>
           Vercel serves this website and may process technical request information such as IP
@@ -291,7 +341,7 @@
           page and are not saved to a website account or database.
         </p>
       </section>
-      <section class="privacy-section" aria-labelledby="privacy-section-4">
+      <section class="split" aria-labelledby="privacy-section-4">
         <h2 id="privacy-section-4">Access and retention</h2>
         <p>
           Business contact details and project correspondence are used to manage enquiries and
@@ -300,7 +350,7 @@
           needed for the enquiry, the agreed engagement, and applicable record-keeping requirements.
         </p>
       </section>
-      <section class="privacy-section" aria-labelledby="privacy-section-5">
+      <section class="split" aria-labelledby="privacy-section-5">
         <h2 id="privacy-section-5">Your choices</h2>
         <p>
           You can ask us to access, correct, or delete your personal information by emailing
@@ -308,140 +358,163 @@
           requirements, including any records we need to retain.
         </p>
       </section>
-      <section class="privacy-section" aria-labelledby="privacy-section-6">
+      <section class="split" aria-labelledby="privacy-section-6">
         <h2 id="privacy-section-6">External links</h2>
         <p>
           External websites and services have their own privacy notices. This policy describes EmloX
           Tech’s handling of personal information; it does not govern independent third parties.
         </p>
       </section>
-      <section class="privacy-section" aria-labelledby="privacy-section-7">
+      <section class="split" aria-labelledby="privacy-section-7">
         <h2 id="privacy-section-7">Changes</h2>
         <p>We update this notice when our company’s data-handling practices change.</p>
       </section>
     </article>
   }
   @case ('about') {
-    <section class="page-hero wrap">
-      <div class="eyebrow">HELLO. WE’RE EmloX Tech.</div>
-      <h1>A development partner.<br />A clear way to work.</h1>
-      <p>
+    <section class="page-hero container">
+      <span class="mono-label"><app-icon name="grid" /> Hello, we’re EmloX Tech</span>
+      <h1>Small details. Shared ambition.</h1>
+      <p class="lead">
         EmloX Tech is an independent software development and design studio for founders,
         businesses, and product teams. We help turn early ideas and operational challenges into
         scoped, reviewable projects through remote collaboration.
       </p>
     </section>
-    <section class="about-manifesto wrap">
-      <div class="eyebrow">OUR APPROACH</div>
-      <h2>The people building your product should understand the business behind it.</h2>
-      <p>
-        That starts with listening. We take time to understand your users, your current systems, and
-        what a successful release needs to achieve.
+    <section class="container statement-wrap">
+      <p class="statement">
+        <span>The people building your product should understand the business behind it.</span>
+        <span
+          >That starts with listening: your users, your current systems, and what a successful
+          release needs to achieve.</span
+        >
       </p>
     </section>
-    <section class="detail-grid section wrap">
-      <div>
-        <div class="eyebrow">REMOTE COLLABORATION. CLEAR COMMUNICATION.</div>
-        <h2>Your priorities.<br />A shared project plan.</h2>
-      </div>
-      <div>
-        <p class="large-copy">
-          Work starts with your business goal, the people using the product, and the constraints
-          around delivery. We agree on communication, review milestones, and meeting overlap so
-          decisions stay visible across time zones.
-        </p>
-        <p>
-          Our work spans product engineering, experience design, AI and data, and cloud systems. We
-          connect those capabilities around your goals, with a clear path from discovery to
-          delivery.
-        </p>
+    <section class="container section-tight">
+      <div class="split">
+        <div>
+          <span class="mono-label">Remote collaboration · Clear communication</span>
+          <h2>Your priorities, a shared project plan</h2>
+        </div>
+        <div>
+          <p class="body-lg">
+            Work starts with your business goal, the people using the product, and the constraints
+            around delivery. We agree on communication, review milestones, and meeting overlap so
+            decisions stay visible across time zones.
+          </p>
+          <p>
+            Our work spans product engineering, experience design, AI and data, and cloud systems.
+            We connect those capabilities around your goals, with a clear path from discovery to
+            delivery.
+          </p>
+        </div>
       </div>
     </section>
-    <section class="wrap values-grid">
-      @for (v of ['Stay curious.', 'Keep it clear.', 'Build with care.']; track v; let i = $index) {
-        <article>
-          <span>0{{ i + 1 }} /</span>
-          <h3>{{ v }}</h3>
-          <p>
-            {{
-              [
-                'Ask better questions. Challenge assumptions. Make room for a better answer.',
-                'Share progress, explain decisions, and make the complicated feel manageable.',
-                'Think about the people behind every click, every workflow, and every business goal.',
-              ][i]
-            }}
-          </p>
-        </article>
-      }
+    <section class="container section-tight">
+      <div class="section-head">
+        <span class="mono-label"><app-icon name="grid" /> Our values</span>
+        <h2>What guides the work</h2>
+      </div>
+      <ol class="steps">
+        @for (
+          v of ['Stay curious.', 'Keep it clear.', 'Build with care.'];
+          track v;
+          let i = $index
+        ) {
+          <li class="card">
+            <span class="mono-label">Value 0{{ i + 1 }}</span>
+            <h3>{{ v }}</h3>
+            <p>
+              {{
+                [
+                  'Ask better questions. Challenge assumptions. Make room for a better answer.',
+                  'Share progress, explain decisions, and make the complicated feel manageable.',
+                  'Think about the people behind every click, every workflow, and every business goal.',
+                ][i]
+              }}
+            </p>
+          </li>
+        }
+      </ol>
     </section>
   }
   @case ('insights') {
-    <section class="page-hero wrap">
-      <div class="eyebrow">EMLOX FIELD NOTES</div>
-      <h1>Notes on making<br />better software.</h1>
-      <p>
+    <section class="page-hero container">
+      <span class="mono-label"><app-icon name="grid" /> EmloX field notes</span>
+      <h1>Notes on making better software</h1>
+      <p class="lead">
         Practical guidance for planning your first release, evaluating automation, and improving
         product design before committing to development.
       </p>
     </section>
-    <section class="wrap insights-grid">
-      @for (a of articles; track a.slug; let i = $index) {
-        <a class="insight-card" [routerLink]="['/insights', a.slug]">
-          <div class="article-meta">
-            {{ a.category }} <span>{{ a.minutes }} read</span>
-          </div>
-          <h3>{{ a.title }}</h3>
-          <p>{{ a.summary }}</p>
-          <span class="text-link">Read the story <app-icon name="book" /></span
-        ></a>
-      }
+    <section class="container section-tight">
+      <div class="cards-3">
+        @for (a of articles; track a.slug; let i = $index) {
+          <a class="resource" [routerLink]="['/insights', a.slug]">
+            <div class="resource-media"><app-insight-art [index]="i" /></div>
+            <div class="resource-body">
+              <span class="mono-label">{{ a.category }} · {{ a.minutes }} read</span>
+              <h3>{{ a.title }}</h3>
+              <p>{{ a.summary }}</p>
+              <span class="pill outline sm">Read the note</span>
+            </div>
+          </a>
+        }
+      </div>
     </section>
   }
   @case ('article') {
     @if (article(); as a) {
-      <article class="article-body wrap">
-        <a class="eyebrow" routerLink="/insights"><app-icon name="arrow-left" /> ALL FIELD NOTES</a>
-        <div class="article-meta">{{ a.category }} · {{ a.minutes }} read</div>
-        <h1>{{ a.title }}</h1>
-        <p class="article-intro">{{ a.summary }}</p>
-        <p>By <a routerLink="/about">EmloX Tech</a> · Product, design, and engineering notes</p>
-        <hr />
-        @for (p of a.paragraphs; track p) {
-          <p>{{ p }}</p>
-        }
-        <h2>Put this into your project brief</h2>
-        <p>
-          Write down the outcome you want, the people affected, and the constraints you already
-          know. Include examples of the current process and questions you need help answering. These
-          details make a first project discussion more useful.
-        </p>
-        <a routerLink="/contact" class="text-link"
-          >Discuss your project <app-icon name="message"
-        /></a>
+      <article class="article container">
+        <header class="article-head">
+          <a class="mono-label back" routerLink="/insights"
+            ><app-icon name="arrow-left" /> All field notes</a
+          >
+          <span class="mono-label">{{ a.category }} · {{ a.minutes }} read</span>
+          <h1>{{ a.title }}</h1>
+          <p class="lead">{{ a.summary }}</p>
+          <p class="byline">
+            By <a routerLink="/about">EmloX Tech</a> · Product, design, and engineering notes
+          </p>
+        </header>
+        <div class="article-body">
+          @for (p of a.paragraphs; track p) {
+            <p>{{ p }}</p>
+          }
+          <h2>Put this into your project brief</h2>
+          <p>
+            Write down the outcome you want, the people affected, and the constraints you already
+            know. Include examples of the current process and questions you need help answering.
+            These details make a first project discussion more useful.
+          </p>
+          <a routerLink="/contact" class="link-arrow"
+            >Discuss your project <app-icon name="arrow-up-right"
+          /></a>
+        </div>
       </article>
     } @else {
-      <section class="page-hero wrap">
-        <h1>Article not found.</h1>
-        <a routerLink="/insights">Explore insights <app-icon name="arrow-right" /></a>
+      <section class="page-hero container">
+        <h1>Article not found</h1>
+        <div class="actions">
+          <a class="pill dark lg" routerLink="/insights">Explore insights</a>
+        </div>
       </section>
     }
   }
   @default {
-    <section class="page-hero wrap">
-      <div class="eyebrow">404 / PAGE NOT FOUND</div>
-      <h1>We couldn’t find<br />that page.</h1>
-      <p>The address may have changed. You can return to the homepage below.</p>
-      <a class="button dark" routerLink="/">Back to home <app-icon name="home" /></a>
+    <section class="page-hero container">
+      <span class="mono-label">404 / PAGE NOT FOUND</span>
+      <h1>We couldn’t find that page</h1>
+      <p class="lead">The address may have changed. You can return to the homepage below.</p>
+      <div class="actions">
+        <a class="pill dark lg" routerLink="/">Back to home</a>
+      </div>
     </section>
   }
 }
-<section class="cta-panel wrap">
-  <div class="eyebrow">HAVE A PROJECT IN MIND?</div>
-  <div>
-    <h2>Let’s define your first milestone.</h2>
-    <a class="button dark" routerLink="/contact"
-      >Discuss your project <app-icon name="message"
-    /></a>
-  </div>
+<section class="container cta">
+  <span class="mono-label"><app-icon name="grid" /> Have a project in mind?</span>
+  <h2>Let’s make your next move.</h2>
   <p>Share your goals, constraints, and timeline. We’ll work out the next step together.</p>
+  <a class="pill dark lg" routerLink="/contact">Discuss your project</a>
 </section>

@@ -1,50 +1,121 @@
 <a class="skip-link" [href]="skipHref()">Skip to content</a>
+@if (bannerOpen()) {
+  <div class="announce">
+    <p>
+      <a routerLink="/work/money-maker">Now on Google Play</a>: Money Maker, our budgeting and
+      expense-tracking app for Android
+    </p>
+    <button type="button" (click)="bannerOpen.set(false)" aria-label="Dismiss announcement">
+      <app-icon name="close" />
+    </button>
+  </div>
+}
 <header class="site-header">
-  <a class="brand" routerLink="/" aria-label="EmloX Tech home"
-    ><span class="brand-name"
-      ><span>Emlo</span
-      ><img class="brand-ribbon-x" src="emlox-logo.svg" alt="" width="38" height="40" /></span
-    ><span class="brand-tec">TECH</span></a
-  >
-  <nav id="main-navigation" aria-label="Main navigation" [class.is-open]="menuOpen()">
-    <a routerLink="/services" routerLinkActive="active">Services</a
-    ><a routerLink="/work" routerLinkActive="active">Work</a
-    ><a routerLink="/about" routerLinkActive="active">About us</a
-    ><a routerLink="/insights" routerLinkActive="active">Notes</a
-    ><a routerLink="/contact" class="nav-cta"
-      >Discuss a project <span><app-icon name="message" /></span
-    ></a>
-  </nav>
-  <button
-    class="menu-toggle"
-    (click)="menuOpen.set(!menuOpen())"
-    [attr.aria-expanded]="menuOpen()"
-    aria-label="Toggle navigation"
-    aria-controls="main-navigation"
-    (keydown.escape)="menuOpen.set(false)"
-  >
-    {{ menuOpen() ? 'Close −' : 'Menu + ' }}
-  </button>
-</header>
-<main id="main" tabindex="-1"><router-outlet /></main>
-<footer>
-  <div class="footer-top">
+  <div class="header-inner">
     <a class="brand" routerLink="/" aria-label="EmloX Tech home"
       ><span class="brand-name"
         ><span>Emlo</span
         ><img class="brand-ribbon-x" src="emlox-logo.svg" alt="" width="38" height="40" /></span
       ><span class="brand-tec">TECH</span></a
     >
-    <p>Custom software. Thoughtful design.<br />Remote collaboration, from idea to launch.</p>
-    <a class="footer-mail" href="mailto:info@emloxtech.com"
-      ><app-icon name="mail" />info&#64;emloxtech.com</a
+    <nav
+      (keydown.escape)="menuOpen.set(false)"
+      id="main-navigation"
+      aria-label="Main navigation"
+      [class.is-open]="menuOpen()"
     >
+      <div class="nav-links">
+        <a routerLink="/services" routerLinkActive="active">Services</a
+        ><a routerLink="/work" routerLinkActive="active">Work</a
+        ><a routerLink="/about" routerLinkActive="active">About</a
+        ><a routerLink="/insights" routerLinkActive="active">Notes</a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-plain" href="mailto:info@emloxtech.com">Email us</a
+        ><a routerLink="/contact" class="pill accent">Discuss a project</a>
+      </div>
+    </nav>
+    <button
+      class="menu-toggle"
+      (click)="menuOpen.set(!menuOpen())"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle navigation"
+      aria-controls="main-navigation"
+      (keydown.escape)="menuOpen.set(false)"
+    >
+      <app-icon [name]="menuOpen() ? 'close' : 'menu'" />
+    </button>
   </div>
-  <div class="footer-bottom">
-    <span>© {{ year }} EmloX Tech.</span>
-    <div class="footer-links">
-      <a routerLink="/privacy">Privacy Policy</a
-      ><a routerLink="/contact">Get in touch <app-icon name="message" /></a>
+</header>
+<main id="main" tabindex="-1"><router-outlet /></main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-intro">
+      <a routerLink="/contact"
+        >Have something in mind?<br /><span>Let’s talk.</span> <app-icon name="arrow-up-right"
+      /></a>
+      <p>Design with purpose.<br />Software that works.<br /><span>EmloX Tech</span></p>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <h2 class="mono-label">Services</h2>
+        <ul>
+          @for (s of services; track s.slug) {
+            <li>
+              <a [routerLink]="['/services', s.slug]">{{ s.title }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+      <div>
+        <h2 class="mono-label">Work</h2>
+        <ul>
+          <li><a routerLink="/work/money-maker">Money Maker</a></li>
+          @for (p of projects; track p.slug) {
+            <li>
+              <a [routerLink]="['/work', p.slug]">{{ p.name }} concept</a>
+            </li>
+          }
+        </ul>
+      </div>
+      <div>
+        <h2 class="mono-label">Notes</h2>
+        <ul>
+          @for (a of articles; track a.slug) {
+            <li>
+              <a [routerLink]="['/insights', a.slug]">{{ a.title }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+      <div>
+        <h2 class="mono-label">Company</h2>
+        <ul>
+          <li><a routerLink="/about">About us</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a href="mailto:info@emloxtech.com">info&#64;emloxtech.com</a></li>
+          <li><a href="tel:+94717071104">+94 71 707 1104</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-meta">
+        <a class="brand brand-sm" routerLink="/" aria-label="EmloX Tech home"
+          ><span class="brand-name"
+            ><span>Emlo</span
+            ><img class="brand-ribbon-x" src="emlox-logo.svg" alt="" width="38" height="40" /></span
+        ></a>
+        <span>© {{ year }} EmloX Tech</span>
+        <a routerLink="/privacy">Privacy policy</a>
+        <a routerLink="/contact">Get in touch</a>
+      </div>
+      <a
+        class="footer-social"
+        href="https://play.google.com/store/apps/details?id=app.moneymaker.android"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Google Play <app-icon name="arrow-up-right"
+      /></a>
     </div>
   </div>
 </footer>
