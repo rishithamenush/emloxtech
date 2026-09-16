@@ -2951,3 +2951,10 @@ select {
     bottom: 18px;
   }
 }
+
+img.app-icon-official {
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+}
