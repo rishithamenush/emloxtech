@@ -47,8 +47,8 @@
     </button>
   </div>
 </header>
-<main id="main" tabindex="-1"><router-outlet /></main>
-<footer class="site-footer">
+<main appScrollReveal id="main" tabindex="-1"><router-outlet /></main>
+<footer appScrollReveal class="site-footer">
   <div class="container">
     <div class="footer-intro">
       <a routerLink="/contact"
@@ -104,7 +104,8 @@
           ><span class="brand-name"
             ><span>Emlo</span
             ><img class="brand-ribbon-x" src="emlox-logo.svg" alt="" width="38" height="40" /></span
-          ><span class="brand-tec">TECH</span></a>
+          ><span class="brand-tec">TECH</span></a
+        >
         <span>© {{ year }} EmloX Tech</span>
         <a routerLink="/privacy">Privacy policy</a>
         <a routerLink="/contact">Get in touch</a>

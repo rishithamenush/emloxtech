@@ -2958,3 +2958,58 @@ img.app-icon-official {
   background: transparent;
   border-radius: 0;
 }
+
+/* Article covers fill the frame and retain their designed composition. */
+.resource-media:has(app-insight-art) {
+  height: auto;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.resource-media app-insight-art {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+.resource-media app-insight-art svg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--sans);
+}
+.resource:hover app-insight-art {
+  transform: scale(1.035);
+}
+
+/* Native scroll progress: no scroll handlers, timers, or framework updates. */
+@supports (animation-timeline: scroll()) {
+  .site-header::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 -1px;
+    height: 2px;
+    background: var(--accent);
+    transform-origin: left;
+    animation: reading-progress linear both;
+    animation-timeline: scroll(root);
+    pointer-events: none;
+  }
+  @keyframes reading-progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header::after {
+    display: none;
+  }
+}
+@media print {
+  .site-header::after {
+    display: none;
+  }
+}

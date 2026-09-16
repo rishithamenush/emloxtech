@@ -1,10 +1,11 @@
+import { ScrollReveal } from './scroll-reveal';
 import { Icon } from './icon';
 import { Component, signal } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet, NavigationEnd } from '@angular/router';
 import { services, projects, articles } from './content';
 @Component({
   selector: 'app-root',
-  imports: [Icon, RouterLink, RouterLinkActive, RouterOutlet],
+  imports: [ScrollReveal, Icon, RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './app.html',
 })
 export class App {
