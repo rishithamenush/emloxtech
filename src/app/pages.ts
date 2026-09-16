@@ -4,10 +4,9 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { services, projects, articles, faqs } from './content';
 import { ProjectArt } from './project-art';
-import { InsightArt } from './insight-art';
 @Component({
   selector: 'app-pages',
-  imports: [Icon, RouterLink, ProjectArt, InsightArt],
+  imports: [Icon, RouterLink, ProjectArt],
   templateUrl: './pages.html',
   styleUrl: './pages.css',
 })

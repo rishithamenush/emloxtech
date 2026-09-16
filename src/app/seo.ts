@@ -50,8 +50,8 @@ export class SeoStrategy extends TitleStrategy {
         'AboutPage',
       ],
       '/insights': [
-        'Software Development, AI & UX Insights',
-        'Practical notes from EmloX Tech on planning software, choosing a first AI project, and building design systems. Read our product and engineering guidance.',
+        'Blog: AI, Software Development & Design',
+        'Practical articles from EmloX Tech on planning software, choosing a first AI project, and building design systems. Read our product and engineering guidance.',
         'CollectionPage',
       ],
       '/contact': [

@@ -569,8 +569,8 @@
   }
   @case ('insights') {
     <section class="page-hero container">
-      <span class="mono-label"><app-icon name="grid" /> EmloX field notes</span>
-      <h1>Notes on making better software</h1>
+      <span class="mono-label"><app-icon name="grid" /> EmloX Blog</span>
+      <h1>Ideas for better digital products</h1>
       <p class="lead">
         Practical guidance for planning your first release, evaluating automation, and improving
         product design before committing to development.
@@ -580,12 +580,21 @@
       <div class="cards-3">
         @for (a of articles; track a.slug; let i = $index) {
           <a class="resource" [routerLink]="['/insights', a.slug]">
-            <div class="resource-media"><app-insight-art [index]="i" /></div>
+            <div class="resource-media blog-cover">
+              <img
+                [src]="a.image"
+                alt=""
+                width="1536"
+                height="1024"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <div class="resource-body">
               <span class="mono-label">{{ a.category }} · {{ a.minutes }} read</span>
               <h3>{{ a.title }}</h3>
               <p>{{ a.summary }}</p>
-              <span class="pill outline sm">Read the note</span>
+              <span class="pill outline sm">Read article</span>
             </div>
           </a>
         }
@@ -597,15 +606,23 @@
       <article class="article container">
         <header class="article-head">
           <a class="mono-label back" routerLink="/insights"
-            ><app-icon name="arrow-left" /> All field notes</a
+            ><app-icon name="arrow-left" /> All articles</a
           >
           <span class="mono-label">{{ a.category }} · {{ a.minutes }} read</span>
           <h1>{{ a.title }}</h1>
           <p class="lead">{{ a.summary }}</p>
           <p class="byline">
-            By <a routerLink="/about">EmloX Tech</a> · Product, design, and engineering notes
+            By <a routerLink="/about">EmloX Tech</a> · Product, design, and engineering articles
           </p>
         </header>
+        <img
+          class="blog-article-cover"
+          [src]="a.image"
+          alt=""
+          width="1536"
+          height="1024"
+          decoding="async"
+        />
         <div class="article-body">
           @for (p of a.paragraphs; track p) {
             <p>{{ p }}</p>

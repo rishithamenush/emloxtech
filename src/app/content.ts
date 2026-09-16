@@ -197,6 +197,7 @@ export const projects = [
 export const articles = [
   {
     slug: 'better-products',
+    image: '/blog/product-planning.jpg',
     category: 'PRODUCT THINKING',
     title: 'Before you build: define the problem.',
     summary: 'Before choosing a stack or drawing a screen, get clear on the problem worth solving.',
@@ -209,6 +210,7 @@ export const articles = [
   },
   {
     slug: 'practical-ai',
+    image: '/blog/ai-automation.jpg',
     category: 'AI & DATA',
     title: 'Choosing a useful first AI project.',
     summary: 'Find the repetitive work, understand your data, and keep people in the loop.',
@@ -221,7 +223,8 @@ export const articles = [
   },
   {
     slug: 'design-that-scales',
-    category: 'DESIGN NOTES',
+    image: '/blog/design-systems.jpg',
+    category: 'DESIGN SYSTEMS',
     title: 'When your product needs a design system.',
     summary: 'Why a small, thoughtful design system makes a big difference as products grow.',
     minutes: '1 min',

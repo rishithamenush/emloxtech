@@ -138,20 +138,33 @@
   </div>
 </section>
 
-<section class="section tint" aria-labelledby="notes-heading">
+<section class="section tint" aria-labelledby="blog-heading">
   <div class="container">
     <div class="section-head">
-      <span class="mono-label"><app-icon name="grid" /> Field notes</span>
-      <h2 id="notes-heading">A few things worth thinking about.</h2>
+      <span class="mono-label"><app-icon name="grid" /> Blog</span>
+      <h2 id="blog-heading">Ideas to help your business move forward.</h2>
+      <a class="link-arrow" routerLink="/insights"
+        >View all articles <app-icon name="arrow-up-right"
+      /></a>
     </div>
     <div class="cards-3">
       @for (article of articles; track article.slug; let i = $index) {
         <a class="resource" [routerLink]="['/insights', article.slug]">
-          <div class="resource-media"><app-insight-art [index]="i" /></div>
+          <div class="resource-media blog-cover">
+            <img
+              [src]="article.image"
+              alt=""
+              width="1536"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
           <div class="resource-body">
-            <span class="mono-label">{{ article.category }}</span>
+            <span class="mono-label">{{ article.category }} · {{ article.minutes }} read</span>
             <h3>{{ article.title }}</h3>
-            <span class="pill outline sm">Read the note</span>
+            <p>{{ article.summary }}</p>
+            <span class="pill outline sm">Read article</span>
           </div>
         </a>
       }

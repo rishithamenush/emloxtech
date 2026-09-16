@@ -51,7 +51,7 @@ export const routes: Routes = [
     path: 'insights',
     loadComponent: () => import('./pages').then((m) => m.Pages),
     data: { page: 'insights' },
-    title: 'Field notes — EmloX Tech',
+    title: 'Blog — EmloX Tech',
   },
   {
     path: 'insights/:slug',

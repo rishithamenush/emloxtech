@@ -2,10 +2,9 @@ import { Icon } from './icon';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { services, articles, faqs } from './content';
-import { InsightArt } from './insight-art';
 @Component({
   selector: 'app-home',
-  imports: [Icon, RouterLink, InsightArt],
+  imports: [Icon, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

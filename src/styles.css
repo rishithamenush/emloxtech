@@ -3003,9 +3003,7 @@ img.app-icon-official {
 }
 /* Liquid glass: translucent tint, heavy blur, specular rim and inner highlights. */
 .site-header.is-scrolled {
-  background:
-    linear-gradient(180deg, #ffffff73 0%, #ffffff2e 55%, #ffffff40 100%),
-    #f7f8f247;
+  background: linear-gradient(180deg, #ffffff73 0%, #ffffff2e 55%, #ffffff40 100%), #f7f8f247;
   border-color: #ffffff8c;
   box-shadow:
     inset 0 1px 0 #ffffffd9,
@@ -3022,13 +3020,7 @@ img.app-icon-official {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(
-    135deg,
-    #ffffffe6 0%,
-    #ffffff33 30%,
-    #b9c7a826 60%,
-    #ffffffb3 100%
-  );
+  background: linear-gradient(135deg, #ffffffe6 0%, #ffffff33 30%, #b9c7a826 60%, #ffffffb3 100%);
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -3059,5 +3051,41 @@ img.app-icon-official {
 @media (prefers-reduced-transparency: reduce) {
   .site-header.is-scrolled {
     background: #fafbf6f5;
+  }
+}
+
+/* Editorial blog photography */
+.resource-media.blog-cover {
+  height: auto;
+  aspect-ratio: 3 / 2;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.blog-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.resource:hover .blog-cover img {
+  transform: scale(1.035);
+}
+.blog-article-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 40px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .blog-cover img {
+    transition: none;
+  }
+  .resource:hover .blog-cover img {
+    transform: none;
   }
 }
