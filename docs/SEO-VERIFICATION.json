@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-09-16T16:56:16.367Z",
+  "scope": "Local production output; not a live ranking or Core Web Vitals measurement",
+  "indexablePages": 16,
+  "excludedConcepts": 3,
+  "checks": [
+    "prerendered headings",
+    "unique metadata",
+    "canonical URLs",
+    "social previews",
+    "JSON-LD",
+    "image assets and dimensions",
+    "responsive image variants",
+    "crawlable reachability",
+    "sitemap",
+    "robots",
+    "404 output",
+    "redirect configuration"
+  ],
+  "urls": [
+    "https://www.emloxtech.com/",
+    "https://www.emloxtech.com/about",
+    "https://www.emloxtech.com/contact",
+    "https://www.emloxtech.com/insights",
+    "https://www.emloxtech.com/insights/better-products",
+    "https://www.emloxtech.com/insights/design-that-scales",
+    "https://www.emloxtech.com/insights/practical-ai",
+    "https://www.emloxtech.com/privacy",
+    "https://www.emloxtech.com/services",
+    "https://www.emloxtech.com/services/ai-data",
+    "https://www.emloxtech.com/services/cloud-devops",
+    "https://www.emloxtech.com/services/experience-design",
+    "https://www.emloxtech.com/services/mobile-app-development",
+    "https://www.emloxtech.com/services/product-engineering",
+    "https://www.emloxtech.com/work",
+    "https://www.emloxtech.com/work/money-maker"
+  ]
+}

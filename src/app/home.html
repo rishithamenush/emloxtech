@@ -154,6 +154,8 @@
           <div class="resource-media blog-cover">
             <img
               [src]="article.image"
+              [attr.srcset]="article.imageSrcset"
+              sizes="(max-width: 860px) 100vw, 33vw"
               alt=""
               width="1536"
               height="1024"

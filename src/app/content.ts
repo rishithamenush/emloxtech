@@ -154,7 +154,7 @@ export const services = [
       ],
       [
         'Do you have a published mobile product?',
-        'Yes. Money Maker: Budget & Expense is an EmloX Android product available on Google Play. Explore it from our Work page.',
+        'Yes. Money Maker: Budget & Expense is an EmloX Android product available on Google Play. Find it on Google Play as Money Maker: Budget & Expense by EmloX.',
       ],
     ],
   },
@@ -198,6 +198,8 @@ export const articles = [
   {
     slug: 'better-products',
     image: '/blog/product-planning.jpg',
+    imageSrcset: '/blog/product-planning-768.jpg 768w, /blog/product-planning.jpg 1536w',
+    imageAlt: 'Notebook with product journey sketches beside a laptop',
     category: 'PRODUCT THINKING',
     title: 'Before you build: define the problem.',
     summary: 'Before choosing a stack or drawing a screen, get clear on the problem worth solving.',
@@ -211,6 +213,8 @@ export const articles = [
   {
     slug: 'practical-ai',
     image: '/blog/ai-automation.jpg',
+    imageSrcset: '/blog/ai-automation-768.jpg 768w, /blog/ai-automation.jpg 1536w',
+    imageAlt: 'Connected glass modules illustrating an AI automation workflow',
     category: 'AI & DATA',
     title: 'Choosing a useful first AI project.',
     summary: 'Find the repetitive work, understand your data, and keep people in the loop.',
@@ -224,6 +228,8 @@ export const articles = [
   {
     slug: 'design-that-scales',
     image: '/blog/design-systems.jpg',
+    imageSrcset: '/blog/design-systems-768.jpg 768w, /blog/design-systems.jpg 1536w',
+    imageAlt: 'Coordinated color swatches and grid studies illustrating a design system',
     category: 'DESIGN SYSTEMS',
     title: 'When your product needs a design system.',
     summary: 'Why a small, thoughtful design system makes a big difference as products grow.',

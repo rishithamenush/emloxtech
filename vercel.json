@@ -6,6 +6,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "emloxtech.com"
+        }
+      ],
+      "destination": "https://www.emloxtech.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/news",
       "destination": "/insights",
       "permanent": true

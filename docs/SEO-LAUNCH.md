@@ -3,9 +3,9 @@
 ## Implemented
 
 - Canonical domain: https://www.emloxtech.com (confirmed by the owner).
-- 16 public pages prerendered as real HTML; browser hydration preserves navigation and interactions.
+- 16 indexable public pages prerendered as real HTML; browser hydration preserves navigation and interactions. Three older concept pages remain available with noindex and are excluded from the sitemap.
 - Unique page titles, descriptions, canonical links, Open Graph and Twitter text metadata.
-- Organization, WebSite, WebPage, Service, Article, and breadcrumb JSON-LD where relevant.
+- Organization, WebSite, WebPage, Service, BlogPosting, ItemList, and breadcrumb JSON-LD where relevant.
 - Service-specific project guidance, preparation notes, FAQs, and links to related articles.
 - Visible article publisher attribution. Concepts remain explicitly identified as illustrative work.
 - Sitemap and robots.txt generated from rendered pages on every production build.
@@ -15,7 +15,7 @@
 ## Required launch steps (not completed by this code change)
 
 1. Deploy `npm run build` output from `dist/emlox/browser` to the existing hosting project. The changes are local until deployed. On Vercel use the included configuration. Other hosts must serve generated route directories and return `404.html` with status 404 for unknown URLs. Do not add an SPA catch-all rewrite.
-2. Confirm HTTPS works and redirect the non-www hostname to https://www.emloxtech.com using the hosting domain settings. Canonical tags are implemented; hostname redirects still need verification on the live host.
+2. Confirm HTTPS works and redirect the non-www hostname to https://www.emloxtech.com using the hosting domain settings. Canonical tags and a permanent apex-to-www redirect are implemented in vercel.json; both hostnames must be attached to the hosting project and the live redirect still needs verification.
 3. In [Google Search Console](https://search.google.com/search-console), verify the domain property `emloxtech.com` using Google's issued DNS TXT record. Alternatively verify the exact www URL-prefix property using Google's supplied HTML verification file in `public/` and rebuild. Do not invent a verification token.
 4. Submit https://www.emloxtech.com/sitemap.xml. Use URL Inspection for the homepage and important service pages, run the live test, and request indexing when eligible.
 5. Verify the site in [Bing Webmaster Tools](https://www.bing.com/webmasters/) and submit the same sitemap. Import from Search Console if offered for the account.
@@ -30,7 +30,9 @@ These are editorial targets based on the actual services, not measured Google Tr
 
 | Page | Main intent | Supporting language |
 | --- | --- | --- |
-| Home | Custom software development | Custom software, remote development studio |
+| Home | AI solutions and custom software development | Workflow automation, websites and apps |
+| Solutions | Practical AI solutions for businesses | AI assistants, document intelligence, business automation |
+| Blog | AI, software and design guidance | Educational articles linked to relevant services |
 | Product engineering | Web application and MVP development | Customer portals, internal tools, API integration |
 | AI and data | AI automation services | Document processing, data engineering, bounded AI pilots |
 | Experience design | UI/UX design and website redesign | Interface redesign, brand identity, design systems |
@@ -76,4 +78,27 @@ When adding pages, update the route/content and the expected public-page count i
 
 ## International client positioning update
 
-Public pages and metadata now use location-neutral remote collaboration language. No overseas office, client history, or other location is implied. Service names focus on buyer needs: web applications and MVPs, AI automation, UI/UX design, and cloud integrations. Pricing uses a tailored project estimate; no public hourly rate has been set. Contact budget ranges are optional client planning preferences, not advertised service prices. Existing contact details remain available. The portfolio remains illustrative concept work until approved real case studies are supplied.
+Public pages and metadata now use location-neutral remote collaboration language. No overseas office, client history, or other location is implied. Service names focus on buyer needs: web applications and MVPs, AI automation, UI/UX design, and cloud integrations. Pricing uses a tailored project estimate; no public hourly rate has been set. Contact budget ranges are optional client planning preferences, not advertised service prices. Existing contact details remain available. The Solutions page describes capabilities and strategy. Older illustrative concept pages are not indexed. No client portfolio or customer outcomes are implied.
+
+## September 16, 2026 implementation and validation
+
+- Updated homepage, contact, and about metadata to match AI and custom software positioning.
+- Added existing article cover images to Open Graph, Twitter, and BlogPosting markup; preserved the existing generic brand preview for other pages.
+- Added article image descriptions, language, section, and word counts. No unverified publication dates, reviews, ratings, offices, or clients were invented.
+- Added collection ItemList markup for the services and blog listings; updated breadcrumb terminology to Blog.
+- Added related-article links and links back to Solutions.
+- Added 768px image variants and responsive srcset/sizes. The three smaller covers total approximately 348 KB versus 1,182 KB for the originals (about 71% smaller); browsers select according to display size and device pixel ratio. This is not a measured Core Web Vitals improvement.
+- Strengthened automated SEO checks for social images, schema, alt attributes, dimensions, local assets, canonical links, descriptions, and crawlable reachability.
+- Production build passed. All 16 indexable pages passed checks; none are orphaned. Verified 22 local HTTP requests, including three invalid paths returning 404.
+- Results: `docs/SEO-VERIFICATION.json`. Re-running the file checks regenerates the report; the HTTP results record this local verification run.
+- Live site retrieval was unavailable through the research tool. No live deployment, Search Console verification, sitemap submission, live redirect validation, or field performance measurement is claimed.
+
+### Account-dependent work remaining
+
+Publish the tested build, verify the live redirects and page status codes, then complete the Search Console and Bing steps above. These require access to the real hosting and search accounts. Use real Search Console queries and enquiries to prioritize later content improvements. Rankings and indexing are controlled by search engines and cannot be guaranteed.
+
+### Guidance reviewed for this update
+
+- [Google developer SEO guide](https://developers.google.com/search/docs/fundamentals/get-started-developers)
+- [Google article structured data](https://developers.google.com/search/docs/appearance/structured-data/article)
+- [Vercel configuration](https://vercel.com/docs/project-configuration/vercel-json)

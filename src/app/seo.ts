@@ -20,8 +20,8 @@ export class SeoStrategy extends TitleStrategy {
     const article = articles.find((item) => path === '/insights/' + item.slug);
     const pages: Record<string, [string, string, string]> = {
       '/': [
-        'Web & Mobile Application Development',
-        'Build web applications, MVPs, and better digital experiences with EmloX Tech. Remote software development, UI/UX design, and practical AI automation.',
+        'AI Solutions & Custom Software Development',
+        'EmloX Tech builds AI solutions, automates business workflows, and develops custom websites and apps. Explore practical software built around your business.',
         'WebPage',
       ],
       '/privacy': [
@@ -45,7 +45,7 @@ export class SeoStrategy extends TitleStrategy {
         'CollectionPage',
       ],
       '/about': [
-        'About Our Software Development & Design Studio',
+        'About Our AI & Software Development Studio',
         'Work with EmloX Tech on your next digital product. Clear project scope, working software reviews, and remote collaboration from discovery to handover.',
         'AboutPage',
       ],
@@ -55,7 +55,7 @@ export class SeoStrategy extends TitleStrategy {
         'CollectionPage',
       ],
       '/contact': [
-        'Discuss Your Software or Design Project',
+        'Discuss Your AI or Software Project',
         'Discuss your web application, MVP, UI/UX design, or automation project with EmloX Tech. Share your goals, budget, and timeline for a tailored project estimate.',
         'ContactPage',
       ],
@@ -83,11 +83,13 @@ export class SeoStrategy extends TitleStrategy {
       entry?.[1] ||
       'This page could not be found. Explore EmloX Tech services, concepts, and insights.';
     const title = `${heading} | ${BRAND}`;
+    const image = SITE_URL + (article?.image || '/social-preview.png');
+    const imageAlt = article?.imageAlt || 'EmloX Tech — Web and mobile apps, from idea to launch.';
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({
       name: 'robots',
-      content: valid ? 'index, follow, max-image-preview:large' : 'noindex, follow',
+      content: valid && !project ? 'index, follow, max-image-preview:large' : 'noindex, follow',
     });
     for (const [property, content] of Object.entries({
       'og:title': title,
@@ -96,18 +98,18 @@ export class SeoStrategy extends TitleStrategy {
       'og:type': article ? 'article' : 'website',
       'og:site_name': BRAND,
       'og:locale': 'en_US',
-      'og:image': SITE_URL + '/social-preview.png',
-      'og:image:width': '1200',
-      'og:image:height': '630',
-      'og:image:type': 'image/png',
-      'og:image:alt': 'EmloX Tech — Web and mobile apps, from idea to launch.',
+      'og:image': image,
+      'og:image:width': article ? '1536' : '1200',
+      'og:image:height': article ? '1024' : '630',
+      'og:image:type': article ? 'image/jpeg' : 'image/png',
+      'og:image:alt': imageAlt,
     })) {
       this.meta.updateTag({ property, content });
     }
     for (const [name, content] of Object.entries({
       'twitter:card': 'summary_large_image',
-      'twitter:image': SITE_URL + '/social-preview.png',
-      'twitter:image:alt': 'EmloX Tech — Web and mobile apps, from idea to launch.',
+      'twitter:image': image,
+      'twitter:image:alt': imageAlt,
       'twitter:title': title,
       'twitter:description': description,
     }))
@@ -128,8 +130,9 @@ export class SeoStrategy extends TitleStrategy {
       url: SITE_URL + '/',
       logo: SITE_URL + '/emlox-logo.svg',
       email: 'info@emloxtech.com',
+      telephone: '+94 71 707 1104',
       description:
-        'Independent software development and design studio offering remote project collaboration for founders, businesses, and product teams.',
+        'AI solutions and custom software studio helping businesses automate workflows, build digital products, and improve customer experiences through remote collaboration.',
     };
     const graph: object[] = [
       organization,
@@ -150,6 +153,7 @@ export class SeoStrategy extends TitleStrategy {
         inLanguage: 'en',
         isPartOf: { '@id': SITE_URL + '/#website' },
         about: { '@id': organization['@id'] },
+        primaryImageOfPage: { '@type': 'ImageObject', url: image },
       },
     ];
     if (path === '/work/money-maker')
@@ -175,9 +179,14 @@ export class SeoStrategy extends TitleStrategy {
       });
     if (article)
       graph.push({
-        '@type': 'Article',
+        '@type': 'BlogPosting',
         '@id': url + '#article',
         headline: article.title,
+        image,
+        url,
+        inLanguage: 'en',
+        articleSection: article.category,
+        wordCount: article.paragraphs.join(' ').split(/\s+/).length,
         description,
         articleBody: article.paragraphs.join('\n\n'),
         author: {
@@ -189,6 +198,23 @@ export class SeoStrategy extends TitleStrategy {
         publisher: { '@id': organization['@id'] },
         mainEntityOfPage: { '@id': url + '#webpage' },
       });
+    const collection =
+      path === '/services'
+        ? services.map((item) => ({ name: item.title, url: SITE_URL + '/services/' + item.slug }))
+        : path === '/insights'
+          ? articles.map((item) => ({ name: item.title, url: SITE_URL + '/insights/' + item.slug }))
+          : [];
+    if (collection.length)
+      graph.push({
+        '@type': 'ItemList',
+        '@id': url + '#list',
+        numberOfItems: collection.length,
+        itemListElement: collection.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          ...item,
+        })),
+      });
     if (path !== '/') {
       const parts = path.slice(1).split('/');
       const breadcrumbs = [
@@ -199,10 +225,7 @@ export class SeoStrategy extends TitleStrategy {
           '@type': 'ListItem',
           position: 2,
           name: (
-            { services: 'Services', work: 'Solutions', insights: 'Insights' } as Record<
-              string,
-              string
-            >
+            { services: 'Services', work: 'Solutions', insights: 'Blog' } as Record<string, string>
           )[parts[0]],
           item: SITE_URL + '/' + parts[0],
         });

@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { services, projects, articles } from './content';
 import { Home } from './home';
 export const routes: Routes = [
-  { path: '', component: Home, title: 'EmloX Tech — Design & Software Engineering' },
+  { path: '', component: Home, title: 'AI Solutions & Custom Software Development — EmloX Tech' },
   {
     path: 'services',
     loadComponent: () => import('./pages').then((m) => m.Pages),

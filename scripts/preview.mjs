@@ -11,6 +11,8 @@ const types = {
   '.xml': 'application/xml',
   '.txt': 'text/plain',
   '.ico': 'image/x-icon',
+  '.jpg': 'image/jpeg',
+  '.png': 'image/png',
 };
 createServer(async (req, res) => {
   try {
