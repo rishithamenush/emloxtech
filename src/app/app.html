@@ -10,7 +10,8 @@
     </button>
   </div>
 }
-<header class="site-header">
+<span id="header-scroll-marker" aria-hidden="true"></span>
+<header class="site-header" [class.is-scrolled]="headerScrolled()">
   <div class="header-inner">
     <a class="brand" routerLink="/" aria-label="EmloX Tech home"
       ><span class="brand-name"
@@ -18,33 +19,41 @@
         ><img class="brand-ribbon-x" src="emlox-logo.svg" alt="" width="38" height="40" /></span
       ><span class="brand-tec">TECH</span></a
     >
-    <nav
-      (keydown.escape)="menuOpen.set(false)"
-      id="main-navigation"
-      aria-label="Main navigation"
-      [class.is-open]="menuOpen()"
-    >
-      <div class="nav-links">
-        <a routerLink="/services" routerLinkActive="active">Services</a
-        ><a routerLink="/work" routerLinkActive="active">Work</a
-        ><a routerLink="/about" routerLinkActive="active">About</a
-        ><a routerLink="/insights" routerLinkActive="active">Notes</a>
-      </div>
-      <div class="nav-actions">
-        <a class="nav-plain" href="mailto:info@emloxtech.com">Email us</a
-        ><a routerLink="/contact" class="pill accent">Discuss a project</a>
-      </div>
-    </nav>
     <button
       class="menu-toggle"
+      #menuButton
+      type="button"
       (click)="menuOpen.set(!menuOpen())"
       [attr.aria-expanded]="menuOpen()"
       aria-label="Toggle navigation"
       aria-controls="main-navigation"
       (keydown.escape)="menuOpen.set(false)"
     >
+      <span>{{ menuOpen() ? 'Close' : 'Menu' }}</span>
       <app-icon [name]="menuOpen() ? 'close' : 'menu'" />
     </button>
+    <nav
+      (keydown.escape)="menuOpen.set(false); menuButton.focus()"
+      id="main-navigation"
+      aria-label="Main navigation"
+      [class.is-open]="menuOpen()"
+    >
+      <div class="nav-links">
+        <a routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Services</a
+        ><a routerLink="/work" routerLinkActive="active" ariaCurrentWhenActive="page">Work</a
+        ><a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a
+        ><a routerLink="/insights" routerLinkActive="active" ariaCurrentWhenActive="page">Notes</a>
+      </div>
+      <div class="nav-actions">
+        <a
+          routerLink="/contact"
+          class="pill accent nav-cta"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Let’s talk <span class="nav-cta-arrow"><app-icon name="arrow-up-right" /></span
+        ></a>
+      </div>
+    </nav>
   </div>
 </header>
 <main appScrollReveal id="main" tabindex="-1"><router-outlet /></main>
