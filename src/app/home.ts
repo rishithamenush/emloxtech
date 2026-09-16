@@ -7,6 +7,7 @@ import { InsightArt } from './insight-art';
   selector: 'app-home',
   imports: [Icon, RouterLink, InsightArt],
   templateUrl: './home.html',
+  styleUrl: './home.css',
 })
 export class Home {
   services = services;
