@@ -21,7 +21,7 @@ export const routes: Routes = [
     path: 'work',
     loadComponent: () => import('./pages').then((m) => m.Pages),
     data: { page: 'work' },
-    title: 'The concept lab — EmloX Tech',
+    title: 'AI & digital solutions — EmloX Tech',
   },
   {
     path: 'work/money-maker',

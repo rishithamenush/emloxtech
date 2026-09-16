@@ -40,8 +40,8 @@ export class SeoStrategy extends TitleStrategy {
         'CollectionPage',
       ],
       '/work': [
-        'Published Products & Design Concepts',
-        'Explore Money Maker, our published Android budgeting app, alongside original EmloX concepts for operations software, ecommerce, and analytics.',
+        'AI Solutions, Automation & Digital Strategy',
+        'Explore AI assistants, workflow automation, document intelligence, and digital product development. Turn business challenges into practical solutions with EmloX Tech.',
         'CollectionPage',
       ],
       '/about': [
@@ -199,7 +199,10 @@ export class SeoStrategy extends TitleStrategy {
           '@type': 'ListItem',
           position: 2,
           name: (
-            { services: 'Services', work: 'Work', insights: 'Insights' } as Record<string, string>
+            { services: 'Services', work: 'Solutions', insights: 'Insights' } as Record<
+              string,
+              string
+            >
           )[parts[0]],
           item: SITE_URL + '/' + parts[0],
         });

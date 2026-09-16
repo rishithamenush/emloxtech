@@ -40,7 +40,7 @@
     >
       <div class="nav-links">
         <a routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Services</a
-        ><a routerLink="/work" routerLinkActive="active" ariaCurrentWhenActive="page">Work</a
+        ><a routerLink="/work" routerLinkActive="active" ariaCurrentWhenActive="page">Solutions</a
         ><a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a
         ><a routerLink="/insights" routerLinkActive="active" ariaCurrentWhenActive="page">Notes</a>
       </div>
@@ -50,7 +50,7 @@
           class="pill accent nav-cta"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
-          >Let’s talk <span class="nav-cta-arrow"><app-icon name="arrow-up-right" /></span
+          >Let’s talk <span class="nav-cta-arrow"><app-icon name="chat" /></span
         ></a>
       </div>
     </nav>
@@ -77,14 +77,12 @@
         </ul>
       </div>
       <div>
-        <h2 class="mono-label">Work</h2>
+        <h2 class="mono-label">Solutions</h2>
         <ul>
-          <li><a routerLink="/work/money-maker">Money Maker</a></li>
-          @for (p of projects; track p.slug) {
-            <li>
-              <a [routerLink]="['/work', p.slug]">{{ p.name }} concept</a>
-            </li>
-          }
+          <li><a routerLink="/work">AI &amp; digital solutions</a></li>
+          <li><a routerLink="/services/ai-data">AI &amp; automation</a></li>
+          <li><a routerLink="/services/product-engineering">Digital products</a></li>
+          <li><a routerLink="/contact">Explore your idea</a></li>
         </ul>
       </div>
       <div>

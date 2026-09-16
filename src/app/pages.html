@@ -111,79 +111,192 @@
     }
   }
   @case ('work') {
-    <section class="page-hero container">
-      <span class="mono-label"><app-icon name="grid" /> Products &amp; explorations</span>
-      <h1>Things we’ve made. Ideas we’re exploring.</h1>
-      <p class="lead">
-        Try our published Android app, Money Maker, and explore our original interface concepts for
-        business software, commerce, and analytics.
-      </p>
-    </section>
-    <section class="container section-tight">
-      <a class="showcase" routerLink="/work/money-maker">
-        <div class="showcase-media">
-          <div class="app-tile" aria-hidden="true">
-            <img
-              class="app-icon app-icon-official"
-              src="money-maker-icon.png"
-              loading="lazy"
-              decoding="async"
-              alt=""
-              width="80"
-              height="80"
-            />
-            <strong>Money Maker</strong>
-            <span>Budget &amp; Expense</span>
+    <div class="solutions-page">
+      <section class="container solutions-hero">
+        <div>
+          <span class="mono-label"><app-icon name="sparkles" /> AI &amp; digital solutions</span>
+          <h1>Less busywork.<br />More <span>possibility.</span></h1>
+          <p class="lead">
+            Put AI to work where it matters. We help you turn everyday business challenges into
+            useful software, smarter workflows, and better customer experiences.
+          </p>
+          <div class="solutions-actions">
+            <a class="pill dark lg" routerLink="/contact"
+              >Let’s explore your idea <app-icon name="arrow-up-right"
+            /></a>
+            <a class="link-arrow" routerLink="/work" fragment="capabilities"
+              >Explore capabilities <app-icon name="arrow-right"
+            /></a>
           </div>
         </div>
-        <div class="showcase-bar">
+        <aside class="opportunity-panel" aria-labelledby="opportunity-title">
+          <span class="mono-label">Start with a business challenge</span>
+          <h2 id="opportunity-title">What could your team do with more time?</h2>
+          <ul>
+            <li>
+              <app-icon name="message" />
+              <div>
+                <strong>Answer repetitive questions</strong
+                ><span>Assist customers and support your team.</span>
+              </div>
+            </li>
+            <li>
+              <app-icon name="file" />
+              <div>
+                <strong>Move past manual data entry</strong
+                ><span>Turn documents into reviewable information.</span>
+              </div>
+            </li>
+            <li>
+              <app-icon name="growth" />
+              <div>
+                <strong>Make information useful</strong
+                ><span>Find answers across your business knowledge.</span>
+              </div>
+            </li>
+          </ul>
+          <p>Your workflow first. The right technology next.</p>
+        </aside>
+      </section>
+
+      <section
+        class="container solutions-capabilities"
+        id="capabilities"
+        aria-labelledby="capabilities-title"
+      >
+        <div class="solutions-section-heading">
           <div>
-            <span class="mono-label">Published product</span>
-            <h2>Money Maker</h2>
-            <p>
-              An Android budgeting and expense tracker by EmloX. Track income and expenses, organize
-              spending by category, and plan monthly budgets.
-            </p>
+            <span class="mono-label">01 / What we can build</span>
+            <h2 id="capabilities-title">Practical AI.<br />Built around your business.</h2>
           </div>
-          <span class="link-arrow">Explore the app <app-icon name="arrow-up-right" /></span>
+          <p>
+            Start with one useful improvement or bring an entire product to life. We shape the scope
+            around your users, your data, and the tools you already use.
+          </p>
         </div>
-      </a>
-    </section>
-    <section class="container section-tight">
-      <div class="filter-row" aria-label="Filter concepts">
-        <span class="mono-label">Concepts</span>
-        @for (item of filters; track item) {
-          <button
-            (click)="filter.set(item)"
-            [class.selected]="filter() === item"
-            [attr.aria-pressed]="filter() === item"
-          >
-            {{ item }}
-          </button>
-        }
-      </div>
-      <div class="work-grid">
-        @for (p of filteredProjects(); track p.slug) {
-          <a class="resource" [routerLink]="['/work', p.slug]"
-            ><div class="resource-media wide"><app-project-art [kind]="p.color" /></div>
-            <div class="resource-body">
-              <span class="mono-label">{{ p.type }} · Concept</span>
-              <h3>{{ p.name }}: {{ p.subtitle }}</h3>
-              <span class="link-arrow">View concept <app-icon name="arrow-up-right" /></span></div
-          ></a>
-        }
-      </div>
-      <p class="fine-print">
-        Orbit, Forma, and Signal are illustrative product concepts. Money Maker is a published EmloX
-        product.
-      </p>
-    </section>
+        <div class="capability-grid">
+          @for (item of capabilities; track item.title; let i = $index) {
+            <article class="capability-card">
+              <span class="mono-label">0{{ i + 1 }} / {{ item.label }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+              <div class="capability-example">
+                <span>Where it can help</span>
+                <p>{{ item.example }}</p>
+              </div>
+              <a class="link-arrow" [routerLink]="item.link"
+                >Explore this service <app-icon name="arrow-up-right"
+              /></a>
+            </article>
+          }
+        </div>
+      </section>
+
+      <section class="solutions-strengths" aria-labelledby="strengths-title">
+        <div class="container strengths-layout">
+          <div>
+            <span class="mono-label">02 / The EmloX approach</span>
+            <h2 id="strengths-title">
+              Business thinking.<br />Design clarity.<br /><span>Engineering depth.</span>
+            </h2>
+            <p>
+              AI is one part of the solution. The experience around it, the systems behind it, and
+              the way your team uses it deserve just as much attention.
+            </p>
+            <a class="link-arrow" routerLink="/services"
+              >See our full expertise <app-icon name="arrow-up-right"
+            /></a>
+          </div>
+          <div class="strengths-list">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>Start with the problem</h3>
+                <p>
+                  Understand the workflow and define what a useful result looks like before choosing
+                  a model or building a feature.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>Connect the whole experience</h3>
+                <p>
+                  Bring interface design, application development, AI integrations, and cloud
+                  delivery into one project plan.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>Keep people in control</h3>
+                <p>
+                  Plan access permissions, source visibility, and human review for the decisions
+                  that need it.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>04</span>
+              <div>
+                <h3>Build for everyday use</h3>
+                <p>
+                  Evaluate with representative tasks, account for running costs, and agree on
+                  handover and support before launch.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="container solutions-process" aria-labelledby="process-title">
+        <div class="solutions-section-heading">
+          <div>
+            <span class="mono-label">03 / From opportunity to delivery</span>
+            <h2 id="process-title">A clear path from<br />“what if” to what’s next.</h2>
+          </div>
+          <p>
+            You don’t need a finished specification. Bring a process that takes too long, an idea
+            worth testing, or a product ready for its next step.
+          </p>
+        </div>
+        <ol class="process-steps">
+          <li>
+            <span class="mono-label">01 / Discover</span>
+            <h3>Find the useful starting point</h3>
+            <p>Map the challenge, users, available data, and constraints.</p>
+            <strong>Outcome: an agreed scope</strong>
+          </li>
+          <li>
+            <span class="mono-label">02 / Validate</span>
+            <h3>Test the idea early</h3>
+            <p>Use a focused prototype to evaluate the experience and technical fit.</p>
+            <strong>Outcome: evidence to move forward</strong>
+          </li>
+          <li>
+            <span class="mono-label">03 / Build</span>
+            <h3>Make it work together</h3>
+            <p>Develop the solution, connect your systems, and review progress with you.</p>
+            <strong>Outcome: a tested implementation</strong>
+          </li>
+          <li>
+            <span class="mono-label">04 / Improve</span>
+            <h3>Launch with a plan</h3>
+            <p>Prepare handover, agree on support, and prioritize the next improvements.</p>
+            <strong>Outcome: a clear next step</strong>
+          </li>
+        </ol>
+      </section>
+    </div>
   }
   @case ('project') {
     @if (project(); as p) {
       <section class="page-hero container">
         <a routerLink="/work" class="mono-label back"
-          ><app-icon name="arrow-left" /> Studio concepts</a
+          ><app-icon name="arrow-left" /> AI &amp; digital solutions</a
         >
         <h1>{{ p.name }}: {{ p.subtitle }}</h1>
         <p class="lead">{{ p.description }}</p>
@@ -226,14 +339,14 @@
       <section class="page-hero container">
         <h1>Concept not found</h1>
         <div class="actions">
-          <a class="pill dark lg" routerLink="/work">Back to the concept lab</a>
+          <a class="pill dark lg" routerLink="/work">Explore our solutions</a>
         </div>
       </section>
     }
   }
   @case ('money-maker') {
     <section class="page-hero container">
-      <a class="mono-label back" routerLink="/work"><app-icon name="arrow-left" /> All work</a>
+      <a class="mono-label back" routerLink="/work"><app-icon name="arrow-left" /> All solutions</a>
       <h1>Money Maker</h1>
       <p class="lead">
         A budgeting and expense-tracking app for Android, published by EmloX Tech on Google Play.
@@ -530,7 +643,15 @@
 }
 <section class="container cta">
   <span class="mono-label"><app-icon name="grid" /> Have a project in mind?</span>
-  <h2>Let’s make your next move.</h2>
-  <p>Share your goals, constraints, and timeline. We’ll work out the next step together.</p>
+  <h2>
+    {{ page() === 'work' ? 'What would you like to make easier?' : 'Let’s make your next move.' }}
+  </h2>
+  <p>
+    {{
+      page() === 'work'
+        ? 'Tell us about your business, the repetitive work, or the idea you want to explore. We’ll help define a practical starting point.'
+        : 'Share your goals, constraints, and timeline. We’ll work out the next step together.'
+    }}
+  </p>
   <a class="pill dark lg" routerLink="/contact">Discuss your project</a>
 </section>

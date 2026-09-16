@@ -2834,9 +2834,10 @@ img.app-icon-official {
 .nav-cta-arrow {
   display: grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
-  color: var(--accent-hover);
+  overflow: hidden;
+  width: 34px;
+  height: 34px;
+  color: #34520f;
   background: #fff;
   border-radius: 50%;
   box-shadow: 0 1px 3px #1d2e0c40;
@@ -2844,15 +2845,44 @@ img.app-icon-official {
     transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
     background-color 0.2s;
 }
+.nav-cta-arrow app-icon {
+  font-size: 17px;
+  vertical-align: 0;
+}
+.nav-cta-arrow app-icon svg {
+  stroke-width: 2.3;
+}
 .pill.accent.nav-cta:hover .nav-cta-arrow {
-  transform: rotate(45deg) scale(1.06);
+  transform: scale(1.06);
   background: #f2f8e6;
+}
+/* Chat bubble gives a small friendly wiggle. */
+.pill.accent.nav-cta:hover .nav-cta-arrow app-icon {
+  animation: nav-cta-chat-wiggle 0.6s cubic-bezier(0.3, 0, 0.2, 1);
+}
+@keyframes nav-cta-chat-wiggle {
+  0%,
+  100% {
+    transform: rotate(0) scale(1);
+  }
+  25% {
+    transform: rotate(-12deg) scale(1.08);
+  }
+  50% {
+    transform: rotate(8deg) scale(1.08);
+  }
+  75% {
+    transform: rotate(-4deg) scale(1.02);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .pill.accent.nav-cta,
   .pill.accent.nav-cta::before,
   .nav-cta-arrow {
     transition: none;
+  }
+  .pill.accent.nav-cta:hover .nav-cta-arrow app-icon {
+    animation: none;
   }
 }
 .site-header::after {
