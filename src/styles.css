@@ -2312,6 +2312,12 @@ select {
 .site-footer .brand {
   color: #f4f5ed;
 }
+.site-footer .brand-tec {
+  color: #f4f5ed;
+}
+.site-footer .brand-tec::before {
+  background: #a5d741;
+}
 .footer-bottom {
   padding-top: 28px;
   border-top: 1px solid #434c3e;
