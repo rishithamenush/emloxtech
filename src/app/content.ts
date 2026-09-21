@@ -197,13 +197,44 @@ export const projects = [
 export const articles = [
   {
     slug: 'better-products',
+    topic: 'Product discovery',
+    relatedService: 'product-engineering',
+    mentions: ['Minimum viable product', 'User journeys'],
+    answerHeading: 'What should you define before building an MVP?',
+    answer:
+      'Define the user, the problem, the smallest useful workflow, and how you will evaluate the result. An MVP should test a specific assumption with a usable first release. Agree on integrations, access permissions, and exclusions before choosing the technology or estimating delivery.',
+    sections: [
+      {
+        heading: 'Example: a customer order portal',
+        paragraphs: [
+          'Suppose customers call your team to ask where an order is. A focused first release could let a customer sign in, see their own orders, and read the latest status. Inventory forecasting and a loyalty program can wait unless they are essential to testing that workflow. This is an illustrative planning example, not a reported client result.',
+        ],
+        checklist: [
+          'Identify the system that holds order data and who maintains it.',
+          'Define which orders each customer can access.',
+          'Plan what customers see when an update is delayed or unavailable.',
+          'Compare support requests before and after the pilot using a consistent measurement period.',
+        ],
+      },
+      {
+        heading: 'What belongs in the project brief?',
+        paragraphs: [
+          'Describe the current process, the people affected, the proposed first release, and what is outside its scope. Record the baseline you can measure today. Agree on acceptance criteria and who will decide whether the pilot is ready to expand.',
+        ],
+        checklist: [
+          'One primary user journey and a clear problem statement.',
+          'Required integrations, data permissions, and operational constraints.',
+          'A measurable outcome, an owner, and a review point.',
+        ],
+      },
+    ],
     image: '/blog/product-planning.jpg',
     imageSrcset: '/blog/product-planning-768.jpg 768w, /blog/product-planning.jpg 1536w',
     imageAlt: 'Notebook with product journey sketches beside a laptop',
     category: 'PRODUCT THINKING',
     title: 'Before you build: define the problem.',
     summary: 'Before choosing a stack or drawing a screen, get clear on the problem worth solving.',
-    minutes: '1 min',
+    minutes: '3 min',
     paragraphs: [
       'A useful product begins with a specific person and a specific problem. “We need an app” describes a format. “Our customers cannot track an order without calling us” describes something a team can investigate and improve.',
       'Start by mapping the current experience. Talk to the people who use it, watch where work slows down, and identify the smallest change that would make a meaningful difference. A focused first release teaches you more than a long feature list.',
@@ -212,13 +243,44 @@ export const articles = [
   },
   {
     slug: 'practical-ai',
+    topic: 'AI automation',
+    relatedService: 'ai-data',
+    mentions: ['Document classification', 'Information extraction', 'Human review'],
+    answerHeading: 'How do you choose a useful first AI project?',
+    answer:
+      'Choose a repeatable task with accessible, permitted data and a result your team can evaluate. Compare an AI pilot with the current process, including review time and running costs. Keep a human review path for uncertain results and expand only when the pilot meets your agreed criteria.',
+    sections: [
+      {
+        heading: 'Example: extracting information from invoices',
+        paragraphs: [
+          'In an illustrative invoice workflow, a system could suggest the supplier, invoice date, and total for a person to check. Begin with representative documents, including scans, unfamiliar layouts, and missing fields. Keep the source document beside the proposed values so the reviewer can verify them. This example does not describe a measured client deployment.',
+        ],
+        checklist: [
+          'Confirm permission to process the documents and decide where they may be stored.',
+          'Define required fields and how to handle duplicates or missing values.',
+          'Route ambiguous output for review before downstream actions.',
+          'Keep evaluation documents separate from examples used to tune the system.',
+        ],
+      },
+      {
+        heading: 'What should you measure in an AI pilot?',
+        paragraphs: [
+          'Measure correctness against checked examples, the amount of human correction, total completion time, and operating cost. A quick generated answer is not useful if review and correction take longer than the original task. Define unacceptable errors before evaluating the system.',
+        ],
+        checklist: [
+          'Compare results with the existing manual or rules-based process.',
+          'Include difficult cases as well as routine documents.',
+          'Record failures and agree on a fallback when the system cannot provide a reliable result.',
+        ],
+      },
+    ],
     image: '/blog/ai-automation.jpg',
     imageSrcset: '/blog/ai-automation-768.jpg 768w, /blog/ai-automation.jpg 1536w',
     imageAlt: 'Connected glass modules illustrating an AI automation workflow',
     category: 'AI & DATA',
     title: 'Choosing a useful first AI project.',
     summary: 'Find the repetitive work, understand your data, and keep people in the loop.',
-    minutes: '1 min',
+    minutes: '3 min',
     paragraphs: [
       'The strongest place to start with AI is often a repetitive task that already has a clear definition of a good result. Document classification, information extraction, and search can offer a focused starting point.',
       'Evaluate whether your data is suitable before selecting a model. Check quality, permissions, coverage, and the consequences of an incorrect result. Build a representative evaluation set and compare the proposed system against the current process.',
@@ -227,13 +289,44 @@ export const articles = [
   },
   {
     slug: 'design-that-scales',
+    topic: 'Design systems',
+    relatedService: 'experience-design',
+    mentions: ['User interface design', 'Keyboard accessibility', 'Component documentation'],
+    answerHeading: 'When does a product need a design system?',
+    answer:
+      'A product benefits from a design system when repeated interface patterns become inconsistent or expensive to maintain. Start with shared typography, spacing, controls, and interaction states. Document how components behave and keep the design files and implementation aligned as the product changes.',
+    sections: [
+      {
+        heading: 'Start with a small component inventory',
+        paragraphs: [
+          'Review existing screens and group repeated elements such as buttons, fields, alerts, and navigation. Identify differences that serve a real user need and those that are accidental. Choose a frequently used workflow as the first place to apply shared patterns.',
+        ],
+        checklist: [
+          'Define default, focus, disabled, loading, and error states where relevant.',
+          'Check keyboard operation and visible focus.',
+          'Try long labels, validation messages, and small screens.',
+          'Document when to use each component and when to choose another pattern.',
+        ],
+      },
+      {
+        heading: 'Example: making form errors consistent',
+        paragraphs: [
+          'An illustrative contact form might use a shared field label, a clear error message, and an error summary that helps a visitor find the affected input. Reusing that pattern across sign-in and account forms reduces repeated design decisions. Each flow still needs testing in its own context.',
+        ],
+        checklist: [
+          'Assign responsibility for reviewing component changes.',
+          'Record changes that affect existing screens.',
+          'Test components in complete user journeys, not only in an isolated component gallery.',
+        ],
+      },
+    ],
     image: '/blog/design-systems.jpg',
     imageSrcset: '/blog/design-systems-768.jpg 768w, /blog/design-systems.jpg 1536w',
     imageAlt: 'Coordinated color swatches and grid studies illustrating a design system',
     category: 'DESIGN SYSTEMS',
     title: 'When your product needs a design system.',
     summary: 'Why a small, thoughtful design system makes a big difference as products grow.',
-    minutes: '1 min',
+    minutes: '3 min',
     paragraphs: [
       'Every new screen asks a familiar set of questions: how should a button behave, what does an error look like, and how does a person get back? A design system makes those answers consistent.',
       'Start with the patterns the product already needs. Define readable typography, color roles, spacing, form states, and navigation. Test components with keyboard access, long content, and small screens.',
@@ -263,3 +356,17 @@ export const faqs = [
     'We can plan a handover, documentation, and ongoing support with you. Maintenance, monitoring, and future improvements are agreed as part of the project scope.',
   ],
 ];
+
+// Shared by the visible article and its structured representation.
+export function articleText(article: (typeof articles)[number]): string {
+  return [
+    article.answerHeading,
+    article.answer,
+    ...article.paragraphs,
+    ...article.sections.flatMap((section) => [
+      section.heading,
+      ...section.paragraphs,
+      ...section.checklist,
+    ]),
+  ].join('\n\n');
+}

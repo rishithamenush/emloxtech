@@ -510,6 +510,23 @@
         scoped, reviewable projects through remote collaboration.
       </p>
     </section>
+    <section class="container section-tight" id="editorial">
+      <div class="split">
+        <div><h2>About our articles</h2></div>
+        <div>
+          <p>
+            EmloX Tech publishes practical guidance on product planning, AI automation, and
+            interface design. Our articles explain planning decisions and include illustrative
+            examples; those examples are not client case studies or measured outcomes.
+          </p>
+          <p>
+            Explore our <a routerLink="/services">services</a> and our published Android product,
+            <a routerLink="/work/money-maker">Money Maker</a>. For questions or corrections,
+            <a routerLink="/contact">contact EmloX Tech</a>.
+          </p>
+        </div>
+      </div>
+    </section>
     <section class="container statement-wrap">
       <p class="statement">
         <span>The people building your product should understand the business behind it.</span>
@@ -611,6 +628,7 @@
             ><app-icon name="arrow-left" /> All articles</a
           >
           <span class="mono-label">{{ a.category }} · {{ a.minutes }} read</span>
+          <p class="mono-label">Topic: {{ a.topic }}</p>
           <h1>{{ a.title }}</h1>
           <p class="lead">{{ a.summary }}</p>
           <p class="byline">
@@ -628,9 +646,25 @@
           decoding="async"
         />
         <div class="article-body">
+          <h2>{{ a.answerHeading }}</h2>
+          <p>{{ a.answer }}</p>
           @for (p of a.paragraphs; track p) {
             <p>{{ p }}</p>
           }
+          @for (section of a.sections; track section.heading) {
+            <section>
+              <h2>{{ section.heading }}</h2>
+              @for (paragraph of section.paragraphs; track paragraph) {
+                <p>{{ paragraph }}</p>
+              }
+              <ul>
+                @for (item of section.checklist; track item) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            </section>
+          }
+          <p><a [routerLink]="['/services', a.relatedService]">Explore the related service</a></p>
           <h2>Put this into your project brief</h2>
           <p>
             Write down the outcome you want, the people affected, and the constraints you already

@@ -54,6 +54,14 @@ for (const url of urls) {
   }
   const json = html.match(/<script[^>]*id="site-structured-data"[^>]*>([\s\S]*?)<\/script>/)?.[1];
   const data = JSON.parse(json);
+  const graph = data['@graph'];
+  const webpage = graph.find((item) => item['@id'] === url + '#webpage');
+  assert.ok(webpage, `Stable page identity: ${path}`);
+  const ids = graph.filter((item) => item['@id']).map((item) => item['@id']);
+  assert.equal(ids.length, new Set(ids).size, `Unique entity identifiers: ${path}`);
+  if (webpage.mainEntity) {
+    assert.ok(ids.includes(webpage.mainEntity['@id']), `Main entity exists: ${path}`);
+  }
   assert.ok(
     data['@graph'].some((item) => item['@type'] === 'Organization'),
     path,
@@ -73,11 +81,29 @@ for (const url of urls) {
     assert.equal(post.image, image, `Article image matches social preview: ${path}`);
     assert.ok(post.author.name && post.author.url && post.articleBody, path);
     assert.ok(image.includes('/blog/'), `Article-specific image: ${path}`);
+    assert.equal(webpage.mainEntity['@id'], post['@id']);
+    assert.ok(post.about?.[0]?.name, `Article has a descriptive topic: ${path}`);
+    assert.notEqual(post.about[0].name, 'EmloX Tech', `Article is about its topic: ${path}`);
+    assert.ok(post.mentions.length > 0, `Supporting article concepts: ${path}`);
+    const visibleText = html
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
+      .replace(/<[^>]+>/g, ' ');
+    assert.ok(
+      visibleText.includes(post.about[0].name) ||
+        post.articleBody.toLowerCase().includes(post.about[0].name.toLowerCase()),
+      `Topic is supported by content: ${path}`,
+    );
+    assert.ok(post.wordCount > 250, `Substantive article guidance: ${path}`);
+    assert.ok(
+      post.articleBody.includes('Example:') || post.articleBody.includes('example:'),
+      `Practical example: ${path}`,
+    );
   }
   if (path !== '/') {
     const crumbs = data['@graph'].find((item) => item['@type'] === 'BreadcrumbList');
     assert.ok(crumbs, `Breadcrumbs: ${path}`);
     assert.equal(crumbs.itemListElement.at(-1).item, url);
+    assert.equal(webpage.breadcrumb['@id'], crumbs['@id']);
   }
   for (const match of html.matchAll(/href="(\/[^"?#]*)(?:[?#][^"]*)?"/g)) {
     const href = match[1];
@@ -88,6 +114,10 @@ for (const url of urls) {
 const missing = await readFile(`${root}/404.html`, 'utf8');
 assert.ok(missing.includes('noindex, follow'));
 assert.ok(missing.includes('PAGE NOT FOUND'));
+assert.ok(
+  !missing.includes('rel="canonical"'),
+  'Error pages do not canonicalize to an indexable page',
+);
 assert.ok(!urls.some((url) => url.endsWith('/404')));
 const robots = await readFile(`${root}/robots.txt`, 'utf8');
 assert.ok(robots.includes('Sitemap: https://www.emloxtech.com/sitemap.xml'));

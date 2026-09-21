@@ -1,7 +1,7 @@
 import { DOCUMENT, Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
-import { services, projects, articles } from './content';
+import { services, projects, articles, articleText } from './content';
 
 export const SITE_URL = 'https://www.emloxtech.com';
 const BRAND = 'EmloX Tech';
@@ -120,7 +120,8 @@ export class SeoStrategy extends TitleStrategy {
       canonical.rel = 'canonical';
       this.document.head.appendChild(canonical);
     }
-    canonical.href = url;
+    if (valid) canonical.href = url;
+    else canonical.remove();
     this.document.getElementById('site-structured-data')?.remove();
     if (!valid) return;
     const organization = {
@@ -129,11 +130,27 @@ export class SeoStrategy extends TitleStrategy {
       name: BRAND,
       url: SITE_URL + '/',
       logo: SITE_URL + '/emlox-logo.svg',
+      mainEntityOfPage: { '@id': SITE_URL + '/about#webpage' },
       email: 'info@emloxtech.com',
       telephone: '+94 71 707 1104',
       description:
         'AI solutions and custom software studio helping businesses automate workflows, build digital products, and improve customer experiences through remote collaboration.',
     };
+    const topic = (name: string) => ({ '@type': 'Thing', name });
+    const mainEntityId = article
+      ? url + '#article'
+      : service
+        ? url + '#service'
+        : path === '/work/money-maker'
+          ? url + '#application'
+          : path === '/about'
+            ? organization['@id']
+            : undefined;
+    const topics = article
+      ? [topic(article.topic)]
+      : service
+        ? service.tags.map(topic)
+        : [{ '@id': organization['@id'] }];
     const graph: object[] = [
       organization,
       {
@@ -152,13 +169,18 @@ export class SeoStrategy extends TitleStrategy {
         description,
         inLanguage: 'en',
         isPartOf: { '@id': SITE_URL + '/#website' },
-        about: { '@id': organization['@id'] },
+        about: topics,
+        ...(mainEntityId ? { mainEntity: { '@id': mainEntityId } } : {}),
+        ...(path !== '/' ? { breadcrumb: { '@id': url + '#breadcrumb' } } : {}),
         primaryImageOfPage: { '@type': 'ImageObject', url: image },
       },
     ];
     if (path === '/work/money-maker')
       graph.push({
         '@type': 'SoftwareApplication',
+        '@id': url + '#application',
+        mainEntityOfPage: { '@id': url + '#webpage' },
+        sameAs: 'https://play.google.com/store/apps/details?id=app.moneymaker.android',
         name: 'Money Maker: Budget & Expense',
         operatingSystem: 'Android',
         applicationCategory: 'FinanceApplication',
@@ -186,9 +208,12 @@ export class SeoStrategy extends TitleStrategy {
         url,
         inLanguage: 'en',
         articleSection: article.category,
-        wordCount: article.paragraphs.join(' ').split(/\s+/).length,
+        wordCount: articleText(article).split(/\s+/).length,
+        about: topics,
+        mentions: article.mentions.map(topic),
+        isPartOf: { '@id': SITE_URL + '/insights#webpage' },
         description,
-        articleBody: article.paragraphs.join('\n\n'),
+        articleBody: articleText(article),
         author: {
           '@type': 'Organization',
           '@id': organization['@id'],
@@ -235,7 +260,11 @@ export class SeoStrategy extends TitleStrategy {
         name: service?.title || project?.name || article?.title || heading,
         item: url,
       });
-      graph.push({ '@type': 'BreadcrumbList', itemListElement: breadcrumbs });
+      graph.push({
+        '@type': 'BreadcrumbList',
+        '@id': url + '#breadcrumb',
+        itemListElement: breadcrumbs,
+      });
     }
     const script = this.document.createElement('script');
     script.id = 'site-structured-data';
